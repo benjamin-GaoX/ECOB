@@ -823,9 +823,10 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  #how-it-works .mh-outro.mh-outro-ready .mh-outro-actions{transition-delay:.1s}
 }
 
-</style></head>
+</style>
+</head>
 <body><a class="skip" href="#how-it-works">Skip to method</a><header class="nav"><div class="wrap nav-inner"><a aria-label="ECOB+ home" class="brand" href="index.html">ECOB<b>+</b></a>
-<nav aria-label="Main navigation" class="nav-links"><a class="nav-extra" href="index.html">Home</a><a aria-current="page" class="nav-method" href="how-it-works.html">How it works</a><a class="nav-extra" href="index.html#validation">Science</a><a class="nav-cta" href="index.html#calculator">Try ECOB+ ↗</a></nav></div></header>
+<nav aria-label="Main navigation" class="nav-links"><a class="nav-extra" href="index.html">Home</a><a aria-current="page" class="nav-method" href="how-it-works.html">How it works</a><a class="nav-extra" href="calculator.html#validation">Science</a><a class="nav-cta" href="calculator.html#calculator">Open calculator ↗</a></nav></div></header>
 <nav class="method-progress-rail" id="method-progress-rail" aria-label="How it works: jump to chapter">
  <div class="method-progress-rail-inner">
   <span aria-hidden="true" class="method-progress-rail-fill"></span>
@@ -975,9 +976,9 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
 <p>Embodied emissions from pipeline steel and emissions associated with pumping electricity.</p></div>
 </div></section>
 <div class="wrap mh-outro" id="method-conclusion"><p>From physical insight to practical pipeline decisions.</p><div class="mh-outro-actions">
-<a class="mh-outline-cta" href="index.html#calculator">Try ECOB+ <span aria-hidden="true">↗</span></a>
+<a class="mh-outline-cta" href="calculator.html#calculator">Open calculator <span aria-hidden="true">↗</span></a>
 <a class="mh-text-link" href="https://doi.org/10.1016/j.ijggc.2026.104829" rel="noopener noreferrer" target="_blank">Read the published method ↗</a>
-<a class="mh-text-link" href="index.html#validation">Scientific validation ↗</a>
+<a class="mh-text-link" href="calculator.html#validation">Scientific validation ↗</a>
 </div></div>
 </section></main>
 <footer class="footer"><div class="wrap"><span>ECOB+ · Research-backed CO₂ pipeline sizing</span><span><a href="index.html">Back to ECOB+</a>   ·   <a href="#" id="cookieSettings">Cookie settings</a>   ·   <a href="https://www.linkedin.com/in/benjamin-gao-oct1015/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a></span></div></footer>
@@ -1017,7 +1018,7 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  // Share the same optional-consent state as the main ECOB+ page.
  const KEY='ecob_analytics_consent',ID='G-0VRKYQ807Y',cookie=document.getElementById('cookie');
  let enabled=false;
- function canTrack(){try{const host=location.hostname.toLowerCase();if(!/^https?:$/.test(location.protocol)||!host||host==='localhost'||host==='127.0.0.1'||host.endsWith('.localhost'))return false;if(window.self!==window.top)return false;if(host==='chatgpt.com'||host.endsWith('.chatgpt.com')||host.endsWith('.oaiusercontent.com'))return false;return true}catch(e){return false}}
+ function canTrack(){try{const host=location.hostname.toLowerCase();if(!/^https?:$/.test(location.protocol)||!host||host==='localhost'||host==='127.0.0.1'||host.endsWith('.localhost'))return false;if(window.self!==window.top)return false;if(host==='chatgpt.com'||host.endsWith('.chatgpt.com')||host.endsWith('.chatgpt.site')||host.endsWith('.oaiusercontent.com'))return false;return true}catch(e){return false}}
  function loadGA(){if(enabled||!canTrack())return;enabled=true;
    window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
    window['ga-disable-'+ID]=false;window.gtag('js',new Date());window.gtag('config',ID,{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});
