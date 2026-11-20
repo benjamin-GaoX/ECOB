@@ -1248,14 +1248,44 @@ body{background:var(--overview-ink)}
 #hub-case[data-exploring="true"] [data-hub-segment="steel"][data-future="true"] .hub-pipe{
   height:2px;border:0;background:repeating-linear-gradient(90deg,#536174 0 5px,transparent 5px 9px);box-shadow:none;
 }
-</style></head>
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet"><style id="ecob-consistency-home">
+/* ECOB+ shared interface foundations — 2026-11. Only presentation, no model changes. */
+:root{--ecob-bg:#0b1018;--ecob-surface:#101723;--ecob-heading:#edf3fb;--ecob-text:#dfe9f5;--ecob-secondary:#aabbd1;--ecob-accent:#b4d5ff;--ecob-line:#34465e;--ecob-gold:#d5b17b;--ecob-ease:cubic-bezier(.22,.82,.24,1)}
+html{scroll-padding-top:82px}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important;background:var(--ecob-bg)!important;color:var(--ecob-heading)}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:2px solid #a5cefb!important;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* Shared chapter rail. Overview + Calculator use four dots; Method retains its seven. */
+.ecob-chapter-rail{position:fixed;z-index:70;left:clamp(17px,2.2vw,36px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:18px;opacity:.83}
+.ecob-chapter-rail::before{content:"";position:absolute;z-index:-1;left:50%;top:10px;bottom:10px;width:1px;background:linear-gradient(180deg,transparent,#344a66 18%,#344a66 82%,transparent)}
+.ecob-chapter-rail a{position:relative;display:flex;align-items:center;justify-content:center;width:16px;height:16px;text-decoration:none;border-radius:50%;outline-offset:5px}
+.ecob-chapter-rail a::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#536d8e;transition:background .32s,transform .36s var(--ecob-ease),box-shadow .32s}
+.ecob-chapter-rail a.is-current::before,.ecob-chapter-rail a[aria-current="location"]::before{background:#b4d5ff;transform:scale(1.55);box-shadow:0 0 10px rgba(145,195,255,.18)}
+.ecob-chapter-rail a:hover::before{background:#d4e6ff;transform:scale(1.45)}
+.ecob-chapter-rail a span{position:absolute;left:calc(100% + 16px);top:50%;transform:translate(5px,-50%);white-space:nowrap;pointer-events:none;opacity:0;visibility:hidden;padding:7px 10px;border:1px solid #364c68;border-radius:7px;background:#101826;color:#dcecff;box-shadow:0 5px 15px rgba(0,0,0,.18);font-size:11px;font-weight:500;letter-spacing:.015em;transition:opacity .22s,transform .22s,visibility .22s}
+.ecob-chapter-rail a:hover span,.ecob-chapter-rail a:focus-visible span{opacity:1;visibility:visible;transform:translate(0,-50%)}
+@media(max-width:1370px){.ecob-chapter-rail{display:none}}
+@media(prefers-reduced-motion:reduce){.ecob-chapter-rail *{transition:none!important}}
+
+.intro-nav{background:rgba(11,16,24,.97)!important;border-color:rgba(138,168,207,.12)!important}
+.intro-nav .wrap{height:68px!important}
+.intro-wordmark{font-size:22px!important;font-weight:650!important;letter-spacing:-.048em!important;color:var(--ecob-heading)!important}
+.intro-wordmark span{color:var(--ecob-gold)!important}
+.intro-nav-links a{font-size:13px;color:#b6c4d8;text-decoration:none}
+.intro-nav-links a[aria-current="page"]{color:#e8f2ff}
+.intro-nav-links .intro-tool{border:1px solid #526e91!important;background:transparent;border-radius:9px;color:#dfeeff!important;transition:background .2s,border-color .2s,transform .2s}
+.intro-nav-links .intro-tool:hover{background:#182840;border-color:#87b5eb;transform:translateY(-1px)}
+.intro-footer{border-color:rgba(138,168,207,.16)!important;color:#aabbd1}
+.intro-consent{border-color:#486181!important;background:#101723!important}
+@media(max-width:760px){.intro-nav .wrap{height:68px!important}.intro-wordmark{font-size:21px!important}}
+@media(max-width:380px){.intro-nav-links .ecob-nav-home{display:none}.intro-nav-links{gap:10px}.intro-nav-links .intro-tool{padding:7px 9px}}
+</style>
+</head>
 <body id="top"><a class="skip-link" href="#main">Skip to main content</a>
 <nav class="intro-nav" aria-label="Main navigation"><div class="wrap">
  <a href="#top" class="intro-wordmark" aria-label="ECOB+ overview">ECOB<span>+</span></a>
- <div class="intro-nav-links">
-  <a href="how-it-works.html">How it works</a>
-  <a class="intro-tool" href="calculator.html#calculator">Open calculator</a>
- </div>
+ <div class="intro-nav-links"><a class="ecob-nav-home" href="index.html" aria-current="page">Home</a><a href="how-it-works.html">How it works</a><a class="intro-tool" href="calculator.html#calculator">Try ECOB+</a></div>
 </div></nav>
 <main id="main">
  <header class="intro-hero"><div class="wrap">
@@ -2156,4 +2186,21 @@ const byId=id=>document.getElementById(id);
  updateScrollScenes();
 })();
 </script>
+<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview"><span aria-hidden="true">Overview</span></a><a href="#worked-example" aria-label="Single pipeline"><span aria-hidden="true">Single pipeline</span></a><a href="#hub-story" aria-label="Network studies"><span aria-hidden="true">Network studies</span></a><a href="#model-story" aria-label="Research integration"><span aria-hidden="true">Research integration</span></a></nav>
+<script id="ecob-rail-behavior">
+(() => {
+ const rail=document.querySelector('.ecob-chapter-rail'); if(!rail)return;
+ const links=[...rail.querySelectorAll('a[href^="#"]')];
+ const targets=links.map(a=>document.getElementById(a.hash.slice(1)));
+ if(targets.some(t=>!t)) return;
+ let pending=false;
+ function update(){pending=false;const anchor=window.innerHeight*.37+68;let best=0;
+   targets.forEach((el,i)=>{if(el.getBoundingClientRect().top<=anchor)best=i});
+   links.forEach((a,i)=>{a.classList.toggle('is-current',i===best);if(i===best)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+ }
+ function queue(){if(!pending){pending=true;requestAnimationFrame(update)}}
+ addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});queue();
+})();
+</script>
+
 </body></html>

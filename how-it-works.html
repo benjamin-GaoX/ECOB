@@ -823,10 +823,36 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  #how-it-works .mh-outro.mh-outro-ready .mh-outro-actions{transition-delay:.1s}
 }
 
+</style><style id="ecob-consistency-method">
+/* ECOB+ shared interface foundations — 2026-11. Only presentation, no model changes. */
+:root{--ecob-bg:#0b1018;--ecob-surface:#101723;--ecob-heading:#edf3fb;--ecob-text:#dfe9f5;--ecob-secondary:#aabbd1;--ecob-accent:#b4d5ff;--ecob-line:#34465e;--ecob-gold:#d5b17b;--ecob-ease:cubic-bezier(.22,.82,.24,1)}
+html{scroll-padding-top:82px}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important;background:var(--ecob-bg)!important;color:var(--ecob-heading)}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:2px solid #a5cefb!important;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+.nav{height:68px!important;background:rgba(11,16,24,.97)!important;border-bottom-color:rgba(138,168,207,.12)!important}
+.nav .wrap.nav-inner{max-width:1220px;width:calc(100% - 48px);padding:0}
+.nav-inner{height:68px!important}
+.brand{font-size:22px!important;font-weight:650!important;letter-spacing:-.048em!important}
+.brand b{color:var(--ecob-gold)!important;font-weight:600}
+.nav-links a{color:#b6c4d8;font-size:13px}
+.nav-links .nav-cta{border:1px solid #526e91!important;border-radius:9px!important;background:transparent!important;color:#dfeeff!important;padding:9px 13px!important;box-shadow:none!important}
+.nav-links .nav-cta:hover{background:#182840!important;border-color:#87b5eb!important}
+#how-it-works{--mh-bg:#0b1018!important;--mh-blue:#b4d5ff!important}
+#mh-step-4.fx4-story{background:transparent!important}
+.method-progress-rail a[aria-current="location"],.method-progress-rail a.is-current{color:var(--ecob-accent)}
+.cookie{background:rgba(16,23,35,.97)!important;border-color:#486181!important}
+/* Same lower-right compact consent placement as Homepage and Calculator. */
+#cookie.cookie{position:fixed!important;left:auto!important;right:15px!important;bottom:15px!important;width:min(390px,calc(100vw - 30px))!important;max-width:390px!important;margin:0!important;padding:13px!important;border-radius:11px!important;z-index:180!important}
+#cookie.cookie p{font-size:12px!important;line-height:1.5!important}
+#cookie.cookie .cookie-actions{gap:7px}
+@media(max-width:760px){.nav{height:68px!important}.nav .wrap.nav-inner{width:calc(100% - 34px)}.nav-links{gap:12px}.nav-links .nav-cta{padding:8px 10px!important}}
+@media(max-width:380px){.nav-links{gap:8px}.brand{font-size:20px!important}}
 </style>
 </head>
 <body><a class="skip" href="#how-it-works">Skip to method</a><header class="nav"><div class="wrap nav-inner"><a aria-label="ECOB+ home" class="brand" href="index.html">ECOB<b>+</b></a>
-<nav aria-label="Main navigation" class="nav-links"><a class="nav-extra" href="index.html">Home</a><a aria-current="page" class="nav-method" href="how-it-works.html">How it works</a><a class="nav-extra" href="calculator.html#validation">Science</a><a class="nav-cta" href="calculator.html#calculator">Open calculator ↗</a></nav></div></header>
+<nav aria-label="Main navigation" class="nav-links"><a class="nav-extra" href="index.html">Home</a><a aria-current="page" class="nav-method" href="how-it-works.html">How it works</a><a class="nav-cta" href="calculator.html#calculator">Try ECOB+</a></nav></div></header>
 <nav class="method-progress-rail" id="method-progress-rail" aria-label="How it works: jump to chapter">
  <div class="method-progress-rail-inner">
   <span aria-hidden="true" class="method-progress-rail-fill"></span>
@@ -976,7 +1002,7 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
 <p>Embodied emissions from pipeline steel and emissions associated with pumping electricity.</p></div>
 </div></section>
 <div class="wrap mh-outro" id="method-conclusion"><p>From physical insight to practical pipeline decisions.</p><div class="mh-outro-actions">
-<a class="mh-outline-cta" href="calculator.html#calculator">Open calculator <span aria-hidden="true">↗</span></a>
+<a class="mh-outline-cta" href="calculator.html#calculator">Try ECOB+ <span aria-hidden="true">↗</span></a>
 <a class="mh-text-link" href="https://doi.org/10.1016/j.ijggc.2026.104829" rel="noopener noreferrer" target="_blank">Read the published method ↗</a>
 <a class="mh-text-link" href="calculator.html#validation">Scientific validation ↗</a>
 </div></div>
@@ -1018,7 +1044,7 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  // Share the same optional-consent state as the main ECOB+ page.
  const KEY='ecob_analytics_consent',ID='G-0VRKYQ807Y',cookie=document.getElementById('cookie');
  let enabled=false;
- function canTrack(){try{const host=location.hostname.toLowerCase();if(!/^https?:$/.test(location.protocol)||!host||host==='localhost'||host==='127.0.0.1'||host.endsWith('.localhost'))return false;if(window.self!==window.top)return false;if(host==='chatgpt.com'||host.endsWith('.chatgpt.com')||host.endsWith('.chatgpt.site')||host.endsWith('.oaiusercontent.com'))return false;return true}catch(e){return false}}
+ function canTrack(){try{const host=location.hostname.toLowerCase();if(!/^https?:$/.test(location.protocol)||!host||host==='localhost'||host==='127.0.0.1'||host.endsWith('.localhost'))return false;if(window.self!==window.top)return false;if(host==='chatgpt.com'||host.endsWith('.chatgpt.com')||host.endsWith('.oaiusercontent.com'))return false;return true}catch(e){return false}}
  function loadGA(){if(enabled||!canTrack())return;enabled=true;
    window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
    window['ga-disable-'+ID]=false;window.gtag('js',new Date());window.gtag('config',ID,{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});
