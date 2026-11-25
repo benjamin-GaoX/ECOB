@@ -669,7 +669,6 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
 #mh-step-4 .fx4-function-row{display:flex;justify-content:center;align-items:center;gap:0;max-width:100%;white-space:nowrap}
 #mh-step-4 .fx4-function-row.second{padding-left:min(10%,64px)}
 #mh-step-4 .fx4-direct-math{display:block;max-width:100%;}
-#mh-step-4 .fx4-sqrt-math{font-size:clamp(28px,2.85vw,39px)!important}
 #mh-step-4 .fx4-equation .fx4-math-piece{font-size:clamp(21px,2.02vw,28px);}
 @media(prefers-reduced-motion:no-preference){
  #mh-step-4.fx4-animate .fx4-stage-copy,#mh-step-4.fx4-animate .fx4-stage-visual{transition:opacity .55s cubic-bezier(.22,.75,.2,1),transform .65s cubic-bezier(.22,.75,.2,1);}
@@ -682,7 +681,6 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  #mh-step-4 .fx4-stage{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:28px}
  #mh-step-4 .fx4-stage h4{font-size:clamp(28px,3.25vw,39px)}
  #mh-step-4 .fx4-equation math{font-size:clamp(25px,2.65vw,32px)}
- #mh-step-4 .fx4-sqrt-math{font-size:clamp(26px,2.75vw,32px)!important}
 }
 @media(max-width:760px){
  #mh-step-4.fx4-story{padding:66px 0 55px}
@@ -697,13 +695,11 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  #mh-step-4 .fx4-stage-copy>p:last-child{font-size:14.5px;line-height:1.72}
  #mh-step-4 .fx4-stage-visual{min-height:130px;padding:12px 0 16px}
  #mh-step-4 .fx4-equation math{font-size:clamp(22px,5.8vw,27px)}
- #mh-step-4 .fx4-sqrt-math{font-size:clamp(23px,5.95vw,29px)!important}
  #mh-step-4 .fx4-function-row.second{padding-left:0}
  #mh-step-4 .fx4-function-row{white-space:normal}
 }
 @media(max-width:360px){
  #mh-step-4 .fx4-function-row math{font-size:22px!important}
- #mh-step-4 .fx4-sqrt-math{font-size:22px!important}
 }
 @media(max-height:650px) and (min-width:761px){
  #mh-step-4 .fx4-stage{min-height:0;padding-top:73px;padding-bottom:83px}
@@ -716,7 +712,8 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
 /* v131 targeted fixes: single-line symbolic formulas; restore engineering two-column layout. */
 #mh-step-4 .fx4-stage{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(28px,4vw,62px)}
 #mh-step-4 .fx4-function{display:block;max-width:100%;width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap;text-align:center;scrollbar-width:thin;scrollbar-color:rgba(129,160,199,.33) transparent}
-#mh-step-4 .fx4-function .fx4-inline-math{display:inline-block!important;width:max-content;max-width:none!important;white-space:nowrap;font-size:clamp(18px,2.05vw,30px)!important;vertical-align:middle}
+#mh-step-4 .fx4-function .fx4-inline-math{display:inline-block!important;width:max-content;max-width:none!important;white-space:nowrap;vertical-align:middle}
+#mh-step-4 .fx4-equation :is(.fx4-inline-math, .fx4-direct-math){font-size:clamp(18px,2.05vw,30px)!important}
 #how-it-works #mh-engineering-grid{align-items:center;position:relative}
 #how-it-works #mh-engineering-grid .mh-visual-column{min-width:0;overflow:clip}
 #how-it-works #mh-engineering-grid .mh-visual-sticky{max-width:100%;}
@@ -727,12 +724,12 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
 #how-it-works #mh-engineering-grid svg .mh-result{font-size:19px}
 @media(min-width:761px) and (max-width:1100px){
  #mh-step-4 .fx4-stage{grid-template-columns:minmax(0,.66fr) minmax(0,1.34fr);gap:24px}
- #mh-step-4 .fx4-function .fx4-inline-math{font-size:clamp(16px,1.92vw,22px)!important}
+ #mh-step-4 .fx4-equation :is(.fx4-inline-math, .fx4-direct-math){font-size:clamp(16px,1.92vw,22px)!important}
 }
 @media(max-width:760px){
  #mh-step-4 .fx4-stage{grid-template-columns:minmax(0,1fr);gap:29px}
  #mh-step-4 .fx4-function{scrollbar-width:thin;text-align:left;padding-bottom:8px}
- #mh-step-4 .fx4-function .fx4-inline-math{font-size:clamp(19px,4.6vw,23px)!important}
+ #mh-step-4 .fx4-equation :is(.fx4-inline-math, .fx4-direct-math){font-size:clamp(19px,4.6vw,23px)!important}
  #how-it-works #mh-engineering-grid{display:block}
  #how-it-works #mh-engineering-grid .mh-visual-column{display:none}
  #how-it-works #mh-engineering-grid .mh-mobile-visual{overflow:hidden}
@@ -741,7 +738,7 @@ a{color:inherit}button{font:inherit}.wrap{width:min(1220px,calc(100% - 80px));ma
  #how-it-works #mh-engineering-grid .mh-mobile-visual svg .mh-result{font-size:23px}
 }
 @media(max-width:360px){
- #mh-step-4 .fx4-function .fx4-inline-math{font-size:15px!important}
+ #mh-step-4 .fx4-equation :is(.fx4-inline-math, .fx4-direct-math){font-size:15px!important}
 }
 @media(min-width:761px) and (max-height:620px){
  #how-it-works #mh-engineering-grid .mh-visual-sticky{height:min(420px,calc(100vh - 112px));top:max(86px,calc(50vh - 210px))}
