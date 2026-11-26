@@ -1206,7 +1206,6 @@ body{background:var(--overview-ink)}
 }
 @media(prefers-reduced-motion:reduce){
  #worked-example * ,#hub-story * ,#model-story * {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
- #hub-story .v143-growth-network{--v143-steel:1!important;--v143-pipe:1!important}
  #hub-story .v143-expansion-results{--v143-progress:1!important}
 }
 
@@ -1256,8 +1255,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 :where(a,button,input,select,textarea,summary):focus-visible{outline:2px solid #a5cefb!important;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
 
-/* Shared chapter rail. Overview + Calculator use four dots; Method retains its seven. */
-.ecob-chapter-rail{position:fixed;z-index:70;left:clamp(17px,2.2vw,36px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:18px;opacity:.83}
+/* Homepage chapter rail: overview plus eight reading scenes. */
+.ecob-chapter-rail{position:fixed;z-index:70;left:clamp(17px,2.2vw,36px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:clamp(7px,1.35vh,14px);opacity:.83}
 .ecob-chapter-rail::before{content:"";position:absolute;z-index:-1;left:50%;top:10px;bottom:10px;width:1px;background:linear-gradient(180deg,transparent,#344a66 18%,#344a66 82%,transparent)}
 .ecob-chapter-rail a{position:relative;display:flex;align-items:center;justify-content:center;width:16px;height:16px;text-decoration:none;border-radius:50%;outline-offset:5px}
 .ecob-chapter-rail a::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#536d8e;transition:background .32s,transform .36s var(--ecob-ease),box-shadow .32s}
@@ -1281,11 +1280,164 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 @media(max-width:760px){.intro-nav .wrap{height:68px!important}.intro-wordmark{font-size:21px!important}}
 @media(max-width:380px){.intro-nav-links .ecob-nav-home{display:none}.intro-nav-links{gap:10px}.intro-nav-links .intro-tool{padding:7px 9px}}
 </style>
+<style id="ecob-v165-home-refinement">
+/* V165: cost-first typography and one reversible transition per story stage. */
+:root{--v165-motion:cubic-bezier(.22,.75,.25,1)}
+#worked-example .v165-result{width:100%;margin:0;min-width:0}
+#worked-example .v165-cost-hero{margin:0 0 clamp(12px,2.5vh,24px)}
+#worked-example .v165-cost-hero .v137-result-hint{font-size:clamp(13px,1.25vw,16px);color:#a7b7cc}
+#worked-example .v165-cost-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 13px;margin:5px 0 0;color:#b4d5ff;line-height:1.06;white-space:nowrap}
+#worked-example .v165-cost-line strong{font-size:clamp(48px,5.6vw,82px);font-weight:520;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+#worked-example .v165-cost-line>span{font-size:clamp(16px,1.9vw,25px);font-weight:450;color:#a9bfd9;letter-spacing:0}
+#worked-example .v165-metrics{margin:0}
+#worked-example .v165-metrics>div{padding:clamp(6px,1.15vh,11px) 0;gap:10px;align-items:baseline;min-width:0}
+#worked-example .v165-metrics dt{font-size:clamp(12px,1.05vw,15px);line-height:1.35;min-width:0}
+#worked-example .v165-metrics dd{font-size:clamp(13px,1.25vw,17px);font-weight:500;line-height:1.35;flex-shrink:0;white-space:nowrap}
+#worked-example .v137-design-select{margin:0 0 clamp(15px,2.8vh,28px);gap:7px}
+#worked-example .v137-design-select button{padding:8px 12px;font-size:clamp(11px,1vw,14px);min-height:36px;transition:background .22s,border-color .22s,color .22s,transform .22s}
+#worked-example .v137-design-select button:active{transform:scale(.97)}
+#worked-example .v137-stage-frame{height:min(72svh,670px);min-height:445px}
+#worked-example .v137-slide{padding-block:12px}
+@media(min-width:761px){
+  /* Old nested animations replayed on boundary changes. Use one crossfade instead. */
+  #worked-example .v137-step,#hub-story .v137-step{opacity:1!important;transition:none!important}
+  #worked-example .v137-step-copy,#hub-story .v137-step-copy{opacity:.14;transform:translate3d(0,8px,0);transition:opacity .48s var(--v165-motion),transform .48s var(--v165-motion)}
+  #worked-example .v137-step.is-active .v137-step-copy,#hub-story .v137-step.is-active .v137-step-copy,.v137-step:focus-within .v137-step-copy{opacity:1;transform:none}
+  #hub-story .v137-step:not(.is-active):not(:focus-within) .v137-step-copy{opacity:0}
+  .v137-step.v143-visible .v137-step-copy :is(h3,p){animation:none!important}
+  .v137-stage-frame .v137-slide{opacity:0;visibility:hidden;transform:translate3d(0,9px,0);transition:opacity .48s var(--v165-motion),transform .48s var(--v165-motion),visibility 0s linear .48s;z-index:0}
+  .v137-stage-frame .v137-slide.is-active{opacity:1;visibility:visible;transform:none;transition:opacity .48s var(--v165-motion),transform .48s var(--v165-motion),visibility 0s;z-index:1}
+  .v137-slide:not(.is-active) :is(.v137-moving-line,.v137-core-ring,.v137-net-source i,.v137-net-trunk i){animation-play-state:paused!important}
+}
+@media(max-height:650px) and (min-width:761px){
+ #worked-example .v137-stage-frame{height:calc(100svh - 82px);min-height:0;top:70px}
+ #worked-example .v137-slide{padding-block:5px}
+ #worked-example .v137-panel-center{padding-block:4px}
+ #worked-example .v165-cost-line strong{font-size:clamp(38px,8vh,54px)}
+ #worked-example .v165-cost-hero{margin-bottom:10px}
+ #worked-example .v165-metrics>div{padding:5px 0}
+ #worked-example .v137-design-select{margin-bottom:10px}
+ #worked-example .v137-design-select button{min-height:31px;padding-block:5px}
+}
+@media(max-width:760px){
+ #worked-example .v165-cost-line strong{font-size:52px}
+ #worked-example .v165-metrics>div{padding:9px 0;gap:8px}
+ #worked-example .v165-metrics dt{font-size:12px}
+ #worked-example .v165-metrics dd{font-size:13px}
+ #worked-example .v137-design-select{gap:5px}
+ #worked-example .v137-design-select button{padding:8px 9px;font-size:11px}
+ #hub-story .v137-mobile-slot[data-mobile-for="0"] .v140-initial-results{margin-top:26px!important}
+ .v137-step.v143-visible .v137-step-copy h3,.v137-step.v143-visible .v137-step-copy p{animation-duration:.48s!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .v137-step-copy{transform:none!important;transition:none!important;opacity:1!important}
+ .v137-slide{transform:none!important;transition:none!important}
+ #hub-story .v140-initial-results{opacity:1!important;transform:none!important}
+}
+</style>
+<style id="ecob-v166-targeted-tweaks">
+#worked-example .v137-correlate-output{min-width:8.5ch;text-align:center}
+#hub-story .v138-result-arrow{display:flex;align-items:center;justify-content:center;align-self:center!important;transform:none!important;width:32px;height:32px;line-height:1;font-size:22px;color:#8eb5e1;padding:0;border-radius:50%}
+#hub-story .v143-expansion-results [data-v143-growth]{min-width:2.2ch}
+#hub-story .v143-expansion-timeline i{transition:transform .14s linear}
+@media(max-width:760px){#hub-story .v138-result-arrow{width:22px;height:22px;font-size:16px}}
+</style>
+<style id="ecob-v167-network-interaction">
+#worked-example .v137-correlate-output{min-width:0;max-width:110px;flex:0 0 auto;line-height:1.35;white-space:nowrap}
+#hub-story a.v137-explore-btn,#hub-story a.v137-explore-btn:hover,#hub-story a.v137-explore-btn:visited{text-decoration:none;gap:0;justify-content:center;padding-inline:22px;white-space:nowrap}
+#hub-story .v140-baseline-slide .segment-nps,#hub-story .v137-mobile-slot[data-mobile-for="0"] .segment-nps{font-size:clamp(11px,1vw,15px);font-weight:550;color:#b4d5ff;line-height:1.35;white-space:nowrap}
+#hub-story .v140-baseline-slide .v137-net-trunk span,#hub-story .v137-mobile-slot[data-mobile-for="0"] .v137-net-trunk span{opacity:1!important;line-height:1.45}
+#hub-story .v138-result-line>.v143-baseline-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
+#hub-story .v143-baseline-grid strong,#hub-story .v143-baseline-grid .v138-result-emphasis strong{font-size:clamp(26px,3.2vw,47px);line-height:1.15}
+#hub-story .v143-baseline-grid em{font-size:.46em;font-style:normal;letter-spacing:0;color:#a9bfd8}
+#hub-story .v143-growth-network:not(.growth-connected) .v137-net-source:nth-child(3){opacity:.3!important}
+#hub-story .v143-growth-network:not(.growth-connected) .v137-net-source:nth-child(3) i{transform:none;background:none;border-top:1px dashed #6682a5;height:0}
+#hub-story .v143-growth-network.growth-connected .v137-net-source:nth-child(3){opacity:1!important}
+#hub-story .v143-growth-network.growth-connected .v137-net-source:nth-child(3) i{transform:none}
+#hub-story .v143-growth-network .v137-net-trunk i{height:calc(4px + 5px * var(--v143-pipe))!important;transition:height .18s ease!important}
+#hub-story [data-v143-growth]{transform:none!important;min-width:0!important;opacity:1!important}
+#hub-story .growth-control{margin-top:8px;min-width:0}
+#hub-story .growth-label{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 10px;color:#a7bdd8;font-size:12px;line-height:1.4}
+#hub-story .growth-label>span{font-size:11px;color:#8da7c6}
+#hub-story [data-growth-slider]{grid-column:1/-1;appearance:none;-webkit-appearance:none;width:100%;height:28px;margin:2px 0 0;background:transparent;cursor:ew-resize;touch-action:pan-y;--slider-fill:0%}
+#hub-story [data-growth-slider]::-webkit-slider-runnable-track{height:3px;border-radius:4px;background:linear-gradient(to right,#b5d7ff var(--slider-fill),#34465e var(--slider-fill))}
+#hub-story [data-growth-slider]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:14px;height:14px;margin-top:-5.5px;border:1px solid #d5e8ff;border-radius:50%;background:#a9cffa;box-shadow:0 0 8px #76aae34d}
+#hub-story [data-growth-slider]::-moz-range-track{height:3px;border-radius:4px;background:linear-gradient(to right,#b5d7ff var(--slider-fill),#34465e var(--slider-fill))}
+#hub-story [data-growth-slider]::-moz-range-thumb{width:12px;height:12px;border:1px solid #d5e8ff;border-radius:50%;background:#a9cffa}
+#hub-story .growth-ticks{display:flex;justify-content:space-between;color:#91aac6;font-size:11px;font-variant-numeric:tabular-nums}
+@media(max-width:760px){#worked-example .v137-correlate-output{max-width:74px;font-size:10px}#hub-story .v140-baseline-slide .segment-nps,#hub-story .v137-mobile-slot[data-mobile-for="0"] .segment-nps{font-size:10px}#hub-story .v143-baseline-grid strong,#hub-story .v143-baseline-grid .v138-result-emphasis strong{font-size:clamp(22px,6vw,32px)}#hub-story .v137-mobile-slot[data-mobile-for="0"] .v137-net-trunk span{white-space:normal;text-align:center;width:100%}#hub-story .growth-label,#hub-story .growth-label>span,#hub-story .growth-ticks{font-size:10px}}
+@media(prefers-reduced-motion:reduce){#hub-story .v143-growth-network .v137-net-trunk i{transition:none!important}}
+</style>
+<style id="ecob-v175-network-layout">
+/* Stage 1: diameter labels are on their respective pipes, not in the source names. */
+#hub-story :is(.v140-baseline-slide,.v137-mobile-slot[data-mobile-for="0"]) .v137-net-source{height:clamp(70px,9vh,94px)}
+#hub-story :is(.v140-baseline-slide,.v137-mobile-slot[data-mobile-for="0"]) .v137-net-label{flex:0 0 clamp(104px,10.5vw,150px)}
+#hub-story .v175-branch-pipe{position:relative;display:flex;align-items:center;flex:1;min-width:0;height:2px}
+#hub-story .v175-branch-pipe i{width:100%;min-width:0}
+#hub-story .v175-branch-pipe .segment-nps{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);white-space:nowrap;line-height:1.2;font-size:clamp(10px,1vw,15px)}
+#hub-story .v140-network:has(.v175-trunk-nps) .v137-net-trunk small{top:calc(50% - 66px)}
+#hub-story .v175-trunk-nps{position:absolute;left:50%;bottom:calc(50% + 10px);transform:translateX(-50%);font-size:clamp(18px,2.1vw,29px)!important;font-weight:550;white-space:nowrap;line-height:1.15!important}
+#hub-story .v175-network-note{display:flex;align-items:baseline;justify-content:space-between;gap:8px 18px;flex-wrap:wrap;border-top:1px solid #344a64a6;padding-top:16px;color:#a4b8d0;font-size:clamp(11px,.95vw,13px)}
+#hub-story .v175-network-note strong{color:#c6dfff;font-weight:550;margin-left:8px}
+#hub-story .v175-network-note>span{color:#91aac6}
+/* Stage 3: a compact, stable result row and an actual range control. */
+#hub-story .v143-growth-slide .v138-expansion-line{gap:10px}
+#hub-story .v143-growth-slide .v138-expansion-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+#hub-story .v143-growth-slide .v138-expansion-values>div{gap:8px}
+#hub-story .v143-growth-slide .v138-expansion-values strong{display:flex;align-items:baseline;gap:0;line-height:1.16;font-size:clamp(26px,3.2vw,47px);font-weight:520;color:#b8d8ff;letter-spacing:-.04em}
+#hub-story .v143-growth-slide .v138-expansion-values>div:first-child strong{color:#e0edfb;gap:8px}
+#hub-story .v143-growth-slide .v138-expansion-values strong b{font:inherit;color:inherit;margin-left:.23em}
+#hub-story .v143-growth-slide .v138-expansion-values strong em{font-size:.42em;color:#a9bfd8;font-weight:450}
+#hub-story .v143-growth-slide [data-v143-growth="flow"]{color:inherit}
+#hub-story .v143-growth-slide .growth-control{margin-top:12px}
+#hub-story .v143-growth-slide .growth-label{row-gap:5px}
+#hub-story .v143-growth-slide [data-growth-slider]{height:32px;margin:0}
+#hub-story .v143-growth-slide [data-growth-slider]::-webkit-slider-thumb{width:16px;height:16px;margin-top:-6.5px}
+#hub-story .v143-growth-slide [data-growth-slider]::-moz-range-thumb{width:14px;height:14px}
+#hub-story .v143-growth-slide .growth-ticks{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;padding-inline:1px}
+#hub-story .v143-growth-slide .growth-ticks span:nth-child(2){text-align:center}
+#hub-story .v143-growth-slide .growth-ticks span:last-child{text-align:right}
+#hub-story .v175-scenario-note{margin:12px 0 0;color:#8198b3;font-size:11px;line-height:1.45}
+@media(max-width:1100px) and (min-width:761px){#hub-story :is(.v140-baseline-slide,.v137-mobile-slot[data-mobile-for="0"]) .v137-net-label{flex-basis:100px}#hub-story .v175-branch-pipe .segment-nps{font-size:10px}}
+@media(max-width:760px){
+ #hub-story :is(.v140-baseline-slide,.v137-mobile-slot[data-mobile-for="0"]) .v137-net-source{height:65px}
+ #hub-story :is(.v140-baseline-slide,.v137-mobile-slot[data-mobile-for="0"]) .v137-net-label{flex-basis:78px}
+ #hub-story .v140-network:has(.v175-trunk-nps){grid-template-columns:minmax(0,1.35fr) var(--v140-hub-col) minmax(0,.9fr) 31px}
+ #hub-story .v175-branch-pipe .segment-nps{font-size:9px;bottom:8px}
+ #hub-story .v140-network:has(.v175-trunk-nps) .v137-net-trunk small{top:calc(50% - 48px)}
+ #hub-story .v175-trunk-nps{font-size:17px!important;bottom:calc(50% + 7px)}
+ #hub-story .v175-network-note{padding-top:12px;font-size:10px}
+ #hub-story .v143-growth-slide .v138-expansion-values strong{font-size:clamp(23px,6.7vw,34px)}
+ #hub-story .v143-growth-slide .v138-expansion-values>div:first-child strong{gap:5px}
+ #hub-story .v143-growth-slide .growth-control{margin-top:7px}
+ #hub-story .v175-scenario-note{margin-top:11px}
+}
+@media(max-height:650px) and (min-width:761px){
+ #hub-story :is(.v140-baseline-slide,.v137-mobile-slot[data-mobile-for="0"]) .v137-net-source{height:54px}
+ #hub-story .v143-growth-slide .v138-expansion-line{gap:4px;padding-top:10px}
+ #hub-story .v143-growth-slide .v138-expansion-values>div{gap:3px}
+ #hub-story .v143-growth-slide .v138-expansion-values strong{font-size:clamp(23px,5vh,34px)}
+ #hub-story .v143-growth-slide .growth-control{margin-top:4px}
+ #hub-story .v143-growth-slide .growth-label{row-gap:0}
+ #hub-story .v175-scenario-note{margin-top:6px}
+}
+</style>
+
+<style id="ecob-v179-pipe-size-labels">
+#hub-story .v175-branch-pipe .segment-nps{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.15}
+#hub-story .v175-branch-pipe .branch-size-label{font-size:.77em;font-weight:450;font-style:normal;line-height:1.15;letter-spacing:0;color:#91aac6}
+#hub-story .v140-network:has(.v175-trunk-nps) .v137-net-trunk small{max-width:100%;text-align:center;white-space:normal}
+#hub-story .v138-price-primary>div,#hub-story .v143-growth-slide .v138-expansion-values>div{display:grid;grid-template-rows:minmax(1.5em,auto) auto;align-content:start}
+#hub-story .v138-price-primary,#hub-story .v143-growth-slide .v138-expansion-values{grid-template-rows:auto auto}
+#hub-story .v138-price-primary>div,#hub-story .v143-growth-slide .v138-expansion-values>div{grid-row:span 2;grid-template-rows:subgrid}
+#hub-story .v143-growth-slide .v138-expansion-values strong b{margin-left:.18em}
+@media(max-width:760px){#hub-story .v175-branch-pipe .branch-size-label{font-size:8px}#hub-story .v140-network:has(.v175-trunk-nps) .v137-net-trunk small{top:auto;bottom:calc(50% + 31px);font-size:9px;line-height:1.15}}
+</style>
 </head>
 <body id="top"><a class="skip-link" href="#main">Skip to main content</a>
 <nav class="intro-nav" aria-label="Main navigation"><div class="wrap">
  <a href="#top" class="intro-wordmark" aria-label="ECOB+ overview">ECOB<span>+</span></a>
- <div class="intro-nav-links"><a class="ecob-nav-home" href="index.html" aria-current="page">Home</a><a href="how-it-works.html">How it works</a><a class="intro-tool" href="calculator.html#calculator">Try ECOB+</a></div>
+ <div class="intro-nav-links"><a class="ecob-nav-home" href="index.html" aria-current="page">Home</a><a href="how-it-works.html">How it works</a><a href="calculator.html#toolkit">Contact</a><a class="intro-tool" href="calculator.html#calculator">Try ECOB+</a></div>
 </div></nav>
 <main id="main">
  <header class="intro-hero"><div class="wrap">
@@ -1302,13 +1454,13 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 <section id="worked-example" class="story-chapter v137-chapter" aria-labelledby="story-size-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">01 / DIRECT PIPELINE SIZING</span><h2 id="story-size-title">How ECOB works for a single pipeline</h2></div></div><div class="v137-story-grid" id="v137-size-grid" data-v137-story="size">
 <div class="v137-steps"><div class="v137-step" id="size-scroll-step-1" data-v137-step="0" data-story="size" aria-label="Step 1 of 4"><div class="v137-step-copy">
 <div class="v137-step-head"><span class="v137-step-number">01 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-<h3>Enter project data</h3><p>Flow, distance, pressure and electricity price.</p></div><div class="v137-mobile-slot" data-mobile-for="0"></div></div><div class="v137-step" id="size-scroll-step-2" data-v137-step="1" data-story="size" aria-label="Step 2 of 4"><div class="v137-step-copy">
+<h3>Define project inputs</h3><p>Enter key design and economic parameters. ECOB uses project-specific conditions to estimate pipe size and transport cost.</p></div><div class="v137-mobile-slot" data-mobile-for="0"></div></div><div class="v137-step" id="size-scroll-step-2" data-v137-step="1" data-story="size" aria-label="Step 2 of 4"><div class="v137-step-copy">
 <div class="v137-step-head"><span class="v137-step-number">02 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
 <h3>Estimate the diameter directly</h3><p>ECOB estimates a target diameter without scanning candidate sizes.</p></div><div class="v137-mobile-slot" data-mobile-for="1"></div></div><div class="v137-step" id="size-scroll-step-3" data-v137-step="2" data-story="size" aria-label="Step 3 of 4"><div class="v137-step-copy">
 <div class="v137-step-head"><span class="v137-step-number">03 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-<h3>Get engineering results</h3><p>Commercial pipe size, cost, energy and emissions.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step" id="size-scroll-step-4" data-v137-step="3" data-story="size" aria-label="Step 4 of 4"><div class="v137-step-copy">
+<h3>Get engineering results</h3><p>ECOB evaluates transport cost, commercial pipe size, pumping requirements and lifecycle GHG in one step.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step" id="size-scroll-step-4" data-v137-step="3" data-story="size" aria-label="Step 4 of 4"><div class="v137-step-copy">
 <div class="v137-step-head"><span class="v137-step-number">04 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-<h3>Compare design options</h3><p>Explore lowest-cost, practical NPS and lowest-GHG designs.</p></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div>
+<h3>Choose a design option</h3><p>ECOB provides three commercial designs to explore different cost and emissions priorities.</p></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div>
 <div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active" data-panel="0" aria-hidden="false" >
 <div class="v137-panel-center"><div class="v137-parameters">
 <div><small>CO₂ flow</small><strong>5 <span>MtCO₂/y</span></strong></div>
@@ -1318,13 +1470,12 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 </div></div><div class="v137-panel-foot"></div></div><div class="v137-slide" data-panel="1" aria-hidden="true" inert>
 <div class="v137-panel-center"><div class="v137-correlate"><div class="v137-mini-input"><span>Flow</span><span>Electricity</span><span>Steel</span><span>Finance</span></div><div class="v137-moving-line" aria-hidden="true"></div>
 <div class="v137-core"><span class="v137-core-ring" aria-hidden="true"></span><strong>ECOB</strong><small>Direct sizing correlation</small></div>
-<div class="v137-moving-line v137-moving-out" aria-hidden="true"></div><div class="v137-correlate-output">Target ID</div></div></div><div class="v137-panel-foot"></div></div><div class="v137-slide" data-panel="2" aria-hidden="true" inert>
-<div class="v137-panel-center"><div class="v137-reference"><span class="v137-result-hint">Commercial pipe</span><div class="v137-nps">NPS <strong data-v137-single="nps">16</strong><span class="v137-small-ring" aria-hidden="true"></span></div>
-<dl class="v137-reference-metrics"><div><dt>Transport cost</dt><dd data-v137-single="cost">3.28 €/tCO₂</dd></div><div><dt>Pumping electricity</dt><dd data-v137-single="energy">4.21 kWh/tCO₂</dd></div><div><dt>Lifecycle GHG</dt><dd data-v137-single="ghg">1.44 kgCO₂e/tCO₂</dd></div></dl></div></div>
+<div class="v137-moving-line v137-moving-out" aria-hidden="true"></div><div class="v137-correlate-output">Optimal<br>pipe size</div></div></div><div class="v137-panel-foot"></div></div><div class="v137-slide" data-panel="2" aria-hidden="true" inert>
+<div class="v137-panel-center"><div class="v137-reference v165-result"><div class="v165-cost-hero"><span class="v137-result-hint">Transport cost</span><div class="v165-cost-line"><strong data-v137-single="cost">3.28</strong><span>€/tCO₂</span></div></div><dl class="v137-reference-metrics v165-metrics"><div><dt>Commercial pipe size</dt><dd data-v137-single="nps">NPS 16 · Sch 30</dd></div><div><dt>Specific pumping electricity</dt><dd data-v137-single="energy">4.21 kWh/tCO₂</dd></div><div><dt>Intermediate pumping stations</dt><dd data-v137-single="stations">2</dd></div><div><dt>Max. station spacing</dt><dd data-v137-single="maxLen">88.5 km</dd></div><div><dt>Lifecycle GHG</dt><dd data-v137-single="ghg">1.44 kgCO₂e/tCO₂</dd></div></dl></div></div>
 <div class="v137-panel-foot"></div></div><div class="v137-slide" data-panel="3" aria-hidden="true" inert>
 <div class="v137-panel-center"><div class="v137-design-select" role="group" aria-label="Choose a pipeline design">
-<button type="button" data-v137-design="cost" aria-pressed="true">Lowest cost</button><button type="button" data-v137-design="practical" aria-pressed="false">Practical NPS</button><button type="button" data-v137-design="lca" aria-pressed="false">Lowest GHG</button></div>
-<div class="v137-choice-result"><div class="v137-choice-top"><span data-v137-choice="label">Lowest-cost reference</span><strong data-v137-choice="nps">NPS 16</strong></div><dl class="v137-reference-metrics"><div><dt>Transport cost</dt><dd data-v137-choice="cost">3.28 €/tCO₂</dd></div><div><dt>Pumping electricity</dt><dd data-v137-choice="energy">4.21 kWh/tCO₂</dd></div><div><dt>Lifecycle GHG</dt><dd data-v137-choice="ghg">1.44 kgCO₂e/tCO₂</dd></div></dl><p data-v137-choice="delta" class="v137-delta" hidden></p></div></div>
+<button type="button" data-v137-design="cost" aria-pressed="true">Lowest cost</button><button type="button" data-v137-design="practical" aria-pressed="false">Balanced size</button><button type="button" data-v137-design="lca" aria-pressed="false">Lowest GHG</button></div>
+<div class="v137-choice-result v165-result"><div class="v165-cost-hero"><span class="v137-result-hint">Transport cost</span><div class="v165-cost-line"><strong data-v137-choice="cost">3.28</strong><span>€/tCO₂</span></div></div><dl class="v137-reference-metrics v165-metrics"><div><dt>Commercial pipe size</dt><dd data-v137-choice="nps">NPS 16 · Sch 30</dd></div><div><dt>Specific pumping electricity</dt><dd data-v137-choice="energy">4.21 kWh/tCO₂</dd></div><div><dt>Intermediate pumping stations</dt><dd data-v137-choice="stations">2</dd></div><div><dt>Max. station spacing</dt><dd data-v137-choice="maxLen">88.5 km</dd></div><div><dt>Lifecycle GHG</dt><dd data-v137-choice="ghg">1.44 kgCO₂e/tCO₂</dd></div></dl></div></div>
 <div class="v137-panel-foot"></div></div></div></div>
 </div></div></section>
 <section id="hub-story" class="story-chapter v137-chapter v138-network-chapter" aria-labelledby="story-hub-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">02 / CCUS NETWORK STUDIES</span><h2 id="story-hub-title">How ECOB supports CCUS network studies</h2></div></div>
@@ -1336,42 +1487,35 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
     <div class="v137-step-head"><span class="v137-step-number">03 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
     <h3>Update designs as CO₂ flows change</h3><p>ECOB rapidly re-sizes network segments as CO₂ flows change, using updated project conditions.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step v138-step" id="hub-scroll-step-4" data-v137-step="3" data-story="hub" aria-label="Step 4 of 4"><div class="v137-step-copy">
     <div class="v137-step-head"><span class="v137-step-number">04 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-    <h3>Screen more scenarios, faster</h3><p>ECOB’s lightweight sizing and cost estimates support repeated screening in large CCUS network studies and optimization workflows.</p><button type="button" class="v137-explore-btn" id="hubCaseToggle" aria-expanded="false" aria-controls="v137-hub-explorer">Explore pipeline segments <span aria-hidden="true">↘</span></button></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div><div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active v138-hub-slide v140-baseline-slide" data-panel="0" aria-hidden="false" >
+    <h3>Screen more scenarios, faster</h3><p>ECOB’s lightweight sizing and cost estimates support repeated screening in large CCUS network studies and optimization workflows.</p><a class="v137-explore-btn" href="calculator.html#calculator">Try ECOB+</a></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div><div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active v138-hub-slide v140-baseline-slide" data-panel="0" aria-hidden="false" >
       <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2026" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
-      <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source is-future"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>Connects in 2030</small></span><i aria-hidden="true"></i></div></div>
+      <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i><b class="segment-nps"><em class="branch-size-label">Pipe size</em>NPS 12¾</b></span></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i><b class="segment-nps"><em class="branch-size-label">Pipe size</em>NPS 14</b></span></div><div class="v137-net-source is-future"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>Connects in 2030</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i></span></div></div>
       <div class="v137-net-hub"><span>Hub</span></div>
-      <div class="v137-net-trunk"><small>Shared trunkline</small><i aria-hidden="true"></i><span>7 MtCO₂/y</span></div>
+      <div class="v137-net-trunk"><small>Trunkline pipe size</small><i aria-hidden="true"></i><b class="segment-nps v175-trunk-nps">NPS 18</b><span>7 MtCO₂/y</span></div>
       <div class="v137-net-store"><span class="v137-net-store-dot" aria-hidden="true"></span><small>Storage</small></div>
-    </div><div class="v138-result-line v140-initial-results v143-baseline-results">
-      <div class="v143-baseline-condition">Baseline electricity price <strong>100 €/MWh</strong></div>
-      <div class="v143-baseline-grid">
-        <div><span>Trunkline flow</span><strong>7 MtCO₂/y</strong></div>
-        <span class="v138-result-arrow" aria-hidden="true">→</span>
-        <div class="v138-result-emphasis"><span>Cost-optimal size</span><strong>NPS 18</strong></div>
-      </div>
-    </div></div><div class="v137-panel-foot"></div></div><div class="v137-slide v138-hub-slide" data-panel="1" aria-hidden="true" inert>
+    </div><div class="v175-network-note"><div>Electricity price <strong>100 €/MWh</strong></div><span>Cost-optimal pipe sizes</span></div></div><div class="v137-panel-foot"></div></div><div class="v137-slide v138-hub-slide" data-panel="1" aria-hidden="true" inert>
       <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2026" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
       <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source is-future"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>Connects in 2030</small></span><i aria-hidden="true"></i></div></div>
       <div class="v137-net-hub"><span>Hub</span></div>
       <div class="v137-net-trunk"><small>Shared trunkline</small><i aria-hidden="true"></i><span>7 MtCO₂/y</span></div>
       <div class="v137-net-store"><span class="v137-net-store-dot" aria-hidden="true"></span><small>Storage</small></div>
     </div><div class="v138-price-stage" data-v138-price-stage data-price="100"><div class="v138-price-controls" role="group" aria-label="Compare electricity prices at unchanged CO₂ flow"><span>Same trunkline · 7 MtCO₂/y</span><div class="v137-price-toggle"><button type="button" data-v137-price="100" aria-pressed="true">100 €/MWh</button><button type="button" data-v137-price="250" aria-pressed="false">250 €/MWh</button></div></div>
-          <div class="v138-price-primary"><div><span>Cost-optimal pipe</span><strong data-v137-price-result="nps">NPS 18</strong></div><div><span>Pumping electricity</span><strong data-v137-price-result="energy">5.78 <em>kWh/tCO₂</em></strong></div></div>
+          <div class="v138-price-primary"><div><span>Cost-optimal pipe size</span><strong data-v137-price-result="nps">NPS 18</strong></div><div><span>Pumping electricity</span><strong data-v137-price-result="energy">5.78 <em>kWh/tCO₂</em></strong></div></div>
           <div class="v138-price-secondary"><span>Transport cost</span><strong data-v137-price-result="cost">3.56 €/tCO₂</strong></div>
         </div></div><div class="v137-panel-foot"></div></div><div class="v137-slide v138-hub-slide v143-growth-slide" data-panel="2" aria-hidden="true" inert>
       <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2030" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
-      <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>2 MtCO₂/y</small></span><i aria-hidden="true"></i></div></div>
+      <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small data-growth-steel>0 MtCO₂/y</small></span><i aria-hidden="true"></i></div></div>
       <div class="v137-net-hub"><span>Hub</span></div>
-      <div class="v137-net-trunk"><small>Shared trunkline</small><i aria-hidden="true"></i><span>9 MtCO₂/y</span></div>
+      <div class="v137-net-trunk"><small>Shared trunkline</small><i aria-hidden="true"></i></div>
       <div class="v137-net-store"><span class="v137-net-store-dot" aria-hidden="true"></span><small>Storage</small></div>
-    </div><div class="v138-expansion-line v143-expansion-results" aria-label="At 100 euros per MWh, the flow increases from 7 to 9 million tonnes of CO2 per year and the independently estimated reference pipe size changes from NPS 18 to NPS 20">
-      <span class="v138-subtle">2030 expansion · 100 €/MWh</span>
+    </div><div class="v138-expansion-line v143-expansion-results" role="group" aria-label="Explore future trunkline flows from 7 to 15 million tonnes per year at 100 euros per MWh">
+      <span class="v138-subtle">Future flow scenario · 100 €/MWh</span>
       <div class="v138-expansion-values">
-        <div><span>Trunkline flow</span><strong><span data-v143-growth="flow">7</span> <em>MtCO₂/y</em></strong></div>
-        <div><span>Cost-optimal trunkline</span><strong>NPS <b data-v143-growth="nps">18</b></strong></div>
+        <div><span>Total CO₂ flow</span><strong><span data-v143-growth="flow">7</span> <em>MtCO₂/y</em></strong></div>
+        <div><span>Optimal trunkline pipe size</span><strong>NPS <b data-v143-growth="nps">18</b></strong></div>
       </div>
-      <div class="v143-expansion-timeline" aria-hidden="true"><i></i><span>New source joins</span><span>Flow increases</span><span>Re-size</span></div>
-    </div></div><div class="v137-panel-foot">Independently sized scenarios</div></div><div class="v137-slide v138-hub-slide v138-wrap-up v143-benchmark-slide" data-panel="3" aria-hidden="true" inert>
+      <div class="growth-control"><label class="growth-label">Adjust total flow <span>Drag to explore</span><input type="range" min="7" max="15" step="0.1" value="7" aria-label="Trunkline flow, million tonnes per year" data-growth-slider></label><div class="growth-ticks" aria-hidden="true"><span>7</span><span>11</span><span>15 MtCO₂/y</span></div></div>
+    <p class="v175-scenario-note">Each scenario is sized independently.</p></div></div><div class="v137-panel-foot"></div></div><div class="v137-slide v138-hub-slide v138-wrap-up v143-benchmark-slide" data-panel="3" aria-hidden="true" inert>
       <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2030" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
       <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>2 MtCO₂/y</small></span><i aria-hidden="true"></i></div></div>
       <div class="v137-net-hub"><span>Hub</span></div>
@@ -1385,102 +1529,13 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
         </div>
         
       </div></div><div class="v137-panel-foot"></div></div></div></div></div></div></section>
-<section id="v137-hub-explorer" class="story-chapter v137-explorer" aria-label="Interactive hub segment explorer" hidden><div class="wrap">
-<div class="v137-explorer-header"><div><span class="v137-section-overline">INTERACTIVE EXPLORER</span><h2>Explore each pipeline segment.</h2><p>Choose the network stage, electricity price and candidate pipe. Results use the existing demonstration dataset.</p></div><button type="button" class="v137-close" id="v137CloseHub" aria-label="Close hub explorer">Close ×</button></div>
-<div aria-labelledby="hubCaseTitle" class="hub-case" data-exploring="false" id="hub-case" role="region">
-<div class="hub-heading">
-<div><h3 id="hubCaseTitle" tabindex="-1">CCUS hub</h3><p>Illustrative case · Each stage sized separately</p></div>
-<div aria-label="Illustrative hub development stage" class="hub-stages" hidden="" id="hubExplorerControls" role="group">
-<button aria-pressed="true" data-hub-year="2026" type="button"><strong>2026</strong><small>2 sources</small></button>
-<button aria-pressed="false" data-hub-year="2030" type="button"><strong>2030</strong><small>3 sources</small></button>
-</div>
-</div>
-<fieldset class="hub-prices" hidden="" id="hubPriceControls">
-<legend>Electricity price scenario</legend>
-<div aria-label="Electricity price" role="group">
-<button aria-pressed="true" data-hub-price="100" type="button">100 €/MWh</button>
-<button aria-pressed="false" data-hub-price="250" type="button">250 €/MWh</button>
-</div>
-</fieldset>
-<div class="hub-body">
-<div aria-label="Select a pipeline segment" class="hub-network" role="group">
-<div class="hub-branches">
-<button aria-pressed="false" class="hub-segment" data-hub-segment="cement" disabled="" type="button"><span aria-hidden="true" class="hub-plant"></span><span class="hub-segment-label"><strong>Cement plant</strong><small></small></span><span aria-hidden="true" class="hub-pipe"></span></button>
-<button aria-pressed="false" class="hub-segment" data-hub-segment="refinery" disabled="" type="button"><span aria-hidden="true" class="hub-plant"></span><span class="hub-segment-label"><strong>Refinery</strong><small></small></span><span aria-hidden="true" class="hub-pipe"></span></button>
-<button aria-pressed="false" class="hub-segment" data-hub-segment="steel" disabled="" type="button"><span aria-hidden="true" class="hub-plant"></span><span class="hub-segment-label"><strong>Steel plant</strong><small></small></span><span aria-hidden="true" class="hub-pipe"></span></button>
-</div>
-<div class="hub-junction"><span>Collection hub</span></div>
-<button aria-pressed="true" class="hub-segment hub-trunk" data-hub-segment="trunk" disabled="" type="button"><span class="hub-segment-label"><strong>Shared trunkline</strong><small></small></span><span aria-hidden="true" class="hub-pipe"></span></button>
-<div class="hub-storage"><span>Storage</span></div>
-</div>
-<div class="hub-guide-result">
-<div class="hub-guide-stage" data-guide-stage="2026"><span>2026 reference design</span><strong>7 MtCO₂/y · NPS 18</strong></div>
-<div aria-hidden="true" class="hub-guide-stage" data-guide-stage="2030"><span>2030 reference design</span><strong>9 MtCO₂/y · NPS 20</strong></div>
-<div aria-label="Compare electricity price scenarios at the same flow" class="v136-price-compare" id="hubPriceComparison" hidden>
-<div class="v136-price-head"><strong>Same flow. Different electricity price.</strong><span>Cost-optimal reference</span></div>
-<div class="v136-price-grid">
-<div class="v136-price-option"><span>100 €/MWh</span><strong id="hubLowPriceNps">NPS 18</strong><small id="hubLowPriceDetails">5.78 kWh/t · 3.56 €/t</small></div>
-<div class="v136-price-option v136-price-high"><span>250 €/MWh</span><strong id="hubHighPriceNps">NPS 20</strong><small id="hubHighPriceDetails">3.44 kWh/t · 4.35 €/t</small></div>
-</div>
-<p class="v136-price-caption">A higher electricity price favors lower pumping demand in this example.</p>
-</div>
-</div>
-<div class="hub-results" hidden="" id="hubInteractiveResults">
-<div aria-atomic="true" aria-live="polite" id="hubLiveResult">
-<h4 id="hubSegmentName">Shared trunkline</h4>
-<p id="hubSegmentInputs"></p>
-<div id="hubDesign">
-<p class="hub-design-label">Lowest-cost reference design</p>
-<dl class="hub-metrics">
-<div><dt>Commercial pipe</dt><dd id="hubNps"></dd></div>
-<div><dt>Transport cost</dt><dd id="hubCost"></dd></div>
-<div><dt>Pumping electricity</dt><dd id="hubEnergy"></dd></div>
-<div><dt>Intermediate pump stations</dt><dd id="hubStations"></dd></div>
-</dl>
-</div>
-</div>
-<table class="hub-stage-grid" hidden="" id="hubStageGrid"><caption>Trunkline screening by stage</caption><thead><tr><th scope="col">Stage</th><th scope="col">MtCO₂/y</th><th scope="col">NPS</th><th scope="col">€/tCO₂</th><th scope="col">kWh/tCO₂</th><th scope="col">Stations</th></tr></thead><tbody></tbody></table>
-<button class="ecob-analysis-secondary" id="hubLoad" type="button">Open in calculator <span aria-hidden="true">↓</span></button>
-</div>
-</div>
-<div class="hub-footer" hidden="" id="hubDetails">
-<p>Illustrative reference designs, sized independently. A fixed installed pipeline needs separate off-design checks; network hydraulics and routing are outside this demo.</p>
-<details><summary>Case assumptions</summary><dl id="hubAssumptions"></dl></details>
-</div>
-<dl class="hub-role">
-<div><dt>Repeatable screening</dt><dd>Flow and power-price inputs update the cost-oriented design directly.</dd></div>
-<div><dt>Network studies</dt><dd>Screen many candidate segments without repeated diameter searches.</dd></div>
-</dl>
-</div></div></section>
-<section id="model-story" class="story-chapter story-integration" aria-labelledby="story-integration-title">
- <div class="wrap">
-  <div class="story-heading">
-   <h2 id="story-integration-title">How to use ECOB in your research</h2>
-   <p>Bring fast, project-specific sizing and transport costs into TEA, scenario and network studies.</p>
-  </div>
-  <div class="story-chain model-flow">
-   <div><i class="model-icon model-icon-input" aria-hidden="true"></i><h3>Your model</h3><p>Defines candidate routes, CO₂ flow and energy-price assumptions.</p></div>
-   <div><i class="model-icon model-icon-calc" aria-hidden="true"></i><h3>ECOB</h3><p>Directly sizes each segment and evaluates its transport cost and pumping needs.</p></div>
-   <div class="story-chain-transport"><i class="model-icon model-icon-output" aria-hidden="true"></i><h3>Your analysis</h3><p>Compares hundreds of cases without repeated diameter sweeps.</p></div>
-  </div>
-  <div class="model-data">
-   <div>
-    <h3>Need Excel or Python integration?</h3>
-    <p>Bring ECOB calculations into your existing TEA or network model. Contact us for Excel or Python workflows.</p>
-   </div>
-   <a class="story-action" href="mailto:binxu.gao@polimi.it?subject=ECOB%20%7C%20Excel%20or%20Python%2FAPI%20integration">Contact the developer <span aria-hidden="true">↗</span></a>
-  </div>
- </div>
-</section>
-
-
 </main>
 <footer class="intro-footer"><div class="wrap">
  <span>ECOB+ · CO₂ pipeline screening</span>
  <nav aria-label="More about ECOB+">
   <a href="how-it-works.html">How it works</a>
   <a href="calculator.html#validation">Scientific validation</a>
-  <a href="calculator.html#toolkit">Research integration</a>
+  <a href="calculator.html#toolkit">Contact</a>
   <button type="button" id="privacySettingsBtn">Privacy &amp; analytics</button>
  </nav>
 </div></footer>
@@ -1489,7 +1544,7 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 const $=id=>document.getElementById(id);
 const fmt=(value,digits)=>value.toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits});
 const pctSigned=(value)=>((value>=0?'+':'−')+Math.abs(value*100).toFixed(1)+'%');
-const samples={"options":{"cost":{"valid":true,"nps":"16","cost":3.2779192438862483,"energy":4.210948682731959,"ghg":1.4382246863719381,"warning":""},"practical":{"valid":true,"nps":"18","cost":3.6178046912400297,"energy":2.3571944245172882,"ghg":1.093988197330555,"warning":""},"lca":{"valid":true,"nps":"22","cost":4.403536928568177,"energy":0.8503087206995001,"ghg":0.919456120801125,"warning":""}},"hub":{"100":{"3/60":{"nps":"12¾","cost":1.3590776070857862,"energy":1.4518890207375985,"stations":0},"4/90":{"nps":"14","cost":1.7540122405723546,"energy":2.4493415857614402,"stations":1},"2/80":{"nps":"10","cost":2.2369935715054563,"energy":2.077603467581065,"stations":1},"3/250":{"nps":"12¾","cost":5.21903776265137,"energy":6.049537586406661,"stations":3},"7/250":{"nps":"18","cost":3.5555016055185567,"energy":5.775147154296193,"stations":3},"9/250":{"nps":"20","cost":3.283295570411061,"energy":5.6801462332203965,"stations":3}},"250":{"3/60":{"nps":"14","cost":1.60414752718752,"energy":0.9184982670082259,"stations":0},"4/90":{"nps":"16","cost":1.9941947805985574,"energy":1.2127493960922298,"stations":0},"2/80":{"nps":"12","cost":2.5657597690219593,"energy":1.18101631378937,"stations":0},"3/250":{"nps":"14","cost":6.196654037564861,"energy":3.827076112534275,"stations":2},"7/250":{"nps":"20","cost":4.349864981679962,"energy":3.436155045141176,"stations":1},"9/250":{"nps":"24","cost":3.9688221543693527,"energy":2.24487004908299,"stations":1}}},"defaults":{"purity":99.35,"flow":158.549,"pin":12,"plimit":8.5,"steelGrade":"X65","df":0.72,"length":200,"electricity":100,"steelCost":2.17,"discountRate":8,"pipeOM":2.5,"gridCI":0.25,"pipeEF":2.55,"hours":8760,"life":25,"carbonPrice":120},"density":768};
+const samples={"options":{"cost":{"valid":true,"nps":"16","cost":3.2779192438862483,"energy":4.210948682731959,"ghg":1.4382246863719381,"warning":"","schedule":"30","stations":2,"maxLen":88.47700176144872},"practical":{"valid":true,"nps":"18","cost":3.6178046912400297,"energy":2.3571944245172882,"ghg":1.093988197330555,"warning":"","schedule":"30","stations":1,"maxLen":158.05743902340254},"lca":{"valid":true,"nps":"22","cost":4.403536928568177,"energy":0.8503087206995001,"ghg":0.919456120801125,"warning":"","schedule":"30","stations":0,"maxLen":438.1609937070292}},"hub":{"100":{"3/60":{"nps":"12¾","cost":1.3590776070857862,"energy":1.4518890207375985,"stations":0},"4/90":{"nps":"14","cost":1.7540122405723546,"energy":2.4493415857614402,"stations":1},"2/80":{"nps":"10","cost":2.2369935715054563,"energy":2.077603467581065,"stations":1},"3/250":{"nps":"12¾","cost":5.21903776265137,"energy":6.049537586406661,"stations":3},"7/250":{"nps":"18","cost":3.5555016055185567,"energy":5.775147154296193,"stations":3},"9/250":{"nps":"20","cost":3.283295570411061,"energy":5.6801462332203965,"stations":3}},"250":{"3/60":{"nps":"14","cost":1.60414752718752,"energy":0.9184982670082259,"stations":0},"4/90":{"nps":"16","cost":1.9941947805985574,"energy":1.2127493960922298,"stations":0},"2/80":{"nps":"12","cost":2.5657597690219593,"energy":1.18101631378937,"stations":0},"3/250":{"nps":"14","cost":6.196654037564861,"energy":3.827076112534275,"stations":2},"7/250":{"nps":"20","cost":4.349864981679962,"energy":3.436155045141176,"stations":1},"9/250":{"nps":"24","cost":3.9688221543693527,"energy":2.24487004908299,"stations":1}}},"defaults":{"purity":99.35,"flow":158.549,"pin":12,"plimit":8.5,"steelGrade":"X65","df":0.72,"length":200,"electricity":100,"steelCost":2.17,"discountRate":8,"pipeOM":2.5,"gridCI":0.25,"pipeEF":2.55,"hours":8760,"life":25,"carbonPrice":120},"density":768};
 const {defaults,density:embeddedDensity}=samples;
 const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
 const compactStory=matchMedia('(max-width:760px)');
@@ -1662,39 +1717,47 @@ function initV137Stories(){
       grid.querySelector('.v137-mobile-slot[data-mobile-for="'+i+'"]').append(copy);
     });
     setActive(grid,0);
+    const steps=[...grid.querySelectorAll('.v137-step')];
+    const copies=steps.map(step=>step.querySelector('.v137-step-copy'));
     scrollScenes.push(height=>{
-      const steps=[...grid.querySelectorAll('.v137-step')];
-      const line=height*(isMobile.matches?.67:.51);
-      let next=0;
-      for(let i=0;i<steps.length;i++){
-        if(steps[i].getBoundingClientRect().top<=line)next=i;
-      }
+      if(isMobile.matches)return;
+      const bounds=grid.getBoundingClientRect();
+      if(bounds.bottom<0||bounds.top>height)return;
+      const line=(height+68)*.5;
+      const centers=copies.map(el=>{const r=el.getBoundingClientRect();return (r.top+r.bottom)/2});
+      let next=stageByStory[grid.dataset.v137Story];
+      // The same reading boundary drives both columns, in either direction.
+      // A tiny dead band prevents rapid toggling on trackpads at the boundary.
+      while(next<centers.length-1 && line>(centers[next]+centers[next+1])/2+10)next++;
+      while(next>0 && line<(centers[next]+centers[next-1])/2-10)next--;
       setActive(grid,next);
     });
   }
   const size=samples.options;
   const basic=size.cost;
   const f=(v,n)=>fmt(v,n);
-  const sizes=document.querySelectorAll('[data-v137-single]');
-  sizes.forEach(el=>{
-    const k=el.dataset.v137Single;
-    el.textContent=k==='nps'?basic.nps:k==='cost'?f(basic.cost,2)+' €/tCO₂':k==='energy'?f(basic.energy,2)+' kWh/tCO₂':f(basic.ghg,2)+' kgCO₂e/tCO₂';
-  });
-  const designNames={cost:'Lowest-cost reference',practical:'Selectable commercial NPS',lca:'Lowest-lifecycle-GHG design'};
+  function metricText(data,key){
+    switch(key){
+      case 'nps':return 'NPS '+data.nps+' · Sch '+data.schedule;
+      case 'cost':return f(data.cost,2);
+      case 'energy':return f(data.energy,2)+' kWh/tCO₂';
+      case 'ghg':return f(data.ghg,2)+' kgCO₂e/tCO₂';
+      case 'stations':return String(data.stations);
+      case 'maxLen':return f(data.maxLen,1)+' km';
+    }
+  }
+  document.querySelectorAll('[data-v137-single]').forEach(el=>el.textContent=metricText(basic,el.dataset.v137Single));
   let selectedDesign='cost';
   function showDesign(){
     const data=size[selectedDesign];
     document.querySelectorAll('[data-v137-design]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v137Design===selectedDesign)));
     document.querySelectorAll('[data-v137-choice]').forEach(el=>{
-      const k=el.dataset.v137Choice;
-      if(k==='label')el.textContent=designNames[selectedDesign];
-      if(k==='nps')el.textContent='NPS '+data.nps;
-      if(k==='cost')el.textContent=f(data.cost,2)+' €/tCO₂';
-      if(k==='energy')el.textContent=f(data.energy,2)+' kWh/tCO₂';
-      if(k==='ghg')el.textContent=f(data.ghg,2)+' kgCO₂e/tCO₂';
-      if(k==='delta'){
-        el.hidden=selectedDesign==='cost';
-        el.textContent=selectedDesign==='cost'?'':`vs lowest cost · ${pctSigned(data.cost/basic.cost-1)} cost · ${pctSigned(data.ghg/basic.ghg-1)} GHG`;
+      const text=metricText(data,el.dataset.v137Choice);
+      if(el.textContent===text)return;
+      el.textContent=text;
+      if(!reducedMotion.matches && el.getClientRects().length && !el.closest('[inert]')){
+        el.getAnimations().forEach(a=>a.cancel());
+        el.animate([{transform:'translateY(3px)',opacity:.78},{transform:'translateY(0)',opacity:1}],{duration:280,easing:'cubic-bezier(.22,.8,.24,1)'});
       }
     });
   }
@@ -1749,90 +1812,6 @@ function initV137Stories(){
       if(next!==electricity)showElectricity(next);
     }
   });
-  // The complete hub explorer is optional: it appears after the scroll narrative, never overlays it.
-  const explorer=document.getElementById('v137-hub-explorer');
-  const panel=document.getElementById('hub-case');
-  const openButton=document.getElementById('hubCaseToggle');
-  const closeButton=document.getElementById('v137CloseHub');
-  const stageButtons=[...panel.querySelectorAll('[data-hub-year]')];
-  const segmentButtons=[...panel.querySelectorAll('[data-hub-segment]')];
-  const priceButtons=[...panel.querySelectorAll('[data-hub-price]')];
-  let hubYear=2026,hubSegment='trunk',hubElectricity=100;
-  function drawHub(){
-    const pipe=segmentFor(hubSegment,hubYear);
-    const active=pipe.year<=hubYear;
-    const design=active?getDesign(pipe,hubElectricity):null;
-    panel.dataset.stage=String(hubYear);
-    for(const button of stageButtons)button.setAttribute('aria-pressed',String(Number(button.dataset.hubYear)===hubYear));
-    for(const button of priceButtons)button.setAttribute('aria-pressed',String(Number(button.dataset.hubPrice)===hubElectricity));
-    for(const button of segmentButtons){
-      const key=button.dataset.hubSegment;
-      const seg=segmentFor(key,hubYear);
-      const future=seg.year>hubYear;
-      button.dataset.future=String(future);
-      button.setAttribute('aria-pressed',String(key===hubSegment));
-      button.querySelector('small').textContent=future?'Connects in '+seg.year:seg.flow+' MtCO₂/y · '+seg.length+' km';
-    }
-    document.getElementById('hubSegmentName').textContent=pipe.name;
-    document.getElementById('hubSegmentInputs').textContent=active?pipe.flow+' MtCO₂/y · '+pipe.length+' km · '+defaults.pin+' MPa':'Connects in '+pipe.year;
-    document.getElementById('hubDesign').hidden=!design;
-    document.getElementById('hubLoad').hidden=!design;
-    document.getElementById('hubStageGrid').hidden=hubSegment!=='trunk';
-    if(design){
-      document.getElementById('hubNps').textContent='NPS '+design.nps;
-      document.getElementById('hubCost').textContent=f(design.cost,2)+' €/tCO₂';
-      document.getElementById('hubEnergy').textContent=f(design.energy,2)+' kWh/tCO₂';
-      document.getElementById('hubStations').textContent=design.stations;
-    }
-    if(hubSegment==='trunk'){
-      const tbody=document.getElementById('hubStageGrid').tBodies[0];tbody.replaceChildren();
-      for(const stage of [2026,2030]){
-        const trunk=segmentFor('trunk',stage),d=getDesign(trunk,hubElectricity);
-        const tr=tbody.insertRow();tr.setAttribute('aria-current',String(stage===hubYear));
-        for(const val of [stage,trunk.flow,d.nps,f(d.cost,2),f(d.energy,2),d.stations])tr.insertCell().textContent=val;
-      }
-    }
-  }
-  function showExplorer(){
-    explorer.hidden=false;
-    panel.dataset.exploring='true';
-    openButton.setAttribute('aria-expanded','true');
-    document.getElementById('hubExplorerControls').hidden=false;
-    document.getElementById('hubInteractiveResults').hidden=false;
-    document.getElementById('hubDetails').hidden=false;
-    document.getElementById('hubPriceControls').hidden=false;
-    panel.querySelector('.hub-guide-result').hidden=true;
-    segmentButtons.forEach(button=>button.disabled=false);
-    drawHub();
-    requestAnimationFrame(()=>explorer.scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'start'}));
-  }
-  openButton.addEventListener('click',showExplorer);
-  closeButton.addEventListener('click',()=>{
-    explorer.hidden=true;
-    openButton.setAttribute('aria-expanded','false');
-    document.getElementById('hub-scroll-step-4').scrollIntoView({behavior:reducedMotion.matches?'instant':'smooth',block:'center'});
-    openButton.focus({preventScroll:true});
-  });
-  for(const button of stageButtons)button.addEventListener('click',()=>{hubYear=Number(button.dataset.hubYear);if(segmentFor(hubSegment,hubYear).year>hubYear)hubSegment='trunk';drawHub();});
-  for(const button of segmentButtons)button.addEventListener('click',()=>{hubSegment=button.dataset.hubSegment;drawHub();});
-  for(const button of priceButtons)button.addEventListener('click',()=>{hubElectricity=Number(button.dataset.hubPrice);drawHub();});
-  document.getElementById('hubLoad').addEventListener('click',()=>{
-    const params=new URLSearchParams({'hub-year':String(hubYear),'hub-segment':hubSegment,'hub-electricity':String(hubElectricity)});
-    location.href='calculator.html?'+params+'#calculator';
-  });
-  const assumptions=[
-    ['Pressure',defaults.pin+' MPa inlet · '+defaults.plimit+' MPa minimum'],
-    ['Stream',defaults.purity+'% CO₂ · '+embeddedDensity+' kg/m³'],
-    ['Pipe',defaults.steelGrade+' · design factor '+defaults.df],
-    ['Operating period',defaults.hours+' h/y · '+defaults.life+' years'],
-    ['Energy and steel','Baseline '+defaults.electricity+' €/MWh · steel '+defaults.steelCost+' €/kg'],
-    ['Discount and pipe O&M',defaults.discountRate+'% · '+defaults.pipeOM+'% of CAPEX/y'],
-    ['Grid and pipe GHG',defaults.gridCI+' kgCO₂e/kWh · '+defaults.pipeEF+' kgCO₂e/kg']
-  ];
-  const assumptionList=document.getElementById('hubAssumptions');
-  for(const [k,v] of assumptions){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;assumptionList.append(dt,dd);}
-  const hashOpen=()=>{if(location.hash==='#hub-case'||location.hash==='#v137-hub-explorer')showExplorer();};
-  addEventListener('hashchange',hashOpen);hashOpen();
   // Scroll-reveal only on mobile where visual panels are stacked with their step.
   const observer=new IntersectionObserver(entries=>{
     for(const entry of entries)entry.target.classList.toggle('v137-seen',entry.isIntersecting);
@@ -1880,40 +1859,6 @@ addEventListener('resize',scheduleScrollScenes,{passive:true});
 addEventListener('pageshow',scheduleScrollScenes);
 reducedMotion.addEventListener('change',scheduleScrollScenes);
 
-/* v141: fluid two-beat baseline reveal tied to scroll position.
-   Uses the existing RAF-managed scrollScenes scheduler; no additional listener. */
-function v141Clamp01(n){return Math.max(0,Math.min(1,n));}
-function v141Smooth(n){const x=v141Clamp01(n);return x*x*(3-2*x);}
-function v141RevealOn(panel, reveal){
-  if(!panel)return;
-  const e=v141Clamp01(reveal);
-  const result=panel.querySelector('.v140-initial-results');
-  if(!result)return;
-  result.style.setProperty('--v141-reveal',e.toFixed(3));
-  result.style.setProperty('--v141-lift',((1-e)*18).toFixed(1)+'px');
-  const flow=panel.querySelector('.v137-net-trunk span');
-  if(flow)flow.style.opacity=(1-.9*e).toFixed(3);
-}
-scrollScenes.push(height=>{
-  const first=document.getElementById('hub-scroll-step-1');
-  const stage=document.querySelector('#v137-hub-grid .v137-stage .v140-baseline-slide');
-  if(first&&stage){
-    const r=first.getBoundingClientRect();
-    const p=v141Clamp01((height*.51-r.top)/Math.max(1,r.height));
-    const reveal=reducedMotion.matches?(p>.38?1:0):v141Smooth((p-.23)/.28);
-    v141RevealOn(stage,reveal);
-  }
-  const mobile=document.querySelector('#hub-scroll-step-1 .v137-mobile-panel');
-  if(mobile){
-    /* Use scroll progression through the visual itself, not the result's
-       position in a tall viewport; otherwise the answer appears too early. */
-    const top=mobile.getBoundingClientRect().top;
-    const distance=Math.max(130,Math.min(height*.23,190));
-    const p=v141Clamp01((-top-35)/distance);
-    const reveal=reducedMotion.matches?(p>.55?1:0):v141Smooth(p);
-    v141RevealOn(mobile,reveal);
-  }
-});
 updateScrollScenes();
 </script>
 
@@ -2020,46 +1965,62 @@ const byId=id=>document.getElementById(id);
    if(net){net.classList.add('v143-growth-network');net.setAttribute('data-network-year','2030');}
  });
  // Intersection-based entrance animation has no effect on numeric model data.
- const targets=[...document.querySelectorAll('.v137-step,#model-story,.v137-stage-frame')];
+ const targets=[...document.querySelectorAll('.v137-step,#model-story')];
  let observer;
  if('IntersectionObserver' in window){
    observer=new IntersectionObserver(entries=>{
-     entries.forEach(entry=>entry.target.classList.toggle('v143-visible',entry.isIntersecting));
+     entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('v143-visible');observer.unobserve(entry.target);}});
    },{threshold:.10,rootMargin:'0px 0px -8% 0px'});
    targets.forEach(x=>observer.observe(x));
  } else targets.forEach(x=>x.classList.add('v143-visible'));
- function updateGrowth(panel,progress){
-   if(!panel)return;
-   const p=prefersReduced.matches?1:clamp(progress);
-   // Visual causal order: new source -> extra flow -> cost-optimal diameter.
-   const steel=ease((p-.07)/.27);
-   const flow=ease((p-.27)/.36);
-   const pipe=ease((p-.57)/.3);
-   const network=panel.querySelector('.v143-growth-network');
-   if(network){
-     network.style.setProperty('--v143-steel',steel.toFixed(3));
-     network.style.setProperty('--v143-pipe',pipe.toFixed(3));
-     const trunk=network.querySelector('.v137-net-trunk span');
-     if(trunk)trunk.textContent=flow>.98?'9 MtCO₂/y':flow<.02?'7 MtCO₂/y':(7+2*flow).toFixed(1)+' MtCO₂/y';
-   }
-   const results=panel.querySelector('.v143-expansion-results');
-   if(results){
-     results.style.setProperty('--v143-progress',p.toFixed(3));
-     const f=results.querySelector('[data-v143-growth="flow"]');
-     const n=results.querySelector('[data-v143-growth="nps"]');
-     if(f)f.textContent=flow>.98?'9':flow<.02?'7':(7+2*flow).toFixed(1);
-     if(n){
-       // NPS sizes are discrete commercial labels, never show invalid decimals.
-       n.textContent=pipe>=.5?'20':'18';
-       n.style.opacity=(.48+.52*Math.min(1,Math.abs(pipe-.5)*2)).toFixed(3);
-     }
+ // The sizing-only path of Calculator v162: costId + mechanicalConstants + oneShotCommercialize.
+ // Annual-to-kg/s conversion follows Calculator's mtyToKgps and three-decimal input rounding.
+ const commercialOD=[['4',.1143],['4½',.127],['5',.1413],['6',.16828],['8',.21908],['10',.27305],['12',.305],['12¾',.32385],['14',.3556],['16',.4064],['18',.4572],['20',.508],['22',.5588],['24',.6096],['26',.6604],['28',.7112],['30',.762],['32',.8128],['34',.8636],['36',.9144]];
+ function growthSize(mty){
+   const x=samples.defaults, kgps=Number((mty*1e9/(x.hours*3600)).toFixed(3));
+   const rate=x.discountRate/100, om=x.pipeOM/100, factor=(1+rate)**x.life;
+   const crf=rate*factor/(factor-1);
+   const id=.175*(kgps/27.58)**.450*(100/100)**.138*(x.steelCost/2.17)**(-.083)*(x.hours/8760)**(1/7)*(.11868/(crf+om))**(1/7);
+   const maop=1.15*x.pin, k=maop/(2*460*x.df-2*maop);
+   const targetOD=id+2*(k*id+.001);
+   return commercialOD.reduce((best,p)=>Math.abs(p[1]-targetOD)<Math.abs(best[1]-targetOD)-1e-12||(Math.abs(Math.abs(p[1]-targetOD)-Math.abs(best[1]-targetOD))<1e-12&&p[1]>best[1])?p:best);
+ }
+ const growthViews=growthPanels.map(panel=>({panel,network:panel.querySelector('.v143-growth-network'),steel:panel.querySelector('[data-growth-steel]'),flow:panel.querySelector('[data-v143-growth="flow"]'),nps:panel.querySelector('[data-v143-growth="nps"]'),slider:panel.querySelector('[data-growth-slider]')}));
+ let growthFlow=null,growthStarted=false,growthFrame=0;
+ function renderGrowth(value){
+   const q=Math.max(7,Math.min(15,Math.round(Number(value)*10)/10));
+   if(q===growthFlow)return;
+   growthFlow=q;
+   const [nps,od]=growthSize(q), fmtFlow=n=>Number(n.toFixed(1)).toString(), connected=q>7;
+   for(const v of growthViews){
+     v.network.style.setProperty('--v143-steel',connected?'1':'0');
+     v.network.style.setProperty('--v143-pipe',String((od-.4572)/(.6604-.4572)));
+     v.network.classList.toggle('growth-connected',connected);
+     v.steel.textContent=fmtFlow(q-7)+' MtCO₂/y';
+     v.flow.textContent=fmtFlow(q);v.nps.textContent=nps;
+     v.slider.value=String(q);
+     v.slider.style.setProperty('--slider-fill',((q-7)/8*100)+'%');
+     v.slider.setAttribute('aria-valuetext',fmtFlow(q)+' million tonnes per year; NPS '+nps);
    }
  }
- function getProgress(step,height){
-   if(!step)return 0;
-   const r=step.getBoundingClientRect();
-   // Desktop: 0 near the beginning of the current reading moment, 1 before exit.
-   return clamp((height*.54-r.top)/Math.max(1,r.height*.68));
+ function stopGrowth(){if(growthFrame)cancelAnimationFrame(growthFrame);growthFrame=0;growthStarted=true;}
+ for(const v of growthViews){
+   v.slider.addEventListener('pointerdown',stopGrowth);
+   v.slider.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','PageUp','PageDown'].includes(e.key))stopGrowth();});
+   v.slider.addEventListener('input',()=>{stopGrowth();renderGrowth(v.slider.value);});
+ }
+ renderGrowth(prefersReduced.matches?11:7);
+ function startGrowthPlayback(){
+   if(growthStarted)return;
+   growthStarted=true;
+   if(prefersReduced.matches){renderGrowth(11);return;}
+   const start=performance.now();
+   function tick(now){
+     const p=clamp((now-start-350)/2800);
+     renderGrowth(7+4*ease(p));
+     if(p<1)growthFrame=requestAnimationFrame(tick);else growthFrame=0;
+   }
+   growthFrame=requestAnimationFrame(tick);
  }
 
  // v144 single-case runtime playback. This animates previously measured runtimes;
@@ -2129,17 +2090,14 @@ const byId=id=>document.getElementById(id);
      }
    },70);
  }
+ const growthStep=document.getElementById('hub-scroll-step-3');
+ const desktopGrowth=growthViews.find(v=>v.panel.matches('.v137-slide'))?.panel;
+ const mobileGrowth=growthViews.find(v=>v.panel.matches('.v137-mobile-panel'))?.panel;
  scrollScenes.push(height=>{
-   const growthStep=document.getElementById('hub-scroll-step-3');
-   if(desktopBench){
-     const desktopGrowth=growthPanels.find(el=>el.matches('.v137-slide'));
-     if(desktopGrowth)updateGrowth(desktopGrowth,getProgress(growthStep,height));
-   }
-   const mobileGrowth=growthPanels.find(el=>el.matches('.v137-mobile-panel'));
-   if(mobileGrowth){
-     const r=mobileGrowth.getBoundingClientRect();
-     const p=clamp((height*.32-r.top)/Math.max(1,r.height*.68));
-     updateGrowth(mobileGrowth,p);
+   if(!growthStarted && !document.hidden){
+     const activeGrowth=isMobile.matches?mobileGrowth:desktopGrowth;
+     const r=(isMobile.matches?activeGrowth:growthStep)?.getBoundingClientRect();
+     if(r && r.top<height*.76 && r.bottom>height*.18 && (isMobile.matches||activeGrowth.classList.contains('is-active')))startGrowthPlayback();
    }
    const mobile=isMobile.matches;
    const target=mobile?mobileBench:desktopBench;
@@ -2156,11 +2114,11 @@ const byId=id=>document.getElementById(id);
    }
  });
  document.addEventListener('visibilitychange',()=>{
-   if(document.hidden)stopBenchPlayback();
+   if(document.hidden){stopBenchPlayback();if(growthFrame){stopGrowth();renderGrowth(9);}}
    else updateScrollScenes();
  });
  prefersReduced.addEventListener('change',()=>{
-   if(prefersReduced.matches)stopBenchPlayback();
+   if(prefersReduced.matches){stopBenchPlayback();if(growthFrame){stopGrowth();renderGrowth(9);}}
    updateScrollScenes();
  });
  // Show a subtle update for both manual and scroll-driven electricity changes.
@@ -2186,20 +2144,49 @@ const byId=id=>document.getElementById(id);
  updateScrollScenes();
 })();
 </script>
-<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview"><span aria-hidden="true">Overview</span></a><a href="#worked-example" aria-label="Single pipeline"><span aria-hidden="true">Single pipeline</span></a><a href="#hub-story" aria-label="Network studies"><span aria-hidden="true">Network studies</span></a><a href="#model-story" aria-label="Research integration"><span aria-hidden="true">Research integration</span></a></nav>
+<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview" class="is-current" aria-current="location"><span aria-hidden="true">Overview</span></a><a href="#size-scroll-step-1" aria-label="Project inputs"><span aria-hidden="true">Project inputs</span></a><a href="#size-scroll-step-2" aria-label="Direct sizing"><span aria-hidden="true">Direct sizing</span></a><a href="#size-scroll-step-3" aria-label="Engineering results"><span aria-hidden="true">Engineering results</span></a><a href="#size-scroll-step-4" aria-label="Design options"><span aria-hidden="true">Design options</span></a><a href="#hub-scroll-step-1" aria-label="Network sizing"><span aria-hidden="true">Network sizing</span></a><a href="#hub-scroll-step-2" aria-label="Energy prices"><span aria-hidden="true">Energy prices</span></a><a href="#hub-scroll-step-3" aria-label="Flow scenarios"><span aria-hidden="true">Flow scenarios</span></a><a href="#hub-scroll-step-4" aria-label="Performance"><span aria-hidden="true">Performance</span></a></nav>
 <script id="ecob-rail-behavior">
 (() => {
  const rail=document.querySelector('.ecob-chapter-rail'); if(!rail)return;
  const links=[...rail.querySelectorAll('a[href^="#"]')];
  const targets=links.map(a=>document.getElementById(a.hash.slice(1)));
- if(targets.some(t=>!t)) return;
- let pending=false;
- function update(){pending=false;const anchor=window.innerHeight*.37+68;let best=0;
-   targets.forEach((el,i)=>{if(el.getBoundingClientRect().top<=anchor)best=i});
-   links.forEach((a,i)=>{a.classList.toggle('is-current',i===best);if(i===best)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+ if(targets.some(t=>!t))return;
+ const chapters=[
+   {section:document.getElementById('worked-example'),grid:document.getElementById('v137-size-grid'),offset:1},
+   {section:document.getElementById('hub-story'),grid:document.getElementById('v137-hub-grid'),offset:5}
+ ];
+ if(chapters.some(c=>!c.section||!c.grid))return;
+ const desktop=matchMedia('(min-width:1371px)');
+ let current=0;
+ function update(height){
+   if(!desktop.matches)return;
+   const line=(height+68)*.5;
+   let best=0;
+   for(const c of chapters){
+     if(c.section.getBoundingClientRect().top>line)break;
+     const bounds=c.grid.getBoundingClientRect();
+     const active=bounds.top>line?0:bounds.bottom<line?3:Number(c.grid.dataset.active||0);
+     best=c.offset+Math.max(0,Math.min(3,active));
+   }
+   if(best===current)return;
+   links[current].classList.remove('is-current');
+   links[current].removeAttribute('aria-current');
+   links[best].classList.add('is-current');
+   links[best].setAttribute('aria-current','location');
+   current=best;
  }
- function queue(){if(!pending){pending=true;requestAnimationFrame(update)}}
- addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue,{passive:true});queue();
+ links.forEach((a,i)=>a.addEventListener('click',e=>{
+   if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.defaultPrevented)return;
+   e.preventDefault();
+   const target=targets[i];
+   const copy=target.querySelector('.v137-step-copy');
+   const r=(copy||target).getBoundingClientRect();
+   const top=i===0?0:window.scrollY+(r.top+r.bottom)/2-(window.innerHeight+68)*.5;
+   try{if(location.hash!==a.hash)history.pushState(null,'',a.hash);}catch(err){}
+   window.scrollTo({top:Math.max(0,top),behavior:reducedMotion.matches?'instant':'smooth'});
+ }));
+ // Reuse the existing scroll scheduler, after story panels have selected their active scene.
+ scrollScenes.push(update);scheduleScrollScenes();
 })();
 </script>
 
