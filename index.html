@@ -1164,23 +1164,9 @@ body{background:var(--overview-ink)}
 #hub-story .v143-expansion-timeline i{position:absolute;left:0;right:0;top:-1px;height:1px;transform:scaleX(var(--v143-progress));transform-origin:left;background:#b5d7ff;box-shadow:0 0 8px #77a9ed50}
 #hub-story .v143-expansion-timeline span{opacity:calc(.38 + .62 * var(--v143-progress));transition:opacity .12s}
 /* The final story moment: evidence, not vague feature adjectives. */
-#hub-story .v143-benchmark{border-top:1px solid #354961;padding-top:20px;min-width:0}
-#hub-story .v143-benchmark-caption{font-size:11px;letter-spacing:.08em;color:#9ebcde;font-weight:540;margin-bottom:10px}
-#hub-story .v143-benchmark-numbers{display:grid;grid-template-columns:1fr 1fr;gap:clamp(15px,3vw,38px)}
-#hub-story .v143-benchmark-numbers>div{display:flex;flex-direction:column;gap:2px;min-width:0}
-#hub-story .v143-benchmark-numbers>div+div{border-left:1px solid #354961;padding-left:clamp(12px,2.8vw,35px)}
-#hub-story .v143-method{font-size:13px;color:#d1e4fc;font-weight:600}
-#hub-story .v143-benchmark strong{color:#b3d5ff;font-size:clamp(30px,3.5vw,51px);letter-spacing:-.04em;font-weight:530;line-height:1.18;white-space:nowrap;font-variant-numeric:tabular-nums}
-#hub-story .v143-benchmark-aspen strong{color:#dce8f8}
-#hub-story .v143-benchmark em{font-size:.55em;letter-spacing:0;font-style:normal;font-weight:440;color:#a9bfd8}
-#hub-story .v143-benchmark small{font-size:11px;color:#92abc7;line-height:1.35}
-#hub-story .v143-benchmark-note{margin:9px 0 0;color:#839bb6;font-size:10px;line-height:1.35}
 @media(max-width:1100px) and (min-width:761px){
  #hub-story .v143-baseline-grid strong{font-size:clamp(20px,2.8vw,32px)}
  #hub-story .v143-baseline-grid .v138-result-emphasis strong{font-size:clamp(27px,3.7vw,38px)}
- #hub-story .v143-benchmark strong{font-size:clamp(28px,3.4vw,38px)}
- #hub-story .v143-benchmark{padding-top:11px}
- #hub-story .v143-benchmark-note{display:none}
 }
 @media(max-width:760px){
  #hub-story .v143-baseline-condition{font-size:10px;margin-bottom:10px}
@@ -1188,18 +1174,9 @@ body{background:var(--overview-ink)}
  #hub-story .v143-baseline-grid strong{font-size:clamp(18px,5vw,25px)}
  #hub-story .v143-baseline-grid .v138-result-emphasis strong{font-size:clamp(26px,7.5vw,34px)}
  #hub-story .v143-baseline-grid>div>span{font-size:10px}
- #hub-story .v143-benchmark-caption{margin-bottom:12px}
- #hub-story .v143-benchmark strong{font-size:clamp(27px,7.5vw,38px)}
- #hub-story .v143-benchmark-numbers{gap:11px}
- #hub-story .v143-benchmark-numbers>div+div{padding-left:12px}
- #hub-story .v143-method{font-size:12px}
- #hub-story .v143-benchmark small{font-size:10px}
- #hub-story .v143-benchmark-note{font-size:9px}
  #hub-story .v143-expansion-timeline{font-size:9px}
 }
 @media(max-width:350px){
- #hub-story .v143-benchmark strong{font-size:25px}
- #hub-story .v143-benchmark small{font-size:9px}
  #hub-story .v143-baseline-grid .v138-result-emphasis strong{font-size:25px}
  #hub-story .v143-expansion-timeline{font-size:8px}
 }
@@ -1209,11 +1186,6 @@ body{background:var(--overview-ink)}
 }
 
 /* v144: always-visible performance numerals with restrained count-up feedback. */
-#hub-story .v144-timer-digit{display:inline-block;opacity:1!important;min-width:2.35ch;will-change:transform;font-variant-numeric:tabular-nums}
-#hub-story .v143-benchmark-aspen .v144-timer-digit{min-width:2ch}
-#hub-story .v143-benchmark[data-v144-counting="true"] .v143-benchmark-ecob strong{color:#bddbff}
-#hub-story .v143-benchmark[data-v144-complete="true"] .v143-benchmark-aspen strong{color:#e6f1ff}
-@media(prefers-reduced-motion:reduce){#hub-story .v144-timer-digit{will-change:auto}}
 </style>
 <style id="ecob-v145-price-result-visibility">
 /* Values must remain readable throughout price switches and story transitions.
@@ -1224,16 +1196,8 @@ body{background:var(--overview-ink)}
   animation:none!important;
 }
 /* Show the total comparison duration while the slower runtime is ticking. */
-#hub-story .v143-benchmark-aspen strong .v145-benchmark-total{
-  font-size:.39em;
-  font-weight:450;
-  font-style:normal;
-  letter-spacing:0;
-  color:#a9bfd8;
-  white-space:nowrap;
-}
+
 @media(max-width:350px){
-  #hub-story .v143-benchmark-aspen strong .v145-benchmark-total{font-size:.38em}
 }
 </style>
 <style id="ecob-v146-explorer-fixes">
@@ -1438,6 +1402,34 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 .v137-heading .v137-section-overline::after{content:"";width:40px;height:1px;background:rgba(163,192,226,.45);flex:0 0 40px}
 .v137-step-head .v137-step-rule{width:40px;height:1px;background:rgba(163,192,226,.45);flex:0 0 40px}
 </style>
+<style id="ecob-home-evidence-closing">
+/* Keep the existing visual field and chapter motion; only extend the opening and closing. */
+.intro-hero .wrap{min-height:clamp(570px,calc(100svh - 68px),840px);padding-block:clamp(40px,6vh,74px) clamp(30px,5vh,60px);grid-template-rows:1fr auto;row-gap:clamp(24px,4vh,44px)}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:24px}
+.intro-hero .hero-actions .story-action{margin:0}
+.hero-example-link{font-size:13px;color:#aabbd1;text-decoration:none;text-underline-offset:4px}
+.hero-example-link:hover{text-decoration:underline;color:#dfeeff}
+.hero-evidence{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 34px;border-top:1px solid #34465e;padding-top:23px;align-items:start}
+.evidence-item{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
+.evidence-item strong{font-size:clamp(26px,3vw,39px);line-height:1.13;font-weight:510;letter-spacing:-.04em;color:#edf3fb;font-variant-numeric:tabular-nums;margin-bottom:8px}
+.evidence-item:first-child strong{color:#b4d5ff}
+.evidence-unit{font-size:.53em;letter-spacing:0;font-weight:450}
+.evidence-label{font-size:clamp(12px,1.08vw,15px);line-height:1.5;color:#d0dceb}
+.evidence-detail{font-size:12px;line-height:1.5;color:#91aac6;text-decoration:none;text-underline-offset:4px}
+.evidence-detail:hover,.evidence-detail:focus-visible{color:#b4d5ff;text-decoration:underline}
+.ecob-closing{min-height:clamp(420px,71svh,700px);display:grid;place-items:center;text-align:center;padding:clamp(80px,13vh,150px) 0;border-top:1px solid #243043;background:var(--ecob-bg);scroll-margin-top:68px}
+.ecob-closing-copy{max-width:1000px;margin:0 auto;opacity:var(--closing-opacity,1);transform:translate3d(0,var(--closing-lift,0px),0)}
+.ecob-closing h2{margin:0 auto 34px;max-width:24ch;color:#edf3fb;font-size:clamp(36px,5.25vw,73px);font-weight:470;letter-spacing:-.047em;line-height:1.1;text-wrap:balance}
+.ecob-closing h2 span{color:#b4d5ff}
+.ecob-closing .closing-action{background:transparent;color:#dfeeff!important;border:1px solid #526e91;padding:12px 24px;font-size:14px;min-height:45px;transition:background .22s,border-color .22s,transform .22s}
+.ecob-closing .closing-action:hover{background:#182840;border-color:#87b5eb;transform:translateY(-1px)}
+.ecob-closing-copy:focus-within{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){.hero-evidence{opacity:var(--evidence-opacity,1);transition:opacity .15s ease-out}.evidence-item{animation:evidence-enter .55s cubic-bezier(.22,.82,.24,1) both}.evidence-item:nth-child(2){animation-delay:.08s}.evidence-item:nth-child(3){animation-delay:.16s}}
+@keyframes evidence-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.intro-hero .wrap{min-height:0;grid-template-rows:auto;padding-block:52px 32px;row-gap:20px}.hero-actions{margin-top:20px;gap:10px 15px}.hero-evidence{gap:15px 12px;padding-top:19px}.evidence-item strong{font-size:clamp(23px,5.8vw,30px);margin-bottom:3px}.evidence-label{font-size:11px}.evidence-detail{font-size:10.5px}.ecob-closing{min-height:clamp(360px,65svh,560px);padding:75px 0}.ecob-closing h2{font-size:clamp(33px,8.5vw,54px);margin-bottom:26px}}
+@media(max-width:360px){.hero-evidence{gap:10px 8px}.evidence-item strong{font-size:21px}.evidence-label,.evidence-detail{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.ecob-closing-copy,.hero-evidence{opacity:1!important;transform:none!important}.evidence-item{animation:none!important}}
+</style>
 </head>
 <body id="top"><a class="skip-link" href="#main">Skip to main content</a>
 <nav class="intro-nav" aria-label="Main navigation"><div class="wrap">
@@ -1448,13 +1440,18 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
  <header class="intro-hero"><div class="wrap">
   <div>
    <h1>Rapid CO₂ pipeline sizing &amp; cost screening.</h1>
-   <p>ECOB estimates cost-optimal pipe diameters directly — no exhaustive diameter sweep. Screen commercial sizes, transport cost, pumping energy and lifecycle GHG.</p>
-   <a class="story-action" href="#worked-example">See a sizing example <span aria-hidden="true">↓</span></a>
+   <p>Estimate cost-optimal pipe sizes directly. Explore more design options and CCUS scenarios without exhaustive diameter searches.</p>
+   <div class="hero-actions"><a class="story-action" href="calculator.html#calculator">Try ECOB+</a></div>
   </div>
   <figure class="transport-field">
    <canvas aria-hidden="true"></canvas>
    
   </figure>
+  <aside class="hero-evidence" aria-label="Scientific evidence">
+    <div class="evidence-item"><strong>0.383 <span class="evidence-unit">ms</span></strong><span class="evidence-label">Sizing &amp; cost evaluation</span><a class="evidence-detail" href="calculator.html#validation">Single-case benchmark ↗</a></div>
+    <div class="evidence-item"><strong>1.65%</strong><span class="evidence-label">Median diameter error vs Aspen Plus</span><a class="evidence-detail" href="calculator.html#validation">166 out-of-sample cases ↗</a></div>
+    <div class="evidence-item"><strong>IJGGC</strong><span class="evidence-label">Peer-reviewed research</span><a class="evidence-detail" href="https://www.sciencedirect.com/science/article/pii/S1750583626002616" target="_blank" rel="noopener noreferrer" title="International Journal of Greenhouse Gas Control">Read the paper ↗</a></div>
+  </aside>
  </div></header>
 <section id="worked-example" class="story-chapter v137-chapter" aria-labelledby="story-size-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">1</span><h2 id="story-size-title">How ECOB works for a single pipeline</h2></div></div><div class="v137-story-grid" id="v137-size-grid" data-v137-story="size">
 <div class="v137-steps"><div class="v137-step" id="size-scroll-step-1" data-v137-step="0" data-story="size" aria-label="Section 1.1"><div class="v137-step-copy">
@@ -1490,9 +1487,7 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
     <div class="v137-step-head"><span class="v137-step-number">2.2</span><span class="v137-step-rule" aria-hidden="true"></span></div>
     <h3>Adapt sizing to energy prices</h3><p>ECOB quickly updates cost-optimal pipe sizes as energy prices change, without repeating diameter sweeps.</p></div><div class="v137-mobile-slot" data-mobile-for="1"></div></div><div class="v137-step v138-step" id="hub-scroll-step-3" data-v137-step="2" data-story="hub" aria-label="Section 2.3"><div class="v137-step-copy">
     <div class="v137-step-head"><span class="v137-step-number">2.3</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-    <h3>Update designs as CO₂ flows change</h3><p>ECOB rapidly re-sizes network segments as CO₂ flows change, using updated project conditions.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step v138-step" id="hub-scroll-step-4" data-v137-step="3" data-story="hub" aria-label="Section 2.4"><div class="v137-step-copy">
-    <div class="v137-step-head"><span class="v137-step-number">2.4</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-    <h3>Screen more scenarios, faster</h3><p>ECOB’s lightweight sizing and cost estimates support repeated screening in large CCUS network studies and optimization workflows.</p><a class="v137-explore-btn" href="calculator.html#calculator">Try ECOB+</a></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div><div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active v138-hub-slide v140-baseline-slide" data-panel="0" aria-hidden="false" >
+    <h3>Update designs as CO₂ flows change</h3><p>ECOB rapidly re-sizes network segments as CO₂ flows change, using updated project conditions.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div></div><div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active v138-hub-slide v140-baseline-slide" data-panel="0" aria-hidden="false" >
       <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2026" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
       <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i><b class="segment-nps"><em class="branch-size-label">Pipe size</em>NPS 12¾</b></span></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i><b class="segment-nps"><em class="branch-size-label">Pipe size</em>NPS 14</b></span></div><div class="v137-net-source is-future"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>Connects in 2030</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i></span></div></div>
       <div class="v137-net-hub"><span>Hub</span></div>
@@ -1520,20 +1515,13 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
         <div><span>Optimal trunkline pipe size</span><strong>NPS <b data-v143-growth="nps">18</b></strong></div>
       </div>
       <div class="growth-control"><label class="growth-label">Adjust total flow <span>Drag to explore</span><input type="range" min="7" max="15" step="0.1" value="7" aria-label="Trunkline flow, million tonnes per year" data-growth-slider></label><div class="growth-ticks" aria-hidden="true"><span>7</span><span>11</span><span>15 MtCO₂/y</span></div></div>
-    <p class="v175-scenario-note">Each scenario is sized independently.</p></div></div><div class="v137-panel-foot"></div></div><div class="v137-slide v138-hub-slide v138-wrap-up v143-benchmark-slide" data-panel="3" aria-hidden="true" inert>
-      <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2030" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
-      <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><i aria-hidden="true"></i></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>2 MtCO₂/y</small></span><i aria-hidden="true"></i></div></div>
-      <div class="v137-net-hub"><span>Hub</span></div>
-      <div class="v137-net-trunk"><small>Shared trunkline</small><i aria-hidden="true"></i><span>9 MtCO₂/y</span></div>
-      <div class="v137-net-store"><span class="v137-net-store-dot" aria-hidden="true"></span><small>Storage</small></div>
-    </div><div class="v143-benchmark" role="group" aria-label="Illustrative single-case benchmark: ECOB 0.383 milliseconds for pipeline sizing and cost evaluation, Aspen Plus candidate diameter sweep 15 seconds">
-        <div class="v143-benchmark-caption">Single-case runtime comparison</div>
-        <div class="v143-benchmark-numbers">
-          <div class="v143-benchmark-ecob"><span class="v143-method">ECOB</span><strong><span data-v143-bench="ecob" class="v144-timer-digit">0.383</span><em> ms</em></strong><small>Sizing + transport-cost evaluation</small></div>
-          <div class="v143-benchmark-aspen"><span class="v143-method">Aspen Plus</span><strong><span data-v143-bench="aspen" class="v144-timer-digit">15</span><em class="v145-benchmark-total"> / 15 s</em></strong><small>Candidate-diameter sweep</small></div>
-        </div>
-        
-      </div></div><div class="v137-panel-foot"></div></div></div></div></div></div></section>
+    <p class="v175-scenario-note">Each scenario is sized independently.</p></div></div><div class="v137-panel-foot"></div></div></div></div></div></div></section>
+<section class="ecob-closing" id="hub-scroll-step-4" aria-labelledby="closing-title">
+ <div class="wrap"><div class="ecob-closing-copy">
+  <h2 id="closing-title">Make large-scale CCUS studies <span>computationally practical.</span></h2>
+  <a class="story-action closing-action" href="calculator.html#calculator">Try ECOB+</a>
+ </div></div>
+</section>
 </main>
 <footer class="intro-footer"><div class="wrap">
  <span>ECOB+ · CO₂ pipeline screening</span>
@@ -1636,6 +1624,13 @@ function initTransportField(){
 initTransportField();
 
 const scrollScenes=[];
+scrollScenes.push(height=>{
+  if(reducedMotion.matches)return;
+  const evidence=document.querySelector('.hero-evidence');
+  const closing=document.querySelector('.ecob-closing-copy');
+  if(evidence){const r=evidence.getBoundingClientRect();const opacity=Math.min(1,Math.max(.4,r.bottom/(height*.24)));evidence.style.setProperty('--evidence-opacity',opacity.toFixed(3));}
+  if(closing){const r=closing.getBoundingClientRect();const entering=1-easeInRange(r.top/height,.70,.99);const leaving=easeInRange(r.bottom/height,.05,.27);const v=Math.min(entering,leaving);closing.style.setProperty('--closing-opacity',(.25+.75*v).toFixed(3));closing.style.setProperty('--closing-lift',((1-entering)*12-(1-leaving)*9).toFixed(2)+'px');}
+});
 const easeInRange=(value,start,end)=>{
   const fraction=Math.max(0,Math.min(1,(value-start)/(end-start)));
   return fraction*fraction*(3-2*fraction);
@@ -1944,10 +1939,8 @@ const byId=id=>document.getElementById(id);
  const ease=n=>{const x=clamp(n);return x*x*(3-2*x);};
  const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)');
  const isMobile=window.matchMedia('(max-width:760px)');
- const frame=document.querySelector('#v137-hub-grid .v137-stage-frame');
- // The v137 story initializer has already cloned the four slides into mobile slots.
+ // The v137 story initializer has already cloned the story slides into mobile slots.
  const growthPanels=[...document.querySelectorAll('#hub-story .v143-growth-slide,#hub-story .v137-mobile-slot[data-mobile-for="2"] .v137-mobile-panel')];
- const benchmarkPanels=[...document.querySelectorAll('#hub-story .v143-benchmark-slide,#hub-story .v137-mobile-slot[data-mobile-for="3"] .v137-mobile-panel')];
  growthPanels.forEach(panel=>{
    panel.classList.add('v143-growth-slide');
    const net=panel.querySelector('.v140-network');
@@ -2012,74 +2005,6 @@ const byId=id=>document.getElementById(id);
    growthFrame=requestAnimationFrame(tick);
  }
 
- // v144 single-case runtime playback. This animates previously measured runtimes;
- // it does NOT run Aspen Plus or rerun the ECOB model.
- // Numerals retain their final reference values in static/reduced-motion mode.
- let benchSession=null, benchPlayed=false;
- const desktopBench=benchmarkPanels.find(el=>el.matches('.v137-slide'));
- const mobileBench=benchmarkPanels.find(el=>el.matches('.v137-mobile-panel'));
- function stopBenchPlayback(){
-   if(!benchSession)return;
-   const s=benchSession;
-   benchSession=null;
-   if(s.frame)cancelAnimationFrame(s.frame);
-   if(s.interval)clearInterval(s.interval);
-   s.ecob.textContent='0.383';
-   s.aspen.textContent='15';
-   s.box?.removeAttribute('data-v144-counting');
-   s.box?.removeAttribute('data-v144-complete');
- }
- function softTick(el,ms){
-   if(prefersReduced.matches||!el.animate)return;
-   el.getAnimations().forEach(anim=>anim.cancel());
-   el.animate([
-     {opacity:1,transform:'translate3d(0,5px,0) scale(.975)'},
-     {opacity:1,transform:'translate3d(0,-1px,0) scale(1.012)',offset:.68},
-     {opacity:1,transform:'none'}
-   ],{duration:ms,easing:'cubic-bezier(.22,1,.36,1)'});
- }
- function startBenchPlayback(panel){
-   stopBenchPlayback();
-   if(!panel||prefersReduced.matches||benchPlayed)return;
-   benchPlayed=true;
-   const ecob=panel.querySelector('[data-v143-bench="ecob"]');
-   const aspen=panel.querySelector('[data-v143-bench="aspen"]');
-   if(!ecob||!aspen)return;
-   const box=panel.querySelector('.v143-benchmark');
-   const session={panel,box,ecob,aspen,frame:0,interval:null};
-   benchSession=session;
-   box?.setAttribute('data-v144-counting','true');
-   box?.removeAttribute('data-v144-complete');
-   ecob.textContent='0.000';
-   aspen.textContent='0';
-   // A quick ~650 ms visible count-up ends at the measured 0.383 ms value.
-   const ecoStart=performance.now();
-   function ecoFrame(now){
-     if(benchSession!==session)return;
-     const p=clamp((now-ecoStart)/650);
-     const eased=1-Math.pow(1-p,3);
-     ecob.textContent=(.383*eased).toFixed(3);
-     if(p<1)session.frame=requestAnimationFrame(ecoFrame);
-     else{ecob.textContent='0.383';softTick(ecob,380);}
-   }
-   session.frame=requestAnimationFrame(ecoFrame);
-   // Aspen is intentionally paced in REAL elapsed seconds, 0,1,2,...15.
-   const aspenStart=performance.now();
-   let previous=0;
-   session.interval=setInterval(()=>{
-     if(benchSession!==session)return;
-     const next=Math.min(15,Math.floor((performance.now()-aspenStart)/1000));
-     if(next===previous)return;
-     previous=next;
-     aspen.textContent=String(next);
-     softTick(aspen,300);
-     if(next>=15){
-       clearInterval(session.interval);session.interval=null;
-       box?.removeAttribute('data-v144-counting');
-       box?.setAttribute('data-v144-complete','true');
-     }
-   },70);
- }
  const growthStep=document.getElementById('hub-scroll-step-3');
  const desktopGrowth=growthViews.find(v=>v.panel.matches('.v137-slide'))?.panel;
  const mobileGrowth=growthViews.find(v=>v.panel.matches('.v137-mobile-panel'))?.panel;
@@ -2089,27 +2014,14 @@ const byId=id=>document.getElementById(id);
      const r=(isMobile.matches?activeGrowth:growthStep)?.getBoundingClientRect();
      if(r && r.top<height*.76 && r.bottom>height*.18 && (isMobile.matches||activeGrowth.classList.contains('is-active')))startGrowthPlayback();
    }
-   const mobile=isMobile.matches;
-   const target=mobile?mobileBench:desktopBench;
-   const rect=target?.getBoundingClientRect();
-   const frameRect=frame?.getBoundingClientRect();
-   const stepRect=document.getElementById('hub-scroll-step-4')?.getBoundingClientRect();
-   const inFrame=mobile ? !!(rect && rect.top<height*.80 && rect.bottom>height*.13)
-       : !!(target?.classList.contains('is-active') && frameRect && frameRect.top<height*.90
-           && frameRect.bottom>height*.12 && stepRect && stepRect.bottom>height*.10 && stepRect.top<height*.84);
-   if(inFrame&&!prefersReduced.matches && !document.hidden){
-     if(!benchPlayed)startBenchPlayback(target);
-     else if(benchSession&&benchSession.panel!==target)stopBenchPlayback();
-   }else if(benchSession){
-     stopBenchPlayback();
-   }
+
  });
  document.addEventListener('visibilitychange',()=>{
-   if(document.hidden){stopBenchPlayback();if(growthFrame){stopGrowth();renderGrowth(9);}}
+   if(document.hidden){if(growthFrame){stopGrowth();renderGrowth(9);}}
    else updateScrollScenes();
  });
  prefersReduced.addEventListener('change',()=>{
-   if(prefersReduced.matches){stopBenchPlayback();if(growthFrame){stopGrowth();renderGrowth(9);}}
+   if(prefersReduced.matches){if(growthFrame){stopGrowth();renderGrowth(9);}}
    updateScrollScenes();
  });
  // Show a subtle update for both manual and scroll-driven electricity changes.
@@ -2135,7 +2047,7 @@ const byId=id=>document.getElementById(id);
  updateScrollScenes();
 })();
 </script>
-<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview" class="is-current" aria-current="location"><span aria-hidden="true">Overview</span></a><a href="#size-scroll-step-1" aria-label="1.1 · Project inputs"><span aria-hidden="true">1.1 · Project inputs</span></a><a href="#size-scroll-step-2" aria-label="1.2 · Direct sizing"><span aria-hidden="true">1.2 · Direct sizing</span></a><a href="#size-scroll-step-3" aria-label="1.3 · Engineering results"><span aria-hidden="true">1.3 · Engineering results</span></a><a href="#size-scroll-step-4" aria-label="1.4 · Design options"><span aria-hidden="true">1.4 · Design options</span></a><a href="#hub-scroll-step-1" aria-label="2.1 · Network sizing"><span aria-hidden="true">2.1 · Network sizing</span></a><a href="#hub-scroll-step-2" aria-label="2.2 · Energy prices"><span aria-hidden="true">2.2 · Energy prices</span></a><a href="#hub-scroll-step-3" aria-label="2.3 · Flow scenarios"><span aria-hidden="true">2.3 · Flow scenarios</span></a><a href="#hub-scroll-step-4" aria-label="2.4 · Performance"><span aria-hidden="true">2.4 · Performance</span></a></nav>
+<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview" class="is-current" aria-current="location"><span aria-hidden="true">Overview</span></a><a href="#size-scroll-step-1" aria-label="1.1 · Project inputs"><span aria-hidden="true">1.1 · Project inputs</span></a><a href="#size-scroll-step-2" aria-label="1.2 · Direct sizing"><span aria-hidden="true">1.2 · Direct sizing</span></a><a href="#size-scroll-step-3" aria-label="1.3 · Engineering results"><span aria-hidden="true">1.3 · Engineering results</span></a><a href="#size-scroll-step-4" aria-label="1.4 · Design options"><span aria-hidden="true">1.4 · Design options</span></a><a href="#hub-scroll-step-1" aria-label="2.1 · Network sizing"><span aria-hidden="true">2.1 · Network sizing</span></a><a href="#hub-scroll-step-2" aria-label="2.2 · Energy prices"><span aria-hidden="true">2.2 · Energy prices</span></a><a href="#hub-scroll-step-3" aria-label="2.3 · Flow scenarios"><span aria-hidden="true">2.3 · Flow scenarios</span></a><a href="#hub-scroll-step-4" aria-label="Try ECOB+"><span aria-hidden="true">Try ECOB+</span></a></nav>
 <script id="ecob-rail-behavior">
 (() => {
  const rail=document.querySelector('.ecob-chapter-rail'); if(!rail)return;
@@ -2143,8 +2055,8 @@ const byId=id=>document.getElementById(id);
  const targets=links.map(a=>document.getElementById(a.hash.slice(1)));
  if(targets.some(t=>!t))return;
  const chapters=[
-   {section:document.getElementById('worked-example'),grid:document.getElementById('v137-size-grid'),offset:1},
-   {section:document.getElementById('hub-story'),grid:document.getElementById('v137-hub-grid'),offset:5}
+   {section:document.getElementById('worked-example'),grid:document.getElementById('v137-size-grid'),offset:1,count:4},
+   {section:document.getElementById('hub-story'),grid:document.getElementById('v137-hub-grid'),offset:5,count:3}
  ];
  if(chapters.some(c=>!c.section||!c.grid))return;
  const desktop=matchMedia('(min-width:1371px)');
@@ -2156,9 +2068,10 @@ const byId=id=>document.getElementById(id);
    for(const c of chapters){
      if(c.section.getBoundingClientRect().top>line)break;
      const bounds=c.grid.getBoundingClientRect();
-     const active=bounds.top>line?0:bounds.bottom<line?3:Number(c.grid.dataset.active||0);
-     best=c.offset+Math.max(0,Math.min(3,active));
+     const active=bounds.top>line?0:bounds.bottom<line?c.count-1:Number(c.grid.dataset.active||0);
+     best=c.offset+Math.max(0,Math.min(c.count-1,active));
    }
+   if(targets[targets.length-1].getBoundingClientRect().top<=line)best=targets.length-1;
    if(best===current)return;
    links[current].classList.remove('is-current');
    links[current].removeAttribute('aria-current');
