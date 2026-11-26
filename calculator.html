@@ -184,11 +184,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
 .recommendation.mode-economic .rec-badge{background:#1f5fa8}
 .recommendation.mode-integrated .rec-badge{background:#dd7a2a}
 .recommendation.mode-lca .rec-badge{background:#2f8750}
-
-.rec-stat.signal-highlight{
-  border-left-color:#c47b35;
-  background:linear-gradient(90deg,#fffaf4,#ffffff);
-}
 .rec-stat.objective-econ{
   border-left-color:#1f5fa8;
   background:linear-gradient(90deg,#edf5ff,#ffffff);
@@ -940,21 +935,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
   line-height:1.48;
 }
 .commercial-decision-signal strong{color:var(--navy2)}
-
-.eq-cost-subcard{
-  margin-top:12px;
-  padding-top:12px;
-  border-top:1px solid var(--line);
-}
-.eq-cost-head{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  align-items:end;
-  margin-bottom:8px;
-}
-.eq-cost-head strong{font-size:12px;color:var(--navy2)}
-.eq-cost-head span{font-size:9.5px;color:var(--muted)}
 .quick-tune-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .delta-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
 
@@ -1043,9 +1023,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
   margin-bottom:13px;
   padding:18px 18px 17px;
 }
-.top-result-role{
-  font-size:11px !important;
-}
 .top-result-design{
   font-size:44px !important;
   line-height:1.02 !important;
@@ -1088,9 +1065,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
   font-size:17px !important;
   line-height:1.25 !important;
   white-space:normal !important;
-}
-.top-metric.emphasis strong{
-  font-size:18px !important;
 }
 
 /* Detailed snapshot: stacked engineering cards, similar to the original one-shot cards */
@@ -1208,15 +1182,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
   padding-top:8px;
   border-top:1px dashed #ead7bb;
 }
-.snapshot-practical-nav .nav-info{
-  font-size:10px;
-  color:#8a6a3c;
-}
-.snapshot-practical-nav .nav-controls{
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
 .snapshot-practical-nav button{
   width:28px;
   height:28px;
@@ -1263,10 +1228,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
 
 
 /* === v38: align three-card breakdown rows for easy horizontal comparison === */
-.snapshot-option-card{
-  display:flex;
-  flex-direction:column;
-}
 .snapshot-head{
   min-height:132px;
   display:flex;
@@ -1413,9 +1374,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
 
 
 /* === v41: restore carbon value quick input + larger snapshot-card fonts === */
-.snapshot-kicker span{
-  font-size:12px !important;
-}
 .snapshot-kicker small{
   font-size:10px !important;
   padding:3px 8px !important;
@@ -1581,13 +1539,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
 }
 
 /* Validation: evidence should be readable on screen / projector */
-.cred-card .cname{
-  font-size:14px !important;
-}
-.cred-card .cevidence{
-  font-size:12.5px !important;
-  line-height:1.5 !important;
-}
 .validation-mini .vbox strong{
   font-size:13px !important;
 }
@@ -2357,9 +2308,6 @@ section{padding:50px 0}.section-head{display:flex;justify-content:space-between;
   border-radius:9px !important;
   font-size:17px !important;
 }
-.saving-main{
-  margin-top:8px !important;
-}
 .saving-main strong{
   font-size:34px !important;
   line-height:1.02 !important;
@@ -3052,7 +3000,6 @@ body:not(.show-advanced-inputs) #life + .unit{display:none!important}
 /* Public scenario explorer: a small analysis layer, not a batch workflow. */
 .quick-tune{display:block!important}
 #scenarioExplorer .quick-tune-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}
-#scenarioExplorer{scroll-margin-top:90px}
 @media(max-width:1180px){#scenarioExplorer .quick-tune-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media(max-width:820px){#scenarioExplorer .quick-tune-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:560px){#scenarioExplorer .quick-tune-grid{grid-template-columns:1fr!important}}
@@ -3401,7 +3348,6 @@ body.ecob-invalid-inputs #scenarioDisclosure{display:none!important}
 #commercialComparison .snapshot-head{min-height:172px}
 @media(max-width:600px){
   #commercialComparison{margin-top:15px}
-  #commercialComparison .snapshot-head{min-height:0!important}
 }
 
 /* v91 - Navy Logo 3 branding; navy on white, high-contrast white on navy */
@@ -3724,7 +3670,6 @@ html{scroll-padding-top:78px;}
   }
 }
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto !important;}
   .chapter-motion-prep{opacity:1 !important;transform:none !important;transition:none !important;}
 }
 
@@ -4077,7 +4022,7 @@ html{scroll-padding-top:78px;}
  .nav-mobile-try{padding:8px 9px!important;font-size:12px!important}
  .nav-mobile-toggle{padding:8px 9px!important;font-size:12px!important}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){}
 
 
 /* ============================================================
@@ -4288,7 +4233,6 @@ body :where(button,input,select,textarea){font-family:inherit}
 #details :is(.chart-note,.curve-caption,.consistency-note,.legacy-note,.quick-tune-head p){color:#c1cada!important}
 /* Generated SVGs have hard-coded presentation attributes: override to dark-appropriate axes.
    Preserve the actual plotted values, markers, series, and tooltips. */
-#details svg.chart-svg text{fill:#c1cada!important}
 #details svg.chart-svg line[stroke="#edf2f6"],
 #details svg.chart-svg line[stroke="#d9e3ea"],
 #details svg.chart-svg line[stroke="#dfe7ef"],
@@ -4325,7 +4269,6 @@ body :where(button,input,select,textarea){font-family:inherit}
 #validation .science-benchmark-table td{color:#c1cada!important;border-color:#4782d5!important}
 #validation .scv-scope summary{color:#c1cada!important}
 #validation .scv-help-box{background:#1b1d28!important;color:#c1cada!important}
-#validation .scv-panel svg.scv-svg,#validation .scv-project-bars-svg{background:transparent!important}
 #validation .scv-panel svg.scv-svg text{fill:#c1cada!important}
 #validation .scv-panel svg.scv-svg line[stroke="#dce5ee"],#validation .scv-panel svg.scv-svg line[stroke="#e5edf3"]{stroke:#272a36!important}
 #validation .scv-panel svg.scv-svg line[stroke="#829bb0"],#validation .scv-panel svg.scv-svg line[stroke="#b8d9d3"],#validation .scv-panel svg.scv-svg line[stroke="#bddcd5"]{stroke:#4782d5!important}
@@ -4680,7 +4623,6 @@ body.ecob-pending-inputs #commercialDecisionPanel .top-decision-console{opacity:
   #calculator .top-decision-head h3{font-size:18px!important}
 }
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto!important}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
@@ -5068,12 +5010,8 @@ nav,.hero,main,section,footer{position:relative;z-index:1}
 @media(prefers-reduced-motion:no-preference){.chapter-motion-prep{transition:opacity .45s ease,transform .55s cubic-bezier(.2,.65,.3,1)!important}.chapter-motion-prep:not(.chapter-motion-visible){opacity:.72!important;transform:translateY(12px)!important}.chapter-motion-visible{opacity:1!important;transform:translateY(0)!important}}
 
 /* v106 polish: softly distributed CO2 particle stream, not just a dotted line */
-.v106-flow-backdrop{opacity:.92}
-.v106-flow-svg .v106-flow-main{opacity:.35;stroke:#507da8;stroke-width:1.1}
-.v106-flow-svg .v106-flow-branch{opacity:.17;stroke-width:.7}
-.v106-flow-svg .v106-cloud-dot{pointer-events:none}
-@media(max-width:760px){.v106-flow-backdrop{width:72vw;right:-17vw;opacity:.64}.v106-cloud-extra{display:none}}
-@media(prefers-reduced-motion:reduce){.v106-moving-dot{display:none}.v106-flow-backdrop{opacity:.47}}
+@media(max-width:760px){}
+@media(prefers-reduced-motion:reduce){}
 
 /* v106 polish: softly distributed CO2 particle stream, not just a dotted line */
 .v106-flow-backdrop{opacity:.92}
@@ -5844,82 +5782,9 @@ nav.nav,#siteNav{background:rgba(8,9,15,.96)!important;
 }
 </style>
 
-<style id="ecob-hub-interactive">
-.hub-case{scroll-margin-top:86px;margin:18px 0 24px;padding:clamp(16px,2.5vw,32px);border:1px solid #303e54;border-radius:16px;background:#10151f;color:#ecf2fc}
-#calculator .hub-example-toggle[aria-expanded=true]{border-color:#8bb5e4!important;background:#23344c!important}
-.hub-case [hidden],.hub-case[hidden]{display:none!important}
-.hub-heading,.hub-footer{display:flex;justify-content:space-between;align-items:flex-start;gap:14px 24px;flex-wrap:wrap}
-.hub-heading h3{margin:0;font-size:clamp(23px,3vw,34px);font-weight:560;letter-spacing:-.035em}
-.hub-heading p,.hub-footer p,#hubSegmentInputs{margin:4px 0;color:#aebbd0;font-size:13px}
-.hub-stages{display:flex;gap:4px;border:1px solid #334562;border-radius:11px;padding:4px;background:#0c111a}
-.hub-stages button{border:0;border-radius:7px;padding:6px 12px;min-height:44px;min-width:60px;background:transparent;color:#b7c5da;cursor:pointer;font:inherit}
-.hub-stages button strong,.hub-stages button small{display:block;line-height:1.3}
-.hub-stages button small{font-size:11px}
-.hub-stages button[aria-pressed=true]{background:#253c58;color:#fff}
-.hub-case button:focus-visible,.hub-footer summary:focus-visible{outline:2px solid #b1d7ff;outline-offset:3px}
-.hub-body{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,1fr);margin-top:19px}
-.hub-network{position:relative;display:grid;grid-template-columns:minmax(105px,1.15fr) 18px minmax(88px,1fr) 36px;align-items:center;min-width:0;padding:12px 26px 12px 0;background:radial-gradient(ellipse at 58% 50%,#223451,transparent 72%)}
-.hub-branches{position:relative}
-.hub-branches::after{content:"";position:absolute;right:0;top:calc(100% / 6);bottom:calc(100% / 6);width:1px;background:#4e719b;pointer-events:none}
-.hub-segment{position:relative;z-index:1;display:flex;align-items:center;width:100%;min-height:70px;padding:0;text-align:left;border:0;border-radius:8px;background:transparent;color:#d8e6fa;font:inherit;cursor:pointer;transition:background .2s ease,color .2s ease}
-.hub-segment:hover{background:#24375180}
-.hub-segment-label{flex:0 0 auto;padding:0 8px 0 4px}
-.hub-segment-label strong,.hub-segment-label small{display:block}
-.hub-segment-label strong{font-size:14px}
-.hub-segment-label small{font-size:11px;color:#a9c1df}
-.hub-segment[data-future=true]{color:#94a0b1}
-.hub-segment[data-future=true] small{color:#94a0b1}
-.hub-pipe{position:relative;flex:1;min-width:9px;height:2px;background:#658bb7;color:#cae5ff;transition:background .25s ease,box-shadow .25s ease}
-.hub-segment[data-future=true] .hub-pipe{height:0;border-top:2px dashed #536174;background:transparent}
-.hub-segment[aria-pressed=true] .hub-segment-label strong{color:#fff}
-.hub-segment[aria-pressed=true][data-future=false] .hub-pipe{background:#a5d2ff;box-shadow:0 0 9px #85bcfa90}
-.hub-segment[aria-pressed=true][data-future=false] .hub-pipe::after{content:"";position:absolute;left:0;top:50%;width:5px;height:5px;border-radius:50%;background:#e6f4ff;box-shadow:0 0 7px #d6ecff;animation:hub-flow 2.2s linear infinite}
-@keyframes hub-flow{from{left:0;transform:translate(-50%,-50%);opacity:0}15%,85%{opacity:1}to{left:100%;transform:translate(-50%,-50%);opacity:0}}
-.hub-junction,.hub-storage{position:relative;height:2px;background:#658bb7;color:#b7cbe5}
-.hub-junction::before,.hub-storage::before{content:"";position:absolute;width:8px;height:8px;left:50%;top:50%;border:1px solid #a9c8eb;border-radius:100%;background:#142034;transform:translate(-50%,-50%);z-index:2}
-.hub-junction span,.hub-storage span{position:absolute;left:50%;transform:translateX(-50%);font-size:10px;text-align:center;line-height:1.25}
-.hub-junction span{top:14px;max-width:54px}
-.hub-storage span{top:14px}
-.hub-storage{background:linear-gradient(90deg,#658bb7 50%,transparent 50%)}
-.hub-trunk{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 2px 1fr;align-items:stretch;text-align:center}
-.hub-trunk .hub-segment-label{display:flex;flex-direction:column;justify-content:flex-end;padding:0 2px 5px}
-.hub-trunk .hub-pipe{height:2px}
-.hub-results{min-width:0;padding:12px 0 12px clamp(15px,2.7vw,34px);border-left:1px solid #30415a}
-.hub-results h4{margin:0;font-size:20px;font-weight:550}
-.hub-design-label{color:#9bb7db;font-size:11px;letter-spacing:.075em;text-transform:uppercase;margin:12px 0 6px}
-.hub-metrics{display:grid;gap:4px;margin:0 0 9px}
-.hub-metrics div{display:flex;align-items:baseline;justify-content:space-between;gap:6px;color:#b5c4da}
-.hub-metrics dt{font-size:12px}
-.hub-metrics dd{margin:0;color:#edf6ff;font-size:15px;font-variant-numeric:tabular-nums;text-align:right}
-.hub-metrics dd:first-letter{text-transform:uppercase}
-.hub-previous{margin:6px 0 10px;font-size:12px;color:#b4cae8}
-#hubLoad{margin-top:4px;min-height:42px;padding:9px 12px;border:1px solid #6d96c4;border-radius:8px;background:#1b2b41;color:#eef6ff;font:inherit;font-size:13px;cursor:pointer}
-#hubLoad:hover{background:#294562}
-.hub-footer{border-top:1px solid #26364c;padding-top:11px;margin-top:14px}
-.hub-footer details{font-size:12px;color:#b8c9de;max-width:100%}
-.hub-footer summary{cursor:pointer}
-.hub-footer dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:2px 12px;margin:6px 0}
-.hub-footer dd{margin:0;color:#e1ebfa}
+<style id="ecob-toolkit-shared">
 #toolkit.toolkit-v108 .toolkit-modes{grid-template-columns:repeat(2,minmax(0,1fr))}
 #toolkit .toolkit-mode p{display:block;margin:8px 0 0;color:#aab8cc;line-height:1.65}
-.hero-v109 .hub-built-link{color:inherit;text-decoration:underline;text-underline-offset:4px}
-.hub-case:not([hidden]){animation:hub-update .28s ease-out}
-@keyframes hub-update{from{opacity:.55;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:715px){
- .hub-body{grid-template-columns:1fr}
- .hub-network{padding:2px 0;min-height:195px}
- .hub-segment{min-height:62px}
- .hub-results{border-left:0;border-top:1px solid #30415a;padding:14px 0 0}
-}
-@media(max-width:410px){
- .hub-network{grid-template-columns:minmax(105px,1.1fr) 13px minmax(86px,1fr) 32px}
- .hub-segment-label strong{font-size:12px}
- .hub-segment-label small{font-size:10px}
-}
-@media(prefers-reduced-motion:reduce){
- .hub-case,.hub-case *,.hub-case *::after{transition:none!important;animation:none!important}
- .hub-segment[aria-pressed=true] .hub-pipe::after{display:none}
-}
 </style>
 
 
@@ -5930,12 +5795,11 @@ nav.nav,#siteNav{background:rgba(8,9,15,.96)!important;
 #calculator #exampleProjects{border:0!important;padding:0!important;margin:0!important;background:none!important}
 #exampleProjects summary{cursor:pointer;padding:8px 0;color:#c8d8ee;font-size:14px}
 #exampleProjects[open]{flex-basis:100%}
-#exampleProjects .example-project-grid{grid-template-columns:repeat(2,minmax(0,1fr)) auto}
-.calc-hub-link{display:flex;align-items:center;color:#b9d5f9;padding:6px 10px}
+#exampleProjects .example-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 #exampleFeedback:empty{display:none}
 #details .calc-scenario-indicator{font-size:20px;margin-left:auto}
 #analysisDisclosure[open] .calc-scenario-indicator{transform:rotate(180deg)}
-@media(max-width:600px){#exampleProjects .example-project-grid{grid-template-columns:1fr 1fr}.calc-hub-link{grid-column:1/-1}}
+@media(max-width:600px){#exampleProjects .example-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <style>
 html{scroll-padding-top:76px}
@@ -7140,7 +7004,6 @@ body > .footer > .wrap {
 <div class="example-project-grid">
 <button class="example-project" data-example="small" type="button"><strong>Small source</strong><span>1 MtCO₂/y · 100 km</span></button>
 <button class="example-project active" data-example="industrial" type="button"><strong>Industrial project</strong><span>5 MtCO₂/y · 200 km</span></button>
-<a href="index.html#hub-case" class="calc-hub-link">CCUS hub cases ↗</a>
 </div></details></div>
 <div aria-live="polite" class="example-feedback" id="exampleFeedback" role="status"></div>
 <div class="grid calc-grid">
@@ -7160,7 +7023,7 @@ body > .footer > .wrap {
 <label for="pin">Operating pressure<span class="mobile-unit"> · MPa</span></label><input class="input" id="pin" type="number" step="0.1" value="12"><span class="unit">MPa</span>
 <label for="plimit">Minimum pressure<span class="mobile-unit"> · MPa</span></label><input class="input" id="plimit" type="number" step="0.1" value="8.5"><span class="unit">MPa</span>
 <label for="steelGrade">Steel grade<span class="mobile-unit"> · grade</span></label><select class="select" id="steelGrade"><option>X42</option><option>X52</option><option selected>X65</option><option>X70</option><option>X80</option><option>X90</option><option>X100</option><option>X120</option></select><span class="unit">grade</span>
-<label for="df">Design factor<span class="mobile-unit"> · –</span></label><input class="input" id="df" type="number" step="0.01" value="0.72"><span class="unit">—</span>
+<label for="df">Design factor<span class="mobile-unit"> · –</span></label><input class="input" id="df" type="number" max="1.2" step="0.01" value="0.72"><span class="unit">—</span>
 <label for="length">Pipeline length<span class="mobile-unit"> · km</span></label><input class="input" id="length" type="number" step="10" value="200"><span class="unit">km</span>
 
 <div class="group-label">Economic assumptions</div>
@@ -7174,7 +7037,7 @@ body > .footer > .wrap {
 <div class="group-label">Lifecycle assumptions</div>
 <label for="gridCI">Grid life-cycle GHG<span class="mobile-unit"> · kgCO₂e/kWh</span></label><input class="input" id="gridCI" type="number" step="0.01" value="0.25"><span class="unit">kgCO₂e/kWh</span>
 <label for="pipeEF">Welded-pipe GWP<span class="mobile-unit"> · kgCO₂e/kg</span></label><input class="input" id="pipeEF" type="number" step="0.05" value="2.55"><span class="unit">kgCO₂e/kg</span>
-<label for="hours">Operating hours<span class="mobile-unit"> · h/y</span></label><input class="input" id="hours" type="number" step="100" value="8760"><span class="unit">h/y</span>
+<label for="hours">Operating hours<span class="mobile-unit"> · h/y</span></label><input class="input" id="hours" type="number" max="8784" step="100" value="8760"><span class="unit">h/y</span>
 <label for="life">Project lifetime<span class="mobile-unit"> · y</span></label><input class="input" id="life" type="number" step="1" value="25"><span class="unit">y</span>
 
 
@@ -7608,7 +7471,7 @@ function v162RequiredNumber(id){const el=$(id);return el && el.value.trim()!==''
 function v162CostBasis(){const period=$('costBasis').value;return {costReferenceYear:period==='custom'?null:2024,costIndexBasis:period==='custom'?'User-defined':'June 2024 reference'};}
 function v162SyncCostBasis(){const custom=$('costBasis').value==='custom',index=$('targetCepci');index.readOnly=!custom;if(!custom)index.value='798.6';$('v163BasisNote').textContent=custom?'User-defined index':'June 2024';}
 function v162RestoreCostDefaults(){['rowCost','miscPct','costBasis','targetCepci'].forEach(id=>$(id).value=defaults[id]);v162SyncCostBasis();v162LastPeriod=$('costBasis').value;asInvalidateSweep();calculate();}
-function inp(){return {...v162CostBasis(),rowCost:v162RequiredNumber('rowCost'),miscPct:v162RequiredNumber('miscPct')/100,targetCepci:v162RequiredNumber('targetCepci'),purity:num('purity',99.35),flow:num('flow'),density:embeddedDensity,pin:num('pin'),plimit:num('plimit'),steelGrade:$('steelGrade').value,df:num('df'),length:num('length'),electricity:num('electricity'),steelCost:num('steelCost'),discountRate:num('discountRate',8)/100,pipeOM:num('pipeOM',2.5)/100,gridCI:num('gridCI'),pipeEF:num('pipeEF'),hours:num('hours'),life:num('life'),carbonPrice:num('carbonPrice')}}
+function inp(){return {...v162CostBasis(),rowCost:v162RequiredNumber('rowCost'),miscPct:v162RequiredNumber('miscPct')/100,targetCepci:v162RequiredNumber('targetCepci'),purity:v162RequiredNumber('purity'),flow:flowInputDriver==='mty'&&!Number.isFinite(v162RequiredNumber('flowAnnual'))?NaN:v162RequiredNumber('flow'),density:embeddedDensity,pin:v162RequiredNumber('pin'),plimit:v162RequiredNumber('plimit'),steelGrade:$('steelGrade').value,df:v162RequiredNumber('df'),length:v162RequiredNumber('length'),electricity:v162RequiredNumber('electricity'),steelCost:v162RequiredNumber('steelCost'),discountRate:v162RequiredNumber('discountRate')/100,pipeOM:v162RequiredNumber('pipeOM')/100,gridCI:v162RequiredNumber('gridCI'),pipeEF:v162RequiredNumber('pipeEF'),hours:v162RequiredNumber('hours'),life:v162RequiredNumber('life'),carbonPrice:v162RequiredNumber('carbonPrice')}}
 function crf(i,n){return i*Math.pow(1+i,n)/(Math.pow(1+i,n)-1)}
 function costId(x){const CCR=crf(x.discountRate,x.life);return .175*Math.pow(x.flow/27.58,.450)*Math.pow(x.electricity/100,.138)*Math.pow(x.steelCost/2.17,-.083)*Math.pow(x.hours/8760,1/7)*Math.pow(.11868/(CCR+x.pipeOM),1/7)}
 function lcaId(x){return .2562*Math.pow(x.flow/27.58,.4265)*Math.pow(x.gridCI/.25,1/7)*Math.pow(x.pipeEF/2.55,-1/7)*Math.pow(x.hours/8760,1/7)*Math.pow(x.life/25,1/7)}
@@ -7674,9 +7537,15 @@ function scheduleCalculate(){
   ecobPendingTimer=setTimeout(()=>{ecobPendingTimer=null;calculate();},240);
 }
 function evaluateCase(x,selectedPracticalNps=null){
+  const required={flow:'Mass flow',purity:'CO₂ purity',pin:'Operating pressure',plimit:'Minimum pressure',df:'Design factor',length:'Pipeline length',electricity:'Electricity price',steelCost:'Steel cost',discountRate:'Discount rate',pipeOM:'Pipeline O&M',gridCI:'Grid life-cycle GHG',pipeEF:'Welded-pipe GWP',hours:'Operating hours',life:'Project lifetime',carbonPrice:'Carbon value',rowCost:'Right-of-way cost',miscPct:'Miscellaneous CAPEX',targetCepci:'CEPCI'};
+  for(const [key,label] of Object.entries(required))if(!Number.isFinite(x[key]))return {error:`Enter a valid number for ${label}.`};
+  // Preserve the model's existing design-factor study interval, including 1.2.
+  if(x.df>1.2)return {error:'Design factor exceeds the supported upper bound of 1.2.'};
+  if(x.hours>8784)return {error:'Annual operating hours cannot exceed 8784 (a leap year).'};
   let err='';
   ['flow','df','length','electricity','steelCost','gridCI','pipeEF','hours','life'].forEach(k=>{if(!(x[k]>0))err='All physical, economic and lifecycle inputs must be positive.'});
-  if(!(x.discountRate>0)||!(x.pipeOM>=0))err='Discount rate and O&M assumptions must be valid.';
+  if(!(x.discountRate>0)||!(x.pipeOM>=0))err='This model requires a positive discount rate and non-negative O&M fraction.';
+  if(x.electricity===0||x.gridCI===0)err='Zero electricity price or grid GHG intensity is outside the current diameter-correlation domain.';
   if(!(x.pin>0&&x.plimit>=0&&x.pin>x.plimit))err='Operating pressure must exceed minimum pressure (and both must be physical).';
   if(!(x.purity>0&&x.purity<=100))err='CO₂ purity must be between 0 and 100 mol %.';
   if(!(x.carbonPrice>=0))err='Carbon value cannot be negative.';
@@ -8082,6 +7951,9 @@ function render(r){const {x,cost,lca}=r;
   }else if(anyEngineered){
     ds.className='status warn';
     ds.textContent=`One or more displayed commercial options require an engineered wall thickness because the current schedule table has no thicker listed schedule. The calculated required thickness is used for verification.`;
+  }else if(x.df<.72){
+    ds.className='status warn';
+    ds.textContent='Design factor is below the reference study interval (0.72–1.2). Verify applicability before engineering use.';
   }else{
     ds.className='status ok';
     ds.textContent=`Endpoint-to-commercial OD rounding is within ${fmt(maxMap,1)}%. All displayed commercial options satisfy the current screening checks.`;
@@ -8129,86 +8001,9 @@ function lineCurveChart(titleColor,xMin,xMax,yMin,yMax,series,markers,yLabel){
   return svg+'</svg>';
 }
 function reducedBasis(D,D0){return D*D+(2/5)*Math.pow(D0,7)*Math.pow(D,-5)}
-function idOverviewStrip(idCost,idLca){
-  const width=1180,height=102,m={l:58,r:58},xmin=.10,xmax=1.00;
-  const sx=v=>m.l+(Math.max(xmin,Math.min(xmax,v))-xmin)/(xmax-xmin)*(width-m.l-m.r);
-  const pts=[
-    {v:idCost,c:'#1f5fa8',lab:'IDcost'},
-    {v:idLca,c:'#2f8750',lab:'IDLCA'}
-  ].sort((a,b)=>a.v-b.v);
-  let svg=`<svg class="chart-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">`;
-  const y=50;
-  svg+=`<line x1="${m.l}" y1="${y}" x2="${width-m.r}" y2="${y}" stroke="#cbd8e4" stroke-width="4" stroke-linecap="round"/>`;
-  [0.10,0.30,0.50,0.70,0.90,1.00].forEach(v=>{
-    const x=sx(v);
-    svg+=`<line x1="${x}" y1="${y-7}" x2="${x}" y2="${y+7}" stroke="#aebfce" stroke-width="1.3"/>
-          <text x="${x}" y="${y+28}" text-anchor="middle" font-size="11" fill="#687789">${v.toFixed(2)}</text>`;
-  });
-  pts.forEach((p,i)=>{
-    const x=sx(p.v),top=i===0?18:8;
-    svg+=`<circle cx="${x}" cy="${y}" r="8.5" fill="#fff" stroke="${p.c}" stroke-width="3"/>
-          <text x="${x}" y="${top}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${p.c}">${p.lab}</text>`;
-  });
-  const outside=pts.filter(p=>p.v<xmin||p.v>xmax);
-  if(outside.length)svg+=`<text x="${width/2}" y="${height-4}" text-anchor="middle" font-size="10" fill="#9a6a35">One or more endpoint targets fall outside the 0.10–1.00 m reference domain and are clipped at the boundary.</text>`;
-  return svg+'</svg>';
-}
-function renderFrontierCharts(r){
-  const lo=Math.min(r.idCost,r.idLca),hi=Math.max(r.idCost,r.idLca);
-  let xMin=Math.max(0.10,0.75*lo),xMax=Math.min(1.00,1.25*hi);
-  const center=(lo+hi)/2;
-  if(xMax-xMin<0.14){xMin=Math.max(0.10,center-0.07);xMax=Math.min(1.00,center+0.07)}
-  if(xMax-xMin<0.08){xMin=Math.max(0.10,center-0.04);xMax=Math.min(1.00,center+0.04)}
-  const xs=[];for(let i=0;i<180;i++)xs.push(xMin+(xMax-xMin)*i/179);
-  const costSeries=[],ghgSeries=[];
-  xs.forEach(id=>{const s=continuousState(r.x,id,evrFromId(r.x,id));if(!s.error){costSeries.push({x:id,y:s.lc});ghgSeries.push({x:id,y:s.gLCA})}});
-  const costAt=(id,evr)=>continuousState(r.x,id,evr).lc;
-  const ghgAt=(id,evr)=>continuousState(r.x,id,evr).gLCA;
-  const markersCost=[
-    {x:r.idCost,y:costAt(r.idCost,r.evrCost),color:'#1f5fa8'},
-    {x:r.idLca,y:costAt(r.idLca,r.evrLca),color:'#2f8750'}
-  ];
-  const markersGhg=[
-    {x:r.idCost,y:ghgAt(r.idCost,r.evrCost),color:'#1f5fa8'},
-    {x:r.idLca,y:ghgAt(r.idLca,r.evrLca),color:'#2f8750'}
-  ];
-  const costVals=costSeries.map(p=>p.y),ghgVals=ghgSeries.map(p=>p.y);
-  const cmin=Math.min(...costVals),cmax=Math.max(...costVals),gmin=Math.min(...ghgVals),gmax=Math.max(...ghgVals);
-  const cp=(cmax-cmin)||1,gp=(gmax-gmin)||1;
-  $('costCurveChart').innerHTML=lineCurveChart('#2a66ad',xMin,xMax,Math.max(0,cmin-0.07*cp),cmax+0.10*cp,costSeries,markersCost,'Transport cost (€/tCO₂)');
-  $('ghgCurveChart').innerHTML=lineCurveChart('#1f8a6a',xMin,xMax,Math.max(0,gmin-0.08*gp),gmax+0.12*gp,ghgSeries,markersGhg,'GHG (kgCO₂e/tCO₂)');
-  $('curveIdCost').textContent=`${fmt(r.idCost,3)} m`;
-  $('curveIdLca').textContent=`${fmt(r.idLca,3)} m`;
-  $('idDomainOverview').innerHTML=idOverviewStrip(r.idCost,r.idLca);
-  $('curveNote').innerHTML=`The detailed curves show the two endpoint objectives only. <strong>Carbon value does not define a third user-facing pipe here;</strong> it is applied after commercial mapping to rank the lowest-cost endpoint, intermediate NPS compromise candidate(s), and lowest-GHG endpoint using carbon-adjusted equivalent cost.`;
-}
-function twoAxisBarChart(labels,costVals,ghgVals){
-  const width=620,height=330,m={t:44,r:68,b:64,l:64};
-  const iw=width-m.l-m.r,ih=height-m.t-m.b;
-  const cmax=Math.max(1,...costVals)*1.08,gmax=Math.max(1,...ghgVals)*1.12,gw=iw/labels.length,bw=gw*.28;
-  let svg=`<svg class="chart-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">`;
 
-  for(let i=0;i<=4;i++){
-    const y=m.t+ih*(1-i/4),cv=cmax*i/4,gv=gmax*i/4;
-    svg+=`<line x1="${m.l}" y1="${y}" x2="${width-m.r}" y2="${y}" stroke="#edf2f6"/>
-          <text x="${m.l-10}" y="${y+4}" text-anchor="end" font-size="11.5" fill="#5f6d7c">${cv.toFixed(1)}</text>
-          <text x="${width-m.r+10}" y="${y+4}" text-anchor="start" font-size="11.5" fill="#5f6d7c">${gv.toFixed(1)}</text>`;
-  }
 
-  svg+=`<line x1="${m.l}" y1="${m.t}" x2="${m.l}" y2="${height-m.b}" stroke="#b9c8d4"/>
-        <line x1="${width-m.r}" y1="${m.t}" x2="${width-m.r}" y2="${height-m.b}" stroke="#b9c8d4"/>
-        <text x="${m.l}" y="20" text-anchor="start" font-size="12.5" font-weight="700" fill="#173f6d">Cost (€/tCO₂)</text>
-        <text x="${width-m.r}" y="20" text-anchor="end" font-size="12.5" font-weight="700" fill="#4d8b67">GHG (kgCO₂e/tCO₂)</text>`;
 
-  labels.forEach((lab,i)=>{
-    const cx=m.l+i*gw+gw/2,ch=ih*costVals[i]/cmax,gh=ih*ghgVals[i]/gmax;
-    svg+=`<rect x="${cx-bw-4}" y="${height-m.b-ch}" width="${bw}" height="${ch}" rx="4" fill="#173f6d"/>
-          <rect x="${cx+4}" y="${height-m.b-gh}" width="${bw}" height="${gh}" rx="4" fill="#6f966e"/>
-          <text x="${cx}" y="${height-24}" text-anchor="middle" font-size="12.5" font-weight="600" fill="#445468">${lab}</text>`;
-  });
-
-  return svg+'</svg><div class="chart-legend"><span><i style="background:#173f6d"></i>Cost · left axis</span><span><i style="background:#6f966e"></i>GHG · right axis</span></div>';
-}
 function donutChart(steel,elec){const r=65,c=2*Math.PI*r,total=Math.max(steel+elec,1),s1=c*steel/total,s2=c*elec/total;return `<svg class="chart-svg" viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg"><g transform="translate(110,95) rotate(-90)"><circle r="${r}" fill="none" stroke="#e8eef3" stroke-width="26"/><circle r="${r}" fill="none" stroke="#738da4" stroke-width="26" stroke-linecap="round" stroke-dasharray="${s1} ${c-s1}"/><circle r="${r}" fill="none" stroke="#77a899" stroke-width="26" stroke-linecap="round" stroke-dasharray="${s2} ${c-s2}" stroke-dashoffset="-${s1}"/></g><text x="110" y="91" text-anchor="middle" font-size="12" fill="#6a7785">LCA split</text><text x="110" y="109" text-anchor="middle" font-size="18" font-weight="800" fill="#173251">${(steel*100).toFixed(0)} / ${(elec*100).toFixed(0)}%</text><rect x="24" y="177" width="10" height="10" rx="2" fill="#738da4"/><text x="40" y="186" font-size="11" fill="#556474">Steel pipe</text><rect x="133" y="177" width="10" height="10" rx="2" fill="#77a899"/><text x="149" y="186" font-size="11" fill="#556474">Pumping electricity</text></svg>`}
 function pipeGeometry(designs){
   const width=620,height=280,n=Math.max(designs.length,1),left=85,right=535;
@@ -8228,111 +8023,9 @@ function pipeGeometry(designs){
 function htmlBarList(rows,color){return '<div class="barlist">'+rows.map(r=>`<div class="barrow"><div>${r.label}</div><div class="bartrack"><div class="barfill" style="width:${r.w}%;background:${r.color||color}"></div></div><div style="text-align:right">${r.txt}</div></div>`).join('')+'</div>'}
 function pctSigned(v,d=1){const n=v*100;return `${n>=0?'+':'−'}${Math.abs(n).toFixed(d)}%`}
 
-function renderObjectiveDelta(r){
-  const practicals=r.practicalDesigns||[];
-  const selectedPractical=r.practical||defaultPracticalDecision(r);
-  const cards=[];
 
-  if(selectedPractical){
-    const idx=Math.max(0,practicals.findIndex(d=>String(d.pipe.nps)===String(selectedPractical.pipe.nps)));
-    const m=optionDelta(r.cost,selectedPractical);
-    const nav=practicals.length>1?`<div class="delta-pill-nav">
-      <button type="button" class="delta-practical-prev" ${idx===0?'disabled':''} aria-label="Previous practical candidate">‹</button>
-      <span>${idx+1}/${practicals.length}</span>
-      <button type="button" class="delta-practical-next" ${idx===practicals.length-1?'disabled':''} aria-label="Next practical candidate">›</button>
-    </div>`:`<div class="delta-pill-nav"><span>1/1</span></div>`;
-    cards.push(`<div class="delta-pill practical">
-      <div class="delta-pill-head">
-        <span class="delta-pill-title">Balanced size ${selectedPractical.pipe.nps} vs lowest cost</span>
-        ${nav}
-      </div>
-      <div class="delta-row">
-        <div><strong>${pctSigned(m.costChange)}</strong><small>cost change</small></div>
-        <div><strong>${pctSigned(m.ghgChange)}</strong><small>GHG change</small></div>
-      </div>
-    </div>`);
-  }
 
-  const lm=optionDelta(r.cost,r.lca);
-  cards.push(`<div class="delta-pill good">
-    <div class="delta-pill-head">
-      <span class="delta-pill-title">Lowest GHG vs lowest cost</span>
-    </div>
-    <div class="delta-row">
-      <div><strong>${pctSigned(lm.costChange)}</strong><small>cost change</small></div>
-      <div><strong>${pctSigned(lm.ghgChange)}</strong><small>GHG change</small></div>
-    </div>
-  </div>`);
 
-  const delta=$('objectiveDelta');
-  delta.innerHTML=cards.join('');
-  delta.style.display=cards.length?'grid':'none';
-
-  const prevBtn=delta.querySelector('.delta-practical-prev');
-  const nextBtn=delta.querySelector('.delta-practical-next');
-  if(prevBtn){
-    prevBtn.addEventListener('click',()=>{
-      const idx=practicals.findIndex(d=>String(d.pipe.nps)===String((r.practical||selectedPractical).pipe.nps));
-      if(idx>0){
-        activePracticalNps=practicals[idx-1].pipe.nps;
-        calculate();
-      }
-    });
-  }
-  if(nextBtn){
-    nextBtn.addEventListener('click',()=>{
-      const idx=practicals.findIndex(d=>String(d.pipe.nps)===String((r.practical||selectedPractical).pipe.nps));
-      if(idx>=0 && idx<practicals.length-1){
-        activePracticalNps=practicals[idx+1].pipe.nps;
-        calculate();
-      }
-    });
-  }
-
-  const pref=preferredDecision(r),note=$('objectiveConsistency');
-  const label=pref.kind==='practical'?`Balanced size ${pref.design.pipe.nps}`:pref.kind==='lca'?'Lowest-GHG endpoint':'Lowest-cost endpoint';
-  note.className='consistency-note';
-  note.innerHTML=`<strong>Carbon-adjusted ranking:</strong> ${label} currently has the lowest carbon-adjusted cost among the displayed commercial options at ${fmt(r.x.carbonPrice,0)} €/tCO₂e.`;
-}
-
-function renderCharts(r,rec){
-  const commercial=[
-    {label:'Lowest cost',kind:'cost',color:'#1f5fa8',...r.cost},
-    ...(r.practicalDesigns||[]).map(d=>({
-      label:`NPS ${d.pipe.nps}`,
-      kind:'practical',
-      color:String(d.pipe.nps)===String((r.practical||{}).pipe?.nps)?'#b7832f':'#d7bd91',
-      ...d
-    })),
-    {label:'Lowest GHG',kind:'lca',color:'#2f8750',...r.lca}
-  ];
-  $('objectiveBars').innerHTML=twoAxisBarChart(commercial.map(d=>d.label),commercial.map(d=>d.lc),commercial.map(d=>d.gLCA));
-  renderObjectiveDelta(r);
-
-  const eqVals=commercial.map(d=>equivalentCost(r.x,d));
-  const eqMax=Math.max(...eqVals,1);
-  $('equivalentCostBars').innerHTML=htmlBarList(commercial.map((d,i)=>({
-    label:d.label,
-    w:eqVals[i]/eqMax*100,
-    txt:`${fmt(eqVals[i],2)} €/t`,
-    color:d.color
-  })),'#7b8ea0');
-
-  const selectedTop=topDecisionDesign(r);
-  $('recommendationDonut').innerHTML=donutChart(selectedTop.design.steelShare,selectedTop.design.elecShare);
-
-  const defaultComp=defaultPracticalDecision(r);
-  const bestComp=defaultComp?{design:defaultComp}:null;
-  const geometry=[
-    {label:'Lowest cost',color:'#1f5fa8',...r.cost},
-    ...(bestComp?[{label:'Balanced size',color:'#b7832f',...bestComp.design}]:[]),
-    {label:'Lowest GHG',color:'#2f8750',...r.lca}
-  ];
-  $('pipeGeometryChart').innerHTML=pipeGeometry(geometry);
-  const mw=Math.max(...geometry.map(d=>d.t));
-  $('wallBars').innerHTML=htmlBarList(geometry.map(d=>({label:d.label,w:d.t/mw*100,txt:mm(d.t),color:d.color})),'#7b8ea0');
-  renderFrontierCharts(r)
-}
 function reset(){
   Object.entries(defaults).forEach(([k,v])=>{if($(k))$(k).value=v});
   v162SyncCostBasis();v162LastPeriod=$('costBasis').value;asInvalidateSweep();
@@ -8450,291 +8143,21 @@ function renderFrontierCharts(r){
 
 
 /* === v49 overrides: carbon-adjusted cost chart + savings cards === */
-function renderCarbonCostSavings(r){
-  const practicals=r.practicalDesigns||[];
-  const selectedPractical=r.practical||defaultPracticalDecision(r);
-  const eq = d => equivalentCost(r.x,d);
-  const costEq = eq(r.cost);
 
-  function savingsMarkup(title, targetEq, tone, nav=''){
-    const delta = targetEq - costEq;
-    const pct = costEq>0 ? delta/costEq : 0;
-    const signText = pctSigned(pct);
-    const direction = delta>=0 ? 'higher' : 'lower';
-    return `<div class="saving-pill ${tone}">
-      <div class="saving-pill-head">
-        <div class="saving-pill-title">${title}</div>
-        ${nav}
-      </div>
-      <div class="saving-main">
-        <strong>${signText}</strong>
-        <small>carbon-adjusted cost change vs lowest cost · ${fmt(targetEq,2)} vs ${fmt(costEq,2)} €/tCO₂</small>
-      </div>
-    </div>`;
-  }
 
-  const cards=[];
-  if(selectedPractical){
-    const idx=Math.max(0,practicals.findIndex(d=>String(d.pipe.nps)===String(selectedPractical.pipe.nps)));
-    const nav = practicals.length>1
-      ? `<div class="saving-pill-nav">
-          <button type="button" class="ceq-practical-prev" ${idx===0?'disabled':''} aria-label="Previous practical candidate">‹</button>
-          <span>${idx+1}/${practicals.length}</span>
-          <button type="button" class="ceq-practical-next" ${idx===practicals.length-1?'disabled':''} aria-label="Next practical candidate">›</button>
-        </div>`
-      : `<div class="saving-pill-nav"><span>1/1</span></div>`;
-    cards.push(savingsMarkup(`Balanced size ${selectedPractical.pipe.nps} vs lowest cost`, eq(selectedPractical), 'practical', nav));
-  }
 
-  cards.push(savingsMarkup('Lowest GHG vs lowest cost', eq(r.lca), 'cost'));
-
-  $('carbonCostSavings').innerHTML = cards.join('');
-
-  const prevBtn=$('carbonCostSavings').querySelector('.ceq-practical-prev');
-  const nextBtn=$('carbonCostSavings').querySelector('.ceq-practical-next');
-  if(prevBtn){
-    prevBtn.addEventListener('click',()=>{
-      const idx=practicals.findIndex(d=>String(d.pipe.nps)===String((r.practical||selectedPractical).pipe.nps));
-      if(idx>0){
-        activePracticalNps=practicals[idx-1].pipe.nps;
-        calculate();
-      }
-    });
-  }
-  if(nextBtn){
-    nextBtn.addEventListener('click',()=>{
-      const idx=practicals.findIndex(d=>String(d.pipe.nps)===String((r.practical||selectedPractical).pipe.nps));
-      if(idx>=0 && idx<practicals.length-1){
-        activePracticalNps=practicals[idx+1].pipe.nps;
-        calculate();
-      }
-    });
-  }
-
-  const pref=preferredDecision(r);
-  const label=pref.kind==='practical'?`Balanced size ${pref.design.pipe.nps}`:pref.kind==='lca'?'Lowest-GHG endpoint':'Lowest-cost endpoint';
-  $('carbonCostNote').innerHTML=`<strong>At ${fmt(r.x.carbonPrice,0)} €/tCO₂e:</strong> ${label} has the lowest carbon-adjusted cost.`;
-}
-
-function renderCharts(r,rec){
-  const commercial=[
-    {label:'Lowest cost',kind:'cost',color:'#1f5fa8',...r.cost},
-    ...(r.practicalDesigns||[]).map(d=>({
-      label:`NPS ${d.pipe.nps}`,
-      kind:'practical',
-      color:String(d.pipe.nps)===String((r.practical||{}).pipe?.nps)?'#b7832f':'#d7bd91',
-      ...d
-    })),
-    {label:'Lowest GHG',kind:'lca',color:'#2f8750',...r.lca}
-  ];
-
-  $('objectiveBars').innerHTML=twoAxisBarChart(commercial.map(d=>d.label),commercial.map(d=>d.lc),commercial.map(d=>d.gLCA));
-  renderObjectiveDelta(r);
-
-  const eqVals=commercial.map(d=>equivalentCost(r.x,d));
-  const eqMax=Math.max(...eqVals,1);
-  $('equivalentCostBars').innerHTML=htmlBarList(commercial.map((d,i)=>({
-    label:d.label,
-    w:eqVals[i]/eqMax*100,
-    txt:`${fmt(eqVals[i],2)} €/t`,
-    color:d.color
-  })),'#7b8ea0');
-  renderCarbonCostSavings(r);
-
-  const selectedTop=topDecisionDesign(r);
-  $('recommendationDonut').innerHTML=donutChart(selectedTop.design.steelShare,selectedTop.design.elecShare);
-
-  const defaultComp=defaultPracticalDecision(r);
-  const bestComp=defaultComp?{design:defaultComp}:null;
-  const geometry=[
-    {label:'Lowest cost',color:'#1f5fa8',...r.cost},
-    ...(bestComp?[{label:'Balanced size',color:'#b7832f',...bestComp.design}]:[]),
-    {label:'Lowest GHG',color:'#2f8750',...r.lca}
-  ];
-  $('pipeGeometryChart').innerHTML=pipeGeometry(geometry);
-  const mw=Math.max(...geometry.map(d=>d.t));
-  $('wallBars').innerHTML=htmlBarList(geometry.map(d=>({label:d.label,w:d.t/mw*100,txt:mm(d.t),color:d.color})),'#7b8ea0');
-  renderFrontierCharts(r);
-}
 
 
 /* === v51 overrides: vertical carbon-adjusted cost bars === */
-function verticalEqBarChart(items){
-  const width=620, height=250;
-  const m={l:26,r:12,t:14,b:68};
-  const plotW=width-m.l-m.r, plotH=height-m.t-m.b;
-  const maxVal=Math.max(...items.map(d=>d.value),1);
-  const n=items.length;
-  const step=plotW/n;
-  const barW=Math.min(58, step*0.56);
-  let svg=`<div class="eq-vertical-wrap"><svg class="chart-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">`;
 
-  // gridlines + y labels
-  const ticks=4;
-  for(let i=0;i<=ticks;i++){
-    const val=maxVal*i/ticks;
-    const y=height-m.b-(val/maxVal)*plotH;
-    svg+=`<line x1="${m.l}" y1="${y}" x2="${width-m.r}" y2="${y}" stroke="#e6edf3" stroke-width="1"/>`;
-    svg+=`<text x="${m.l-4}" y="${y+4}" text-anchor="end" font-size="10.5" fill="#7b8ea0">${val.toFixed(1)}</text>`;
-  }
 
-  // bars
-  items.forEach((d,i)=>{
-    const x=m.l + step*i + (step-barW)/2;
-    const h=(d.value/maxVal)*plotH;
-    const y=height-m.b-h;
-    svg+=`<rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="9" fill="${d.color}"/>`;
-    svg+=`<text x="${x+barW/2}" y="${y-8}" text-anchor="middle" font-size="11.5" font-weight="700" fill="#183b6b">${d.value.toFixed(2)} €/t</text>`;
-    svg+=`<text x="${x+barW/2}" y="${height-m.b+20}" text-anchor="middle" font-size="11.5" fill="#334e68">${d.label}</text>`;
-  });
 
-  svg+=`</svg><div class="eq-vertical-note">Carbon-adjusted cost for each displayed commercial option at the current carbon value.</div></div>`;
-  return svg;
-}
-
-function renderCharts(r,rec){
-  const commercial=[
-    {label:'Lowest cost',kind:'cost',color:'#1f5fa8',...r.cost},
-    ...(r.practicalDesigns||[]).map(d=>({
-      label:`NPS ${d.pipe.nps}`,
-      kind:'practical',
-      color:String(d.pipe.nps)===String((r.practical||{}).pipe?.nps)?'#b7832f':'#d7bd91',
-      ...d
-    })),
-    {label:'Lowest GHG',kind:'lca',color:'#2f8750',...r.lca}
-  ];
-
-  $('objectiveBars').innerHTML=twoAxisBarChart(commercial.map(d=>d.label),commercial.map(d=>d.lc),commercial.map(d=>d.gLCA));
-  renderObjectiveDelta(r);
-
-  const eqItems=commercial.map(d=>({
-    label:d.label,
-    value:equivalentCost(r.x,d),
-    color:d.color
-  }));
-  $('equivalentCostBars').innerHTML=verticalEqBarChart(eqItems);
-  renderCarbonCostSavings(r);
-
-  const selectedTop=topDecisionDesign(r);
-  $('recommendationDonut').innerHTML=donutChart(selectedTop.design.steelShare,selectedTop.design.elecShare);
-
-  const defaultComp=defaultPracticalDecision(r);
-  const bestComp=defaultComp?{design:defaultComp}:null;
-  const geometry=[
-    {label:'Lowest cost',color:'#1f5fa8',...r.cost},
-    ...(bestComp?[{label:'Balanced size',color:'#b7832f',...bestComp.design}]:[]),
-    {label:'Lowest GHG',color:'#2f8750',...r.lca}
-  ];
-  $('pipeGeometryChart').innerHTML=pipeGeometry(geometry);
-  const mw=Math.max(...geometry.map(d=>d.t));
-  $('wallBars').innerHTML=htmlBarList(geometry.map(d=>({label:d.label,w:d.t/mw*100,txt:mm(d.t),color:d.color})),'#7b8ea0');
-  renderFrontierCharts(r);
-}
 
 
 /* === v52 overrides: better proportions in carbon-adjusted-cost section === */
-function verticalEqBarChart(items){
-  const width=640, height=290;
-  const m={l:34,r:16,t:18,b:74};
-  const plotW=width-m.l-m.r, plotH=height-m.t-m.b;
-  const maxVal=Math.max(...items.map(d=>d.value),1);
-  const n=items.length;
-  const step=plotW/n;
-  const barW=Math.min(64, step*0.58);
 
-  let svg=`<div class="eq-vertical-wrap"><svg class="chart-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">`;
 
-  const ticks=4;
-  for(let i=0;i<=ticks;i++){
-    const val=maxVal*i/ticks;
-    const y=height-m.b-(val/maxVal)*plotH;
-    svg+=`<line x1="${m.l}" y1="${y}" x2="${width-m.r}" y2="${y}" stroke="#e6edf3" stroke-width="1"/>`;
-    svg+=`<text x="${m.l-6}" y="${y+4}" text-anchor="end" font-size="11.5" fill="#7b8ea0">${val.toFixed(1)}</text>`;
-  }
 
-  items.forEach((d,i)=>{
-    const x=m.l + step*i + (step-barW)/2;
-    const h=(d.value/maxVal)*plotH;
-    const y=height-m.b-h;
-    svg+=`<rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="10" fill="${d.color}"/>`;
-    svg+=`<text x="${x+barW/2}" y="${y-10}" text-anchor="middle" font-size="12.5" font-weight="700" fill="#173d6b">${d.value.toFixed(2)} €/t</text>`;
-    svg+=`<text x="${x+barW/2}" y="${height-m.b+24}" text-anchor="middle" font-size="12" fill="#334e68">${d.label}</text>`;
-  });
-
-  svg+=`</svg><div class="eq-vertical-note">Carbon-adjusted cost for each displayed commercial option at the current carbon value.</div></div>`;
-  return svg;
-}
-
-function renderCarbonCostSavings(r){
-  const practicals=r.practicalDesigns||[];
-  const selectedPractical=r.practical||defaultPracticalDecision(r);
-  const eq = d => equivalentCost(r.x,d);
-  const costEq = eq(r.cost);
-
-  function cardTitle(main, sub, nav=''){
-    return `<div class="saving-pill-head">
-      <div>
-        <div class="saving-title-main">${main}</div>
-        <div class="saving-title-sub">${sub}</div>
-      </div>
-      ${nav}
-    </div>`;
-  }
-
-  function savingsMarkup(mainTitle, targetEq, tone, nav=''){
-    const delta = targetEq - costEq;
-    const pct = costEq>0 ? delta/costEq : 0;
-    return `<div class="saving-pill ${tone}">
-      ${cardTitle(mainTitle,'vs lowest-cost carbon-adjusted cost',nav)}
-      <div class="saving-main">
-        <strong>${pctSigned(pct)}</strong>
-        <small>C<sub>eq</sub> change · ${fmt(targetEq,2)} vs ${fmt(costEq,2)} €/tCO₂</small>
-      </div>
-    </div>`;
-  }
-
-  const cards=[];
-  if(selectedPractical){
-    const idx=Math.max(0,practicals.findIndex(d=>String(d.pipe.nps)===String(selectedPractical.pipe.nps)));
-    const nav = practicals.length>1
-      ? `<div class="saving-pill-nav">
-          <button type="button" class="ceq-practical-prev" ${idx===0?'disabled':''} aria-label="Previous practical candidate">‹</button>
-          <span>${idx+1}/${practicals.length}</span>
-          <button type="button" class="ceq-practical-next" ${idx===practicals.length-1?'disabled':''} aria-label="Next practical candidate">›</button>
-        </div>`
-      : `<div class="saving-pill-nav"><span>1/1</span></div>`;
-    cards.push(savingsMarkup(`Balanced size ${selectedPractical.pipe.nps}`, eq(selectedPractical), 'practical', nav));
-  }
-
-  cards.push(savingsMarkup('Lowest GHG', eq(r.lca), 'cost'));
-
-  $('carbonCostSavings').innerHTML = cards.join('');
-
-  const prevBtn=$('carbonCostSavings').querySelector('.ceq-practical-prev');
-  const nextBtn=$('carbonCostSavings').querySelector('.ceq-practical-next');
-  if(prevBtn){
-    prevBtn.addEventListener('click',()=>{
-      const idx=practicals.findIndex(d=>String(d.pipe.nps)===String((r.practical||selectedPractical).pipe.nps));
-      if(idx>0){
-        activePracticalNps=practicals[idx-1].pipe.nps;
-        calculate();
-      }
-    });
-  }
-  if(nextBtn){
-    nextBtn.addEventListener('click',()=>{
-      const idx=practicals.findIndex(d=>String(d.pipe.nps)===String((r.practical||selectedPractical).pipe.nps));
-      if(idx>=0 && idx<practicals.length-1){
-        activePracticalNps=practicals[idx+1].pipe.nps;
-        calculate();
-      }
-    });
-  }
-
-  const pref=preferredDecision(r);
-  const label=pref.kind==='practical'?`Balanced size ${pref.design.pipe.nps}`:pref.kind==='lca'?'Lowest-GHG endpoint':'Lowest-cost endpoint';
-  $('carbonCostNote').innerHTML=`<strong>At ${fmt(r.x.carbonPrice,0)} €/tCO₂e:</strong> ${label} has the lowest carbon-adjusted cost.`;
-}
 
 
 /* === v54: clipping-safe body-level tooltip portal === */
@@ -8976,6 +8399,7 @@ function asSummary(r,objective,requestedNps=null){
   const warnings=[];
   if(d.rangeLimited)warnings.push('Outside commercial pipe table');
   if(d.engineeredWall)warnings.push('Engineered wall required');
+  if(r.x.df<.72)warnings.push('Design factor below reference interval');
   if(objective==='practical' && requestedNps!=null && String(d.pipe.nps)!==String(requestedNps))
     warnings.push(`Requested NPS ${requestedNps} unavailable; used NPS ${d.pipe.nps}`);
   const warning=warnings.join(' · ');
@@ -9537,11 +8961,19 @@ alignCalculatorAnchor();
   }
 
   function loadAnalytics(){
-    if(gaLoaded || gaFailed || !canRunAnalytics()) return;
+    if(gaFailed || !canRunAnalytics()) return;
+    if(gaLoaded){
+      if(window['ga-disable-'+GA_ID]){
+        window['ga-disable-'+GA_ID]=false;
+        window.gtag?.('consent','update',{analytics_storage:'granted'});
+      }
+      return;
+    }
     try{
       window.dataLayer=window.dataLayer||[];
       window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
       window['ga-disable-'+GA_ID]=false;
+      window.gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
       window.gtag('js',new Date());
       window.gtag('config',GA_ID,{
         anonymize_ip:true,

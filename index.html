@@ -726,7 +726,6 @@ body{background:var(--overview-ink)}
  #hub-story .v137-mobile-panel .v137-panel-center{gap:18px;padding:10px 0 16px}
  #hub-story .v138-network{min-height:180px;grid-template-columns:minmax(0,1.12fr) 19px minmax(0,.93fr) 27px}
  #hub-story .v138-network .v137-net-source{height:53px;gap:4px}
- #hub-story .v138-network .v137-net-label strong{font-size:11px}
  #hub-story .v138-network .v137-net-label small{font-size:9px}
  #hub-story .v138-distance{display:none}
  #hub-story .v138-network .v137-net-trunk small{font-size:10px}
@@ -1433,6 +1432,12 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 #hub-story .v143-growth-slide .v138-expansion-values strong b{margin-left:.18em}
 @media(max-width:760px){#hub-story .v175-branch-pipe .branch-size-label{font-size:8px}#hub-story .v140-network:has(.v175-trunk-nps) .v137-net-trunk small{top:auto;bottom:calc(50% + 31px);font-size:9px;line-height:1.15}}
 </style>
+<style id="ecob-section-numbering">
+/* Same minimal chapter numbering as How it works. Numbers share the existing copy animation. */
+.v137-heading .v137-section-overline,.v137-step-head{display:flex;align-items:center;gap:12px;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:#a3c0e2;font-size:12px;font-weight:550}
+.v137-heading .v137-section-overline::after{content:"";width:40px;height:1px;background:rgba(163,192,226,.45);flex:0 0 40px}
+.v137-step-head .v137-step-rule{width:40px;height:1px;background:rgba(163,192,226,.45);flex:0 0 40px}
+</style>
 </head>
 <body id="top"><a class="skip-link" href="#main">Skip to main content</a>
 <nav class="intro-nav" aria-label="Main navigation"><div class="wrap">
@@ -1451,15 +1456,15 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
    
   </figure>
  </div></header>
-<section id="worked-example" class="story-chapter v137-chapter" aria-labelledby="story-size-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">01 / DIRECT PIPELINE SIZING</span><h2 id="story-size-title">How ECOB works for a single pipeline</h2></div></div><div class="v137-story-grid" id="v137-size-grid" data-v137-story="size">
-<div class="v137-steps"><div class="v137-step" id="size-scroll-step-1" data-v137-step="0" data-story="size" aria-label="Step 1 of 4"><div class="v137-step-copy">
-<div class="v137-step-head"><span class="v137-step-number">01 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-<h3>Define project inputs</h3><p>Enter key design and economic parameters. ECOB uses project-specific conditions to estimate pipe size and transport cost.</p></div><div class="v137-mobile-slot" data-mobile-for="0"></div></div><div class="v137-step" id="size-scroll-step-2" data-v137-step="1" data-story="size" aria-label="Step 2 of 4"><div class="v137-step-copy">
-<div class="v137-step-head"><span class="v137-step-number">02 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-<h3>Estimate the diameter directly</h3><p>ECOB estimates a target diameter without scanning candidate sizes.</p></div><div class="v137-mobile-slot" data-mobile-for="1"></div></div><div class="v137-step" id="size-scroll-step-3" data-v137-step="2" data-story="size" aria-label="Step 3 of 4"><div class="v137-step-copy">
-<div class="v137-step-head"><span class="v137-step-number">03 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-<h3>Get engineering results</h3><p>ECOB evaluates transport cost, commercial pipe size, pumping requirements and lifecycle GHG in one step.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step" id="size-scroll-step-4" data-v137-step="3" data-story="size" aria-label="Step 4 of 4"><div class="v137-step-copy">
-<div class="v137-step-head"><span class="v137-step-number">04 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+<section id="worked-example" class="story-chapter v137-chapter" aria-labelledby="story-size-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">1</span><h2 id="story-size-title">How ECOB works for a single pipeline</h2></div></div><div class="v137-story-grid" id="v137-size-grid" data-v137-story="size">
+<div class="v137-steps"><div class="v137-step" id="size-scroll-step-1" data-v137-step="0" data-story="size" aria-label="Section 1.1"><div class="v137-step-copy">
+<div class="v137-step-head"><span class="v137-step-number">1.1</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+<h3>Define project inputs</h3><p>Enter key design and economic parameters. ECOB uses project-specific conditions to estimate pipe size and transport cost.</p></div><div class="v137-mobile-slot" data-mobile-for="0"></div></div><div class="v137-step" id="size-scroll-step-2" data-v137-step="1" data-story="size" aria-label="Section 1.2"><div class="v137-step-copy">
+<div class="v137-step-head"><span class="v137-step-number">1.2</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+<h3>Estimate the diameter directly</h3><p>ECOB estimates a target diameter without scanning candidate sizes.</p></div><div class="v137-mobile-slot" data-mobile-for="1"></div></div><div class="v137-step" id="size-scroll-step-3" data-v137-step="2" data-story="size" aria-label="Section 1.3"><div class="v137-step-copy">
+<div class="v137-step-head"><span class="v137-step-number">1.3</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+<h3>Get engineering results</h3><p>ECOB evaluates transport cost, commercial pipe size, pumping requirements and lifecycle GHG in one step.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step" id="size-scroll-step-4" data-v137-step="3" data-story="size" aria-label="Section 1.4"><div class="v137-step-copy">
+<div class="v137-step-head"><span class="v137-step-number">1.4</span><span class="v137-step-rule" aria-hidden="true"></span></div>
 <h3>Choose a design option</h3><p>ECOB provides three commercial designs to explore different cost and emissions priorities.</p></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div>
 <div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active" data-panel="0" aria-hidden="false" >
 <div class="v137-panel-center"><div class="v137-parameters">
@@ -1478,15 +1483,15 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 <div class="v137-choice-result v165-result"><div class="v165-cost-hero"><span class="v137-result-hint">Transport cost</span><div class="v165-cost-line"><strong data-v137-choice="cost">3.28</strong><span>€/tCO₂</span></div></div><dl class="v137-reference-metrics v165-metrics"><div><dt>Commercial pipe size</dt><dd data-v137-choice="nps">NPS 16 · Sch 30</dd></div><div><dt>Specific pumping electricity</dt><dd data-v137-choice="energy">4.21 kWh/tCO₂</dd></div><div><dt>Intermediate pumping stations</dt><dd data-v137-choice="stations">2</dd></div><div><dt>Max. station spacing</dt><dd data-v137-choice="maxLen">88.5 km</dd></div><div><dt>Lifecycle GHG</dt><dd data-v137-choice="ghg">1.44 kgCO₂e/tCO₂</dd></div></dl></div></div>
 <div class="v137-panel-foot"></div></div></div></div>
 </div></div></section>
-<section id="hub-story" class="story-chapter v137-chapter v138-network-chapter" aria-labelledby="story-hub-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">02 / CCUS NETWORK STUDIES</span><h2 id="story-hub-title">How ECOB supports CCUS network studies</h2></div></div>
- <div class="v137-story-grid" id="v137-hub-grid" data-v137-story="hub"><div class="v137-steps"><div class="v137-step v138-step" id="hub-scroll-step-1" data-v137-step="0" data-story="hub" aria-label="Step 1 of 4"><div class="v137-step-copy">
-    <div class="v137-step-head"><span class="v137-step-number">01 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-    <h3>Size candidate network segments</h3><p>ECOB directly sizes candidate segments and estimates transport costs—without exhaustive diameter searches.</p></div><div class="v137-mobile-slot" data-mobile-for="0"></div></div><div class="v137-step v138-step" id="hub-scroll-step-2" data-v137-step="1" data-story="hub" aria-label="Step 2 of 4"><div class="v137-step-copy">
-    <div class="v137-step-head"><span class="v137-step-number">02 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-    <h3>Adapt sizing to energy prices</h3><p>ECOB quickly updates cost-optimal pipe sizes as energy prices change, without repeating diameter sweeps.</p></div><div class="v137-mobile-slot" data-mobile-for="1"></div></div><div class="v137-step v138-step" id="hub-scroll-step-3" data-v137-step="2" data-story="hub" aria-label="Step 3 of 4"><div class="v137-step-copy">
-    <div class="v137-step-head"><span class="v137-step-number">03 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
-    <h3>Update designs as CO₂ flows change</h3><p>ECOB rapidly re-sizes network segments as CO₂ flows change, using updated project conditions.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step v138-step" id="hub-scroll-step-4" data-v137-step="3" data-story="hub" aria-label="Step 4 of 4"><div class="v137-step-copy">
-    <div class="v137-step-head"><span class="v137-step-number">04 / 04</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+<section id="hub-story" class="story-chapter v137-chapter v138-network-chapter" aria-labelledby="story-hub-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">2</span><h2 id="story-hub-title">How ECOB supports CCUS network studies</h2></div></div>
+ <div class="v137-story-grid" id="v137-hub-grid" data-v137-story="hub"><div class="v137-steps"><div class="v137-step v138-step" id="hub-scroll-step-1" data-v137-step="0" data-story="hub" aria-label="Section 2.1"><div class="v137-step-copy">
+    <div class="v137-step-head"><span class="v137-step-number">2.1</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+    <h3>Size candidate network segments</h3><p>ECOB directly sizes candidate segments and estimates transport costs—without exhaustive diameter searches.</p></div><div class="v137-mobile-slot" data-mobile-for="0"></div></div><div class="v137-step v138-step" id="hub-scroll-step-2" data-v137-step="1" data-story="hub" aria-label="Section 2.2"><div class="v137-step-copy">
+    <div class="v137-step-head"><span class="v137-step-number">2.2</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+    <h3>Adapt sizing to energy prices</h3><p>ECOB quickly updates cost-optimal pipe sizes as energy prices change, without repeating diameter sweeps.</p></div><div class="v137-mobile-slot" data-mobile-for="1"></div></div><div class="v137-step v138-step" id="hub-scroll-step-3" data-v137-step="2" data-story="hub" aria-label="Section 2.3"><div class="v137-step-copy">
+    <div class="v137-step-head"><span class="v137-step-number">2.3</span><span class="v137-step-rule" aria-hidden="true"></span></div>
+    <h3>Update designs as CO₂ flows change</h3><p>ECOB rapidly re-sizes network segments as CO₂ flows change, using updated project conditions.</p></div><div class="v137-mobile-slot" data-mobile-for="2"></div></div><div class="v137-step v138-step" id="hub-scroll-step-4" data-v137-step="3" data-story="hub" aria-label="Section 2.4"><div class="v137-step-copy">
+    <div class="v137-step-head"><span class="v137-step-number">2.4</span><span class="v137-step-rule" aria-hidden="true"></span></div>
     <h3>Screen more scenarios, faster</h3><p>ECOB’s lightweight sizing and cost estimates support repeated screening in large CCUS network studies and optimization workflows.</p><a class="v137-explore-btn" href="calculator.html#calculator">Try ECOB+</a></div><div class="v137-mobile-slot" data-mobile-for="3"></div></div></div><div class="v137-stage"><div class="v137-stage-frame"><div class="v137-slide is-active v138-hub-slide v140-baseline-slide" data-panel="0" aria-hidden="false" >
       <div class="v137-panel-center"><div class="v137-network v138-network v140-network" data-network-year="2026" aria-label="Illustrative 2026 and 2030 CCUS hub candidate pipeline segments">
       <div class="v137-network-branches"><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Cement plant</strong><small>3 MtCO₂/y</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i><b class="segment-nps"><em class="branch-size-label">Pipe size</em>NPS 12¾</b></span></div><div class="v137-net-source"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Refinery</strong><small>4 MtCO₂/y</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i><b class="segment-nps"><em class="branch-size-label">Pipe size</em>NPS 14</b></span></div><div class="v137-net-source is-future"><span class="v137-net-dot"></span><span class="v137-net-label"><strong>Steel plant</strong><small>Connects in 2030</small></span><span class="v175-branch-pipe"><i aria-hidden="true"></i></span></div></div>
@@ -1636,33 +1641,6 @@ const easeInRange=(value,start,end)=>{
   return fraction*fraction*(3-2*fraction);
 };
 
-function copyFocus(element,weight,floor){
-  element.style.setProperty('--copy-opacity',(floor+(1-floor)*weight).toFixed(3));
-}
-
-function watchStorySteps(scene,render){
-  const [first,second]=scene.querySelectorAll('.story-step');
-  let previous;
-  scrollScenes.push(height=>{
-    const compact=compactStory.matches;
-    const bounds=second.getBoundingClientRect();
-    const readingLine=(bounds.top+(compact?0:bounds.height*.22))/height;
-    const progress=1-easeInRange(readingLine,.34,.82);
-    const step=progress>=.5?1:0;
-    const reveal=reducedMotion.matches?step:easeInRange(progress,.14,.86);
-    scene.style.setProperty('--story-progress',reveal.toFixed(3));
-    if(!reducedMotion.matches){
-      const focus=compact?.72:.58;
-      copyFocus(first,1-progress,focus);
-      copyFocus(second,progress,focus);
-      second.style.setProperty('--action-opacity',(.78+.22*progress).toFixed(3));
-    }
-    if(step!==previous){
-      render(step);
-      previous=step;
-    }
-  });
-}
 
 /* v137: single-pipe story initialized below. */
 const viewportCopy=[...document.querySelectorAll([
@@ -1673,12 +1651,14 @@ const viewportCopy=[...document.querySelectorAll([
 scrollScenes.push(height=>{
   if(reducedMotion.matches)return;
   const floor=compactStory.matches?.60:.42;
-  for(const element of viewportCopy){
-    const {top,bottom}=element.getBoundingClientRect();
+  const bounds=viewportCopy.map(element=>element.getBoundingClientRect());
+  for(const [i,element] of viewportCopy.entries()){
+    const {top,bottom}=bounds[i];
     const entering=1-easeInRange(top/height,.72,.99);
     const leaving=easeInRange(bottom/height,.055,.29);
     const visibility=Math.min(entering,leaving);
-    element.style.setProperty('--viewport-opacity',(floor+(1-floor)*visibility).toFixed(3));
+    const opacity=(floor+(1-floor)*visibility).toFixed(3);
+    if(element.style.getPropertyValue('--viewport-opacity')!==opacity)element.style.setProperty('--viewport-opacity',opacity);
   }
 });
 
@@ -1833,15 +1813,16 @@ scrollScenes.push(height=>{
   }
   const clamp=n=>Math.max(0,Math.min(1,n));
   const smooth=n=>{const x=clamp(n);return x*x*(3-2*x);};
-  for(const el of v142ChapterTitles){
-    const title=el.querySelector('.v142-intro-inner');
-    if(!title)continue;
-    const r=title.getBoundingClientRect();
+  const titleBounds=v142ChapterTitles.map(el=>el.querySelector('.v142-intro-inner')?.getBoundingClientRect());
+  for(const [i,el] of v142ChapterTitles.entries()){
+    const r=titleBounds[i];
+    if(!r)continue;
     const enter=1-smooth((r.top-height*.68)/(height*.39));
     const exit=smooth((r.bottom-height*.08)/(height*.21));
     const visibility=Math.min(enter,exit);
-    el.style.setProperty('--v142-title-opacity',(0.12+0.88*visibility).toFixed(3));
-    el.style.setProperty('--v142-title-lift',((1-visibility)*15).toFixed(1)+'px');
+    const opacity=(0.12+0.88*visibility).toFixed(3),lift=((1-visibility)*15).toFixed(1)+'px';
+    if(el.style.getPropertyValue('--v142-title-opacity')!==opacity)el.style.setProperty('--v142-title-opacity',opacity);
+    if(el.style.getPropertyValue('--v142-title-lift')!==lift)el.style.setProperty('--v142-title-lift',lift);
   }
 });
 
@@ -1892,11 +1873,19 @@ const byId=id=>document.getElementById(id);
   }
 
   function loadAnalytics(){
-    if(gaLoaded || gaFailed || !canRunAnalytics()) return;
+    if(gaFailed || !canRunAnalytics()) return;
+    if(gaLoaded){
+      if(window['ga-disable-'+GA_ID]){
+        window['ga-disable-'+GA_ID]=false;
+        window.gtag?.('consent','update',{analytics_storage:'granted'});
+      }
+      return;
+    }
     try{
       window.dataLayer=window.dataLayer||[];
       window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
       window['ga-disable-'+GA_ID]=false;
+      window.gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
       window.gtag('js',new Date());
       window.gtag('config',GA_ID,{
         anonymize_ip:true,
@@ -2026,7 +2015,7 @@ const byId=id=>document.getElementById(id);
  // v144 single-case runtime playback. This animates previously measured runtimes;
  // it does NOT run Aspen Plus or rerun the ECOB model.
  // Numerals retain their final reference values in static/reduced-motion mode.
- let benchSession=null;
+ let benchSession=null, benchPlayed=false;
  const desktopBench=benchmarkPanels.find(el=>el.matches('.v137-slide'));
  const mobileBench=benchmarkPanels.find(el=>el.matches('.v137-mobile-panel'));
  function stopBenchPlayback(){
@@ -2051,7 +2040,8 @@ const byId=id=>document.getElementById(id);
  }
  function startBenchPlayback(panel){
    stopBenchPlayback();
-   if(!panel||prefersReduced.matches)return;
+   if(!panel||prefersReduced.matches||benchPlayed)return;
+   benchPlayed=true;
    const ecob=panel.querySelector('[data-v143-bench="ecob"]');
    const aspen=panel.querySelector('[data-v143-bench="aspen"]');
    if(!ecob||!aspen)return;
@@ -2108,7 +2098,8 @@ const byId=id=>document.getElementById(id);
        : !!(target?.classList.contains('is-active') && frameRect && frameRect.top<height*.90
            && frameRect.bottom>height*.12 && stepRect && stepRect.bottom>height*.10 && stepRect.top<height*.84);
    if(inFrame&&!prefersReduced.matches && !document.hidden){
-     if(benchSession?.panel!==target)startBenchPlayback(target);
+     if(!benchPlayed)startBenchPlayback(target);
+     else if(benchSession&&benchSession.panel!==target)stopBenchPlayback();
    }else if(benchSession){
      stopBenchPlayback();
    }
@@ -2144,7 +2135,7 @@ const byId=id=>document.getElementById(id);
  updateScrollScenes();
 })();
 </script>
-<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview" class="is-current" aria-current="location"><span aria-hidden="true">Overview</span></a><a href="#size-scroll-step-1" aria-label="Project inputs"><span aria-hidden="true">Project inputs</span></a><a href="#size-scroll-step-2" aria-label="Direct sizing"><span aria-hidden="true">Direct sizing</span></a><a href="#size-scroll-step-3" aria-label="Engineering results"><span aria-hidden="true">Engineering results</span></a><a href="#size-scroll-step-4" aria-label="Design options"><span aria-hidden="true">Design options</span></a><a href="#hub-scroll-step-1" aria-label="Network sizing"><span aria-hidden="true">Network sizing</span></a><a href="#hub-scroll-step-2" aria-label="Energy prices"><span aria-hidden="true">Energy prices</span></a><a href="#hub-scroll-step-3" aria-label="Flow scenarios"><span aria-hidden="true">Flow scenarios</span></a><a href="#hub-scroll-step-4" aria-label="Performance"><span aria-hidden="true">Performance</span></a></nav>
+<nav class="ecob-chapter-rail" aria-label="Jump to page section"><a href="#top" aria-label="Overview" class="is-current" aria-current="location"><span aria-hidden="true">Overview</span></a><a href="#size-scroll-step-1" aria-label="1.1 · Project inputs"><span aria-hidden="true">1.1 · Project inputs</span></a><a href="#size-scroll-step-2" aria-label="1.2 · Direct sizing"><span aria-hidden="true">1.2 · Direct sizing</span></a><a href="#size-scroll-step-3" aria-label="1.3 · Engineering results"><span aria-hidden="true">1.3 · Engineering results</span></a><a href="#size-scroll-step-4" aria-label="1.4 · Design options"><span aria-hidden="true">1.4 · Design options</span></a><a href="#hub-scroll-step-1" aria-label="2.1 · Network sizing"><span aria-hidden="true">2.1 · Network sizing</span></a><a href="#hub-scroll-step-2" aria-label="2.2 · Energy prices"><span aria-hidden="true">2.2 · Energy prices</span></a><a href="#hub-scroll-step-3" aria-label="2.3 · Flow scenarios"><span aria-hidden="true">2.3 · Flow scenarios</span></a><a href="#hub-scroll-step-4" aria-label="2.4 · Performance"><span aria-hidden="true">2.4 · Performance</span></a></nav>
 <script id="ecob-rail-behavior">
 (() => {
  const rail=document.querySelector('.ecob-chapter-rail'); if(!rail)return;
