@@ -1,0 +1,52 @@
+/* Shared language controls; original site design is otherwise retained. */
+.ecob-language-toggle,.ecob-mobile-menu{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;background:transparent;color:#aabbd1;font:inherit;font-size:13px;font-weight:450;white-space:nowrap;cursor:pointer;padding:7px 4px;line-height:1.35;transition:color .2s ease;flex-shrink:0}
+.ecob-language-toggle:hover,.ecob-mobile-menu:hover{color:#edf3fb}.ecob-language-toggle:focus-visible,.ecob-mobile-menu:focus-visible{outline:2px solid #a5cefb;outline-offset:3px;border-radius:4px}
+.ecob-mobile-menu,.ecob-mobile-panel{display:none!important}.ecob-desktop-language{border-left:1px solid #34465e;padding-left:13px}
+html[lang=zh-CN] body,html[lang=zh-CN] svg text{font-family:Inter,"Noto Sans SC","Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif!important}
+html[lang=zh-CN] :is(h1,h2,h3,h4,.mh-outro>p,.ecob-closing h2){letter-spacing:0!important;line-height:1.25!important}
+html[lang=zh-CN] :is(.intro-hero p,.v137-step p,.mh-chapter-copy,.ev2-step p,.fx4-stage-copy p){line-height:1.75!important;letter-spacing:0!important}
+html[lang=zh-CN] .intro-hero h1{max-width:13em!important;font-size:clamp(35px,4.2vw,62px)!important}
+html[lang=zh-CN] .v164-disclosure-state::before{content:'展开'}
+html[lang=zh-CN] details[open]>summary.v164-disclosure .v164-disclosure-state::before,html[lang=zh-CN] button.v164-disclosure[aria-expanded=true] .v164-disclosure-state::before{content:'收起'}
+html[lang=zh-CN] #calculator #commercialDecisionPanel #topEngineeringDetails>summary::after{content:'展开 ↓'}
+html[lang=zh-CN] #calculator #commercialDecisionPanel #topEngineeringDetails[open]>summary::after{content:'收起 ↑'}
+html[lang=zh-CN] .commercial-compare-disclosure>summary::after,html[lang=zh-CN] .scenario-disclosure>summary::after{content:'展开 ↓'!important}
+html[lang=zh-CN] .commercial-compare-disclosure[open]>summary::after,html[lang=zh-CN] .scenario-disclosure[open]>summary::after{content:'收起 ↑'!important}
+html[lang=zh-CN] #details .ecob-analysis-fold[open] .ecob-analysis-fold-open::before{content:'关闭'}
+@media(max-width:760px){
+ .intro-nav-links,.nav:not(#siteNav) .nav-links{position:relative;gap:12px!important}
+ .intro-nav-links>.ecob-desktop-link,.nav:not(#siteNav) .nav-links>.ecob-desktop-link,.ecob-desktop-language{display:none!important}
+ .ecob-mobile-menu{display:inline-flex!important;font-size:12px;padding:8px 3px;min-height:38px}
+ .ecob-mobile-menu[aria-expanded=true] svg{transform:rotate(180deg)}
+ .ecob-mobile-panel{display:flex!important;position:absolute;z-index:200;right:0;top:calc(100% + 15px);width:min(238px,calc(100vw - 32px));flex-direction:column;align-items:stretch;gap:4px;padding:10px;background:#101723;border:1px solid #34465e;border-radius:10px;box-shadow:0 12px 30px #0005;opacity:0;visibility:hidden;transform:translateY(-5px);pointer-events:none;transition:opacity .2s,transform .2s,visibility 0s .2s}
+ .ecob-mobile-panel.ecob-menu-open{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .2s,transform .2s,visibility 0s}
+ .ecob-mobile-panel a,.ecob-mobile-panel button{display:flex!important;justify-content:flex-start;padding:11px 9px!important;font-size:13px!important;text-decoration:none!important;border-radius:5px;color:#dfe9f5!important;line-height:1.4}
+ .ecob-mobile-panel a:hover,.ecob-mobile-panel button:hover{background:#1b2b41}.ecob-mobile-panel .ecob-language-toggle{border-top:1px solid #293747;border-radius:0;margin-top:3px;color:#b4d5ff!important}
+ #siteNav .ecob-language-toggle{justify-content:flex-start;padding:10px 12px;width:100%;font-size:13px}
+ html[lang=zh-CN] .intro-hero h1{font-size:clamp(33px,8.4vw,48px)!important}
+}
+@media(prefers-reduced-motion:reduce){.ecob-mobile-panel,.ecob-language-toggle,.ecob-mobile-menu{transition:none!important}}
+@media(max-width:760px){.intro-nav-links .ecob-mobile-panel .ecob-nav-home{display:flex!important}}
+html[lang=zh-CN] #calculator :is(.v152-kpi-label,.rec-title,.v137-kicker){letter-spacing:normal!important}
+#siteNav .nav-links>a[href^="how-it-works.html"]{color:#c6d7e9!important}
+
+/* QA typography: preserve engineering identifiers and numeric font, simplify Chinese labels. */
+html[lang=zh-CN] :is(.v151-pump-label,.v163-kicker,.ecob-analysis-eyebrow,.group-label,.v137-kicker,.evidence-label,.ev2-stage-label){letter-spacing:normal!important;text-transform:none!important}
+html[lang=zh-CN] .v149-pipe-schedule{white-space:nowrap}
+/* Repair the inherited tablet breakpoint: the old <=980px column layout
+   conflicts with the calculator's desktop menu starting at 881px. */
+@media(min-width:881px) and (max-width:980px){
+ #siteNav.nav>.wrap{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important}
+ #siteNav.nav .nav-links{background:transparent!important;border:0!important;box-shadow:none!important}
+}
+@media(max-width:880px){
+ #siteNav .ecob-language-toggle{justify-content:flex-start;padding:10px 12px;width:100%;font-size:13px}
+}
+/* Keep the calculator's existing Menu-only mobile navigation, but anchor its
+   dropdown below the 68px header rather than letting it move the logo upward. */
+@media(max-width:880px){
+ #siteNav.nav>.wrap{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:68px;align-items:center!important;padding-block:0!important}
+ #siteNav.nav .nav-links{position:absolute;top:calc(100% + 5px);right:max(16px,var(--page-gutter,16px));width:min(270px,calc(100vw - 32px))!important;padding:8px!important;gap:4px!important;border-radius:10px;background:#101723!important;border:1px solid #34465e!important;box-shadow:0 12px 30px #0005!important}
+ #siteNav.nav .nav-links>a{margin-left:0!important}
+ #siteNav.nav .nav-links>.ecob-language-toggle{border-top:1px solid #293747;margin-top:3px;color:#b4d5ff}
+}

@@ -1466,6 +1466,10 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
 @media(max-width:360px){.hero-evidence{gap:10px 8px}.evidence-item strong{font-size:21px}.evidence-label,.evidence-detail{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.ecob-closing-copy,.hero-evidence{opacity:1!important;transform:none!important}.evidence-item{animation:none!important}}
 </style>
+<link rel="stylesheet" href="i18n/i18n.css?v=20261127-qa2">
+<script defer src="i18n/common.js?v=20261127-qa2"></script>
+<script defer src="i18n/home.js?v=20261127-qa2"></script>
+<script defer src="i18n/i18n.js?v=20261127-qa2"></script>
 </head>
 <body id="top"><a class="skip-link" href="#main">Skip to main content</a>
 <nav class="intro-nav" aria-label="Main navigation"><div class="wrap">
@@ -1486,7 +1490,7 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sa
   <aside class="hero-evidence" aria-label="Scientific evidence">
     <div class="evidence-item"><strong>0.383 <span class="evidence-unit">ms</span></strong><span class="evidence-label">Sizing &amp; cost evaluation</span><a class="evidence-detail" href="calculator.html#benchmarkDetails">Single-case benchmark ↗</a></div>
     <div class="evidence-item"><strong>1.65%</strong><span class="evidence-label">Median diameter error vs Aspen Plus</span><a class="evidence-detail" href="calculator.html#validation">166 out-of-sample cases ↗</a></div>
-    <div class="evidence-item"><strong>IJGGC</strong><span class="evidence-label">Peer-reviewed research</span><a class="evidence-detail" href="https://www.sciencedirect.com/science/article/pii/S1750583626002616" target="_blank" rel="noopener noreferrer" title="International Journal of Greenhouse Gas Control">Read the paper ↗</a></div>
+    <div class="evidence-item"><strong>IJGGC</strong><span class="evidence-label">Peer-reviewed research</span><a class="evidence-detail" href="https://doi.org/10.1016/j.ijggc.2026.104829" target="_blank" rel="noopener noreferrer" title="International Journal of Greenhouse Gas Control">Read the paper ↗</a></div>
   </aside>
  </div></header>
 <section id="worked-example" class="story-chapter v137-chapter" aria-labelledby="story-size-title"><div class="wrap"><div class="story-heading v137-heading v142-chapter-intro"><div class="v142-intro-inner"><span class="v137-section-overline">1</span><h2 id="story-size-title">How ECOB works for a single pipeline</h2></div></div><div class="v137-story-grid" id="v137-size-grid" data-v137-story="size">
@@ -2035,7 +2039,7 @@ const byId=id=>document.getElementById(id);
      v.flow.textContent=fmtFlow(q);v.nps.textContent=nps;
      v.slider.value=String(q);
      v.slider.style.setProperty('--slider-fill',((q-7)/8*100)+'%');
-     v.slider.setAttribute('aria-valuetext',fmtFlow(q)+' million tonnes per year; NPS '+nps);
+     v.slider.setAttribute('aria-valuetext',fmtFlow(q)+' MtCO₂/y; NPS '+nps);
    }
  }
  function stopGrowth(){if(growthFrame)cancelAnimationFrame(growthFrame);growthFrame=0;growthStarted=true;}

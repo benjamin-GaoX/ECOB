@@ -6984,6 +6984,10 @@ body > .footer > .wrap {
   background: var(--panel-fill);
 }
 </style>
+<link rel="stylesheet" href="i18n/i18n.css?v=20261127-qa2">
+<script defer src="i18n/common.js?v=20261127-qa2"></script>
+<script defer src="i18n/calculator.js?v=20261127-qa2"></script>
+<script defer src="i18n/i18n.js?v=20261127-qa2"></script>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -7368,7 +7372,7 @@ body > .footer > .wrap {
 </section>
 <div class="v163-publication" id="correlations">
   <h3 class="publication-heading">Published research</h3>
-  <div class="v163-paper-grid"><div class="v163-paper-copy"><h4 class="publication-title">A novel approach for preliminary sizing and cost screening of CO₂ pipeline transport: The ECOB method</h4><p>Binxu Gao, Nicola Zecca &amp; Giampaolo Manzolini</p><p class="v163-paper-meta"><cite>International Journal of Greenhouse Gas Control</cite> · Volume 157 · 2026 · Article 104829</p></div><a class="v163-cta" href="https://doi.org/10.1016/j.ijggc.2026.104829" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a></div>
+  <div class="v163-paper-grid"><div class="v163-paper-copy" data-i18n-skip><h4 class="publication-title">A novel approach for preliminary sizing and cost screening of CO₂ pipeline transport: The ECOB method</h4><p>Binxu Gao, Nicola Zecca &amp; Giampaolo Manzolini</p><p class="v163-paper-meta"><cite>International Journal of Greenhouse Gas Control</cite> · Volume 157 · 2026 · Article 104829</p></div><a class="v163-cta" href="https://doi.org/10.1016/j.ijggc.2026.104829" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a></div>
 </div>
 <details class="scv-scope"><summary class="v164-disclosure"><span class="v164-disclosure-label">Scope &amp; limitations</span><span class="v164-disclosure-action" aria-hidden="true"><span class="v164-disclosure-state"></span><span class="v164-chevron"></span></span></summary><p>ECOB is intended for preliminary screening of steady-state, onshore, dense-phase CO₂ pipelines within the studied parameter ranges. Project-specific hydraulic, mechanical, cost and lifecycle verification remains necessary. <a href="https://doi.org/10.1016/j.ijggc.2026.104829" rel="noopener noreferrer" target="_blank">Read method &amp; limitations</a>.</p></details>
 </div></section>
@@ -8207,6 +8211,7 @@ function showHintTooltip(el){
   if(!tip) return;
   activeHint=el;
   tooltipPortal.textContent=tip;
+  window.ECOBI18n?.localize(tooltipPortal);
   tooltipPortal.classList.add('show');
   positionTooltipPortal(el);
 }
@@ -8632,7 +8637,7 @@ function asRunSweep(){
     sweepRows=rows;sweepInfo={key,objective,original};
     const invalid=rows.filter(r=>!r.summary.valid).length,warn=rows.filter(r=>r.summary.valid&&r.summary.warning).length;
     asEl('asResultTitle').textContent=`${analysisParameterMeta[key].label} sensitivity`;
-    asEl('asResultInfo').textContent=`${rows.length} cases · ${invalid} invalid · ${warn} with engineering warnings · ${asEl('asObjective').selectedOptions[0].text}${selectedNps!=null?' · Requested NPS '+selectedNps:''}`;
+    asEl('asResultInfo').textContent=`${rows.length} cases · ${invalid} invalid · ${warn} with engineering warnings · ${(asEl('asObjective').selectedOptions[0].dataset.i18nEnText||asEl('asObjective').selectedOptions[0].text)}${selectedNps!=null?' · Requested NPS '+selectedNps:''}`;
     asEl('asChartCost').innerHTML=asSvgChart(rows,'cost','€/t','#92b4e2');
     asEl('asChartEnergy').innerHTML=asSvgChart(rows,'energy','kWh/t','#88c1b0');
     asEl('asChartDiameter').innerHTML=asSvgChart(rows,'id','m','#c2a77e',true);
@@ -8880,6 +8885,7 @@ function alignCalculatorAnchor(){
   for(let parent=target;parent;parent=parent.parentElement){
     if(parent.tagName==='DETAILS')parent.open=true;
   }
+  if(id === 'benchmarkDetails') target = $('advantages') || target;
   if(target)requestAnimationFrame(()=>{
     if(location.hash===hash)target.scrollIntoView({behavior:'instant',block:'start'});
   });
@@ -9225,7 +9231,7 @@ alignCalculatorAnchor();
   const tip=document.createElement('div');tip.className='scv-hover-tip';tip.hidden=true;
   tip.setAttribute('role','status');document.body.appendChild(tip);
   let touched=false;
-  function pointData(t){return t&&t.querySelector&&t.querySelector('title')?.textContent?.trim();}
+  function pointData(t){return t&&t.querySelector&&(()=>{const n=t.querySelector('title')?.firstChild;return n?(window.ECOBI18n?.originalText(n)??n.textContent).trim():undefined;})();}
   function position(e){
     const rect=tip.getBoundingClientRect();
     const x=Math.max(12,Math.min(window.innerWidth-rect.width-12,(e.clientX||14)+14));
@@ -9239,14 +9245,14 @@ alignCalculatorAnchor();
       const mark=e.target.closest('circle, rect');
       const message=pointData(mark);
       if(!message){if(!touched)tip.hidden=true;return;}
-      touched=false;tip.textContent=message;tip.hidden=false;position(e);
+      touched=false;tip.textContent=message;window.ECOBI18n?.localize(tip);tip.hidden=false;position(e);
     });
     svg.addEventListener('pointerleave',()=>{if(!touched)tip.hidden=true;});
     svg.addEventListener('pointerup',e=>{
       if(e.pointerType!=='touch')return;
       const msg=pointData(e.target.closest('circle,rect'));
       if(!msg){tip.hidden=true;touched=false;return;}
-      tip.textContent=msg;tip.hidden=false;touched=true;position(e);
+      tip.textContent=msg;window.ECOBI18n?.localize(tip);tip.hidden=false;touched=true;position(e);
     });
   }
   document.addEventListener('pointerdown',e=>{
