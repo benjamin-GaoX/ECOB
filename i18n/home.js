@@ -73,7 +73,7 @@ window.ECOBTranslations = Object.assign(window.ECOBTranslations || {}, {
   "Sizing + transport-cost evaluation": "管径与输送成本计算",
   "Candidate-diameter sweep": "候选管径遍历",
   "Make large-scale CCUS studies": "让大规模 CCUS 系统研究",
-  "computationally practical.": "突破计算效率的限制。",
+  "computationally practical.": "更加高效。",
   "ECOB+ · CO₂ pipeline screening": "ECOB+ · CO₂ 管道初步评估",
   "Scientific validation": "科研验证",
   "Privacy & analytics": "隐私与分析",
